@@ -1,4 +1,4 @@
 ---
 hero_title: Dirty Not Sorry
-hero_description: Unkempt and unapologetic music collective
+hero_description: Unkempt and unapologetic artist + promotion collective
 ---
