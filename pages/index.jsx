@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { attributes } from '../content/home.md';
+import { attributes } from '../content/pages/home.md';
 
 export default class Home extends Component {
   render() {

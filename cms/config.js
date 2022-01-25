@@ -15,7 +15,7 @@ const config = {
         {
           label: 'Home',
           name: 'home',
-          file: 'content/home.md',
+          file: 'content/pages/home.md',
           fields: [
             {
               label: 'Hero Title',
