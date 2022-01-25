@@ -5,8 +5,8 @@ const config = {
     repo: 'dirtynotsorry/dirtysite',
     branch: 'main',
   },
-  media_folder: '',
-  public_folder: 'public',
+  media_folder: 'public/img',
+  public_folder: 'img',
   collections: [
     {
       name: 'pages',
@@ -23,8 +23,8 @@ const config = {
               widget: 'string',
             },
             {
-              label: 'Hero Description',
-              name: 'hero_description',
+              label: 'Hero Subtitle',
+              name: 'hero_subtitle',
               widget: 'markdown',
             },
           ],
