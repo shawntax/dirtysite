@@ -29,6 +29,18 @@ const config = {
             },
           ],
         },
+        {
+          label: 'About',
+          name: 'about',
+          file: 'content/pages/about.md',
+          fields: [
+            {
+              label: 'About DNS',
+              name: 'about_dns',
+              widget: 'markdown',
+            },
+          ]
+        },
       ],
     },
   ],
