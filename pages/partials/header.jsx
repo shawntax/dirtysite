@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Link from 'next/link'
 
 export default class Header extends Component {
     constructor(props) {
@@ -21,18 +22,21 @@ export default class Header extends Component {
                         <div className="hidden md:flex space-x-4">
 
                             <div>
-                                <a href="/" className="flex items-center py-2">
-                                    <img src="logo.svg" className="h-20 w-20" />
-                                </a>
+                                <Link href="/">
+                                    <a className="flex items-center py-2">
+                                        <img src="logo.svg" className="h-20 w-20" />
+                                    </a>
+                                </Link>
                             </div>
 
                         </div>
                         {/* Primary nav */}
                         <div className="hidden md:flex space-x-1 align-left">
-                            <a href="/events" className="py-7 px-3 text-gray-100 hover:text-gray-600">Events</a>
-                            <a href="/about" className="py-7 px-3 text-gray-100 hover:text-gray-600">About</a>
-                            <a href="/roster" className="py-7 px-3 text-gray-100 hover:text-gray-600">Roster</a>
-                            <a href="/contact" className="py-7 px-3 text-gray-100 hover:text-gray-600">Contact</a>
+                            <Link href="/events"><a className="py-7 px-3 text-gray-100 hover:text-gray-600">Events</a></Link>
+                            <Link href="/about"><a className="py-7 px-3 text-gray-100 hover:text-gray-600">About</a></Link>
+                            <Link href="/roster"><a className="py-7 px-3 text-gray-100 hover:text-gray-600">Roster</a></Link>
+                            <Link href="/contact"><a className="py-7 px-3 text-gray-100 hover:text-gray-600">Contact</a></Link>
+                            <a href="https://shop.dirtynotsorry.com" className="py-7 px-3 text-gray-100 hover:text-gray-600">Shop</a>
                         </div>
                     </div>
 
@@ -41,9 +45,12 @@ export default class Header extends Component {
                 {/**Mobile menu bar*/}  
                 <div className="bg-black text-gray-100 flex justify-between md:hidden">
                     {/**Logo */}
-                    <a href="/" className="block p-4 text-white font-bold">
-                        <img src="logo.svg" className="h-20 w-20 " />
-                    </a>
+                    <Link href="/">
+                        <a className="block p-4 text-white font-bold">
+                            <img src="logo.svg" className="h-20 w-20 " />
+                        </a>
+                    </Link>
+                   
 
                     {/**Mobile menu button */}
                     <button onClick={this.handleClick} className="p-4 focus:outline-none focus:bg-gray-700">
@@ -59,10 +66,10 @@ export default class Header extends Component {
                         Dirty Not Sorry
                     </a>
                     <nav>
-                        <a href="/events" className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Events</a>
-                        <a href="/about" className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">About</a>
-                        <a href="/roster" className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Roster</a>
-                        <a href="/contact" className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Contact</a>
+                        <Link href="/events"><a className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Events</a></Link>
+                        <Link href="/about"><a className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">About</a></Link>
+                        <Link href="/roster"><a className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Roster</a></Link>
+                        <Link href="/contact"><a href="/contact" className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Contact</a></Link>
                     </nav>
                 </div>
             </div>
