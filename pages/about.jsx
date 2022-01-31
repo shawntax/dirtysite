@@ -7,8 +7,8 @@ export default class About extends Component {
     return (
       <>
         <Header />
-        <main className="h-screen bg-black text-white flex flex-col justify-center items-center">
-            <h2>This is the about page</h2>
+        <main  className="h-screen bg-gray-200 flex flex-col py-20 items-center">
+            <h1 className="text-black font-bold">This is the about page</h1>
         </main>
       </>
     );

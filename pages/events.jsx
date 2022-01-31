@@ -1,14 +1,15 @@
 import { Component } from 'react';
+import Header from './partials/header'
 import { attributes } from '../content/events/dns-at-your-moms-house.md';
 
-export default class Home extends Component {
+export default class Events extends Component {
   render() {
-    let { hero_title, hero_subtitle } = attributes;
+    // let { hero_title, hero_subtitle } = attributes;
     return (
       <>
-        <main className="h-screen bg-black text-white flex flex-col justify-center items-center">
-          <h1 className="text-2xl my-5">{hero_title}</h1>
-          <p className="italic">{hero_subtitle}</p>
+        <Header />
+        <main className="h-screen bg-gray-200 flex flex-col py-20 items-center">
+          <h1 className="text-black font-bold">Events page</h1>
         </main>
       </>
     );
