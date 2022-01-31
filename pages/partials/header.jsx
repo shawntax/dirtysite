@@ -21,7 +21,7 @@ export default class Header extends Component {
                         <div className="hidden md:flex space-x-4">
 
                             <div>
-                                <a href="#" className="flex items-center py-2">
+                                <a href="/" className="flex items-center py-2">
                                     <img src="logo.svg" className="h-20 w-20" />
                                 </a>
                             </div>
@@ -29,10 +29,10 @@ export default class Header extends Component {
                         </div>
                         {/* Primary nav */}
                         <div className="hidden md:flex space-x-1 align-left">
-                            <a href="" className="py-7 px-3 text-gray-100 hover:text-gray-600">Events</a>
-                            <a href="" className="py-7 px-3 text-gray-100 hover:text-gray-600">About</a>
-                            <a href="" className="py-7 px-3 text-gray-100 hover:text-gray-600">Roster</a>
-                            <a href="" className="py-7 px-3 text-gray-100 hover:text-black">Contact</a>
+                            <a href="/events" className="py-7 px-3 text-gray-100 hover:text-gray-600">Events</a>
+                            <a href="/about" className="py-7 px-3 text-gray-100 hover:text-gray-600">About</a>
+                            <a href="/roster" className="py-7 px-3 text-gray-100 hover:text-gray-600">Roster</a>
+                            <a href="/contact" className="py-7 px-3 text-gray-100 hover:text-black">Contact</a>
                         </div>
                     </div>
 
@@ -41,7 +41,7 @@ export default class Header extends Component {
                 {/**Mobile menu bar*/}  
                 <div className="bg-gray-900 text-gray-100 flex justify-between md:hidden">
                     {/**Logo */}
-                    <a href="" className="block p-4 text-white font-bold">
+                    <a href="/" className="block p-4 text-white font-bold">
                         <img src="logo.svg" className="h-20 w-20 " />
                     </a>
 
@@ -55,14 +55,14 @@ export default class Header extends Component {
                 {/**Sidebar */}
                 <div className="sidebar min-h-screen bg-gray-900 text-blue-100 w-64 space-y-6 px-2 py-7 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:hidden ">
                     {/**Logo */}
-                    <a href="#" className="text-white flex items-center p-4 hover:bg-blue-400 hover:text-white">
+                    <a href="/" className="text-white flex items-center p-4 hover:bg-blue-400 hover:text-white">
                         Dirty Not Sorry
                     </a>
                     <nav>
-                        <a href="" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white">Events</a>
-                        <a href="" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-400 hover:text-white">About</a>
-                        <a href="" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-400 hover:text-white">Roster</a>
-                        <a href="" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-400 hover:text-white">Contact</a>
+                        <a href="/events" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-500 hover:text-white">Events</a>
+                        <a href="/about" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-400 hover:text-white">About</a>
+                        <a href="/roster" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-400 hover:text-white">Roster</a>
+                        <a href="/contact" className="block py-3 px-4 rounded transition duration-200 hover:bg-blue-400 hover:text-white">Contact</a>
                     </nav>
                 </div>
             </div>
