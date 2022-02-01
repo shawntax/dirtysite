@@ -39,11 +39,11 @@ const config = {
               name: 'about_dns',
               widget: 'markdown',
             },
-          ]
+          ],
         },
       ],
     },
   ],
-};
+}
 
-export default config;
+export default config

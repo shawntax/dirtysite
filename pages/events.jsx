@@ -1,6 +1,6 @@
-import { Component } from 'react';
+import { Component } from 'react'
 import Header from './partials/header'
-import { attributes } from '../content/events/dns-at-your-moms-house.md';
+import { attributes } from '../content/events/dns-at-your-moms-house.md'
 
 export default class Events extends Component {
   render() {
@@ -12,6 +12,6 @@ export default class Events extends Component {
           <h1 className="text-black font-bold">Events page</h1>
         </main>
       </>
-    );
+    )
   }
 }

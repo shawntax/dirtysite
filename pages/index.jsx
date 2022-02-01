@@ -1,9 +1,9 @@
-import { Component } from 'react';
-import { attributes } from '../content/pages/home.md';
+import { Component } from 'react'
+import { attributes } from '../content/pages/home.md'
 import Header from './partials/header'
 export default class Home extends Component {
   render() {
-    let { hero_title, hero_subtitle } = attributes;
+    let { hero_title, hero_subtitle } = attributes
     return (
       <>
         <Header />
@@ -12,6 +12,6 @@ export default class Home extends Component {
           <p className="italic">{hero_subtitle}</p>
         </main>
       </>
-    );
+    )
   }
 }

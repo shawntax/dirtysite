@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from 'react'
 import Header from './partials/header'
 
 export default class Roster extends Component {
@@ -10,6 +10,6 @@ export default class Roster extends Component {
           <h1 className="text-black font-bold">Roster page</h1>
         </main>
       </>
-    );
+    )
   }
 }
