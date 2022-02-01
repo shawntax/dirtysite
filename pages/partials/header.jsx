@@ -12,7 +12,7 @@ export default class Header extends Component {
     }
     render() {
         return (
-            <div className="relative lg:flex">
+            <div className="">
 
                 <div className="bg-black max-w-screen mx-auto px-4">
 
@@ -62,9 +62,12 @@ export default class Header extends Component {
                 {/**Sidebar */}
                 <div className="sidebar min-h-screen bg-black text-white w-64 space-y-6 px-2 py-7 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out md:hidden">
                     {/**Dirty Not Sorry */}
-                    <a href="/" className="text-gray-200 flex items-center p-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">
-                        Dirty Not Sorry
-                    </a>
+                    <Link href="/">
+                        <a href="/" className="text-gray-200 flex items-center p-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">
+                            Dirty Not Sorry
+                        </a>
+                    </Link>
+                    
                     <nav>
                         <Link href="/events"><a className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">Events</a></Link>
                         <Link href="/about"><a className="block py-3 px-4 rounded transition duration-200 hover:bg-gray-400 hover:text-white">About</a></Link>
