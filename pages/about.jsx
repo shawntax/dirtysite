@@ -15,7 +15,6 @@ export default class About extends Component {
             <img src="/group-2-yolo.png" className="h-72 lg:w-1/4 p-1 mx-auto mb-5 my-8"/>
             <img src="/cat-yolo-cropped.png " className="h-72 lg:w-1/4 p-1 mx-auto mb-5 my-8" /> 
           </div>
-         
           <h1 className="text-black text-2xl font-bold px-20 py-10 text-center">Dirty Not sorry is an artist and promotion collective united by the belief that music brings us together.</h1>
           
         </main>

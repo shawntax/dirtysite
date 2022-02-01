@@ -6,8 +6,32 @@ export default class Roster extends Component {
     return (
       <>
         <Header />
-        <main className="h-screen bg-gray-200 flex flex-col py-20 items-center">
-          <h1 className="text-black font-bold">Roster page</h1>
+        <main className="h-max bg-gray-200 lg:flex flex-wrap -mx-1 lg:-mx-4 py-10 justify-center">
+  
+          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
+            <img src="/knives-7.png" className=''/>
+            <h3 className='text-white text-center text-2xl'>Knives</h3>
+            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
+          </div> 
+            
+          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
+            <img src="/knives-7.png" className=''/>
+            <h3 className='text-white text-center text-2xl'>Knives</h3>
+            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
+          </div> 
+      
+          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
+            <img src="/knives-7.png" className=''/>
+            <h3 className='text-white text-center text-2xl'>Knives</h3>
+            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
+          </div> 
+
+          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
+            <img src="/knives-7.png" className=''/>
+            <h3 className='text-white text-center text-2xl'>Knives</h3>
+            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
+          </div> 
+
         </main>
       </>
     );
