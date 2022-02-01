@@ -14,7 +14,7 @@ export default class Header extends Component {
         return (
             <div className="">
 
-                <div className="bg-black max-w-screen mx-auto px-4">
+                <div className="bg-black w-auto mx-auto px-4">
 
                     <div className="flex justify-between">
                   
