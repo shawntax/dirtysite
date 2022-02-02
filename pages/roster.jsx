@@ -1,5 +1,5 @@
 import PageContainer from '../components/PageContainer'
-import { Box, SimpleGrid, Image, Text, Center } from '@chakra-ui/react'
+import { Box, SimpleGrid, Image, Text, Center, Link } from '@chakra-ui/react'
 
 export default function Roster() {
   return (
@@ -9,7 +9,7 @@ export default function Roster() {
         spacing="10px"
         px="8"
       >
-        <Box bg="gray.700" borderRadius="lg" justifyContent="center" px="4">
+        <Box bg="gray.700" borderRadius="lg"  px="4" py="5">
           <Image mx="auto" pt="2"  borderRadius="full" src="group.jpg" alt="group" />
             <Box px="15%">
               <Box bg="black" mx="auto" w="auto" pb="1" mt="4" borderRadius="full">
@@ -17,9 +17,12 @@ export default function Roster() {
               </Box>
             </Box>
           <Center px="6" py="3" textColor="white">Lorem Ipsum dorito delicious. Illus dorus parabem.</Center>
+          <Box d="flex" justifyContent="center">
+            <Link href="https://instagram.com/djknives"> <Image src="instagram.svg" h="10" mx="3"/> </Link> <Link href="https://facebook.com/djknivesofficial" > <Image src="facebook.svg" h="10"  mx="3"/> </Link>  <Link href="https://soundcloud.com/djknivesofficial" > <Image src="soundcloud.svg" h="10"  mx="3"/> </Link>
+          </Box>
         </Box>
 
-        <Box bg="gray.700" borderRadius="lg" justifyContent="center" px="4">
+        <Box bg="gray.700" borderRadius="lg"  px="4" py="5">
           <Image mx="auto" pt="2"  borderRadius="full" src="group.jpg" alt="group" />
             <Box px="15%">
               <Box bg="black" mx="auto" w="auto" pb="1" mt="4" borderRadius="full">
@@ -27,9 +30,12 @@ export default function Roster() {
               </Box>
             </Box>
           <Center px="6" py="3" textColor="white">Lorem Ipsum dorito delicious. Illus dorus parabem.</Center>
+          <Box d="flex" justifyContent="center">
+            <Link href="https://instagram.com/djknives"> <Image src="instagram.svg" h="10" mx="3"/> </Link> <Link href="https://facebook.com/djknivesofficial" > <Image src="facebook.svg" h="10"  mx="3"/> </Link>  <Link href="https://soundcloud.com/djknivesofficial" > <Image src="soundcloud.svg" h="10"  mx="3"/> </Link>
+          </Box>
         </Box>
 
-        <Box bg="gray.700" borderRadius="lg" justifyContent="center" px="4">
+        <Box bg="gray.700" borderRadius="lg"  px="4" py="5">
           <Image mx="auto" pt="2"  borderRadius="full" src="group.jpg" alt="group" />
             <Box px="15%">
               <Box bg="black" mx="auto" w="auto" pb="1" mt="4" borderRadius="full">
@@ -37,9 +43,12 @@ export default function Roster() {
               </Box>
             </Box>
           <Center px="6" py="3" textColor="white">Lorem Ipsum dorito delicious. Illus dorus parabem.</Center>
+          <Box d="flex" justifyContent="center">
+            <Link href="https://instagram.com/djknives"> <Image src="instagram.svg" h="10" mx="3"/> </Link> <Link href="https://facebook.com/djknivesofficial" > <Image src="facebook.svg" h="10"  mx="3"/> </Link>  <Link href="https://soundcloud.com/djknivesofficial" > <Image src="soundcloud.svg" h="10"  mx="3"/> </Link>
+          </Box>
         </Box>
 
-        <Box bg="gray.700" borderRadius="lg" justifyContent="center" px="4">
+        <Box bg="gray.700" borderRadius="lg"  px="4" py="5">
           <Image mx="auto" pt="2"  borderRadius="full" src="group.jpg" alt="group" />
             <Box px="15%">
               <Box bg="black" mx="auto" w="auto" pb="1" mt="4" borderRadius="full">
@@ -47,6 +56,9 @@ export default function Roster() {
               </Box>
             </Box>
           <Center px="6" py="3" textColor="white">Lorem Ipsum dorito delicious. Illus dorus parabem.</Center>
+          <Box d="flex" justifyContent="center">
+            <Link href="https://instagram.com/djknives"> <Image src="instagram.svg" h="10" mx="3"/> </Link> <Link href="https://facebook.com/djknivesofficial" > <Image src="facebook.svg" h="10"  mx="3"/> </Link>  <Link href="https://soundcloud.com/djknivesofficial" > <Image src="soundcloud.svg" h="10"  mx="3"/> </Link>
+          </Box>
         </Box>
 
       </SimpleGrid>
