@@ -6,6 +6,7 @@ const PageContainer = ({ children, title }) => {
     <VStack justify="between" pb="20" bg={'black'}>
       <NavBar />
       <Heading as="h1" size="xl" mb={6} textAlign="center">
+        {title}
       </Heading>
       {children}
     </VStack>
