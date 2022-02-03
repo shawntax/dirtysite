@@ -12,46 +12,52 @@ export default function Roster() {
         area="10"
       >
         <Card
-          djname="Knives"
+          djName="Knives"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
           instaLink="djknives"
           fbLink="djknivesofficial"
           scLink="djknivesofficial"
+          djPhoto="group.jpg"
         />
         <Card
-          djname="JaxxT"
+          djName="JaxxT"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
           instaLink="jaxxtofficial"
           fbLink="jaxxtofficial"
           scLink="jaxxtofficial"
+          djPhoto="group.jpg"
         />
         <Card
-          djname="CatLiu"
+          djName="CatLiu"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
           instaLink="catliu"
           fbLink="catliu"
           scLink="catliu"
+          djPhoto="group.jpg"
         />
         <Card
-          djname="Glaas"
+          djName="Glaas"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
           instaLink="glaasmusic"
           fbLink="glaas"
           scLink="glaasmusic"
+          djPhoto="group.jpg"
         />
         <Card
-          djname="i2i"
+          djName="i2i"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
           instaLink="glaasmusic"
           fbLink="glaas"
           scLink="glaasmusic"
+          djPhoto="group.jpg"
         />
         <Card
-          djname="Aanster"
+          djName="Aanster"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
           instaLink="glaasmusic"
           fbLink="glaas"
           scLink="glaasmusic"
+          djPhoto="group.jpg"
         />
       </SimpleGrid>
     </PageContainer>
