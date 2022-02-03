@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { Box, Image, Center, Link } from '@chakra-ui/react'
 
 const Card = (props) => {
-  const { djname, bio, instaLink, fbLink, scLink } = props
+  const { djName, djPhoto, bio, instaLink, fbLink, scLink } = props
 
   return (
     <Box bg="gray.700" borderRadius="lg" px="4" py="5">
-      <Image mx="auto" pt="2" borderRadius="full" src="group.jpg" alt="group" />
+      <Image mx="auto" pt="2" borderRadius="full" src={djPhoto} alt="djPhoto" />
       <Box px="15%">
         <Box bg="black" mx="auto" w="auto" pb="1" mt="4" borderRadius="full">
           <Center textColor="white" fontSize="x-large">
-            {djname}
+            {djName}
           </Center>
         </Box>
       </Box>
