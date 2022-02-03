@@ -5,8 +5,8 @@ const PageContainer = ({ children, title }) => {
   return (
     <VStack height="100vh" justify="between" pb="20" bg={'black'}>
       <NavBar />
-      <Heading as="h1" size="xl" mb={6} textAlign="center">
-        {title}
+      <Heading as="h1" size="sm" color="red.100">
+        ({title})
       </Heading>
       {children}
     </VStack>
