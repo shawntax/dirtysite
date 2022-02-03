@@ -5,11 +5,7 @@ import Card from '../components/Card'
 export default function Roster() {
   return (
     <PageContainer title="Roster">
-      <SimpleGrid
-        columns={{ md: 2, xl:3}}
-        spacing="10px"
-        px="8"
-      >
+      <SimpleGrid columns={{ md: 2, xl: 3 }} spacing="10px" px="8">
         <Card
           djname="Knives"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
@@ -38,7 +34,6 @@ export default function Roster() {
           fbLink="glaas"
           scLink="glaasmusic"
         />
-
       </SimpleGrid>
     </PageContainer>
   )
