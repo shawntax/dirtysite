@@ -39,6 +39,20 @@ export default function Roster() {
           fbLink="glaas"
           scLink="glaasmusic"
         />
+        <Card
+          djname="i2i"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="glaasmusic"
+          fbLink="glaas"
+          scLink="glaasmusic"
+        />
+        <Card
+          djname="Aanster"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="glaasmusic"
+          fbLink="glaas"
+          scLink="glaasmusic"
+        />
       </SimpleGrid>
     </PageContainer>
   )
