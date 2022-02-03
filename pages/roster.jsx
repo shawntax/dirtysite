@@ -5,7 +5,12 @@ import Card from '../components/Card'
 export default function Roster() {
   return (
     <PageContainer title="Roster">
-      <SimpleGrid columns={{ md: 2, xl: 3 }} spacing="10px" px="8">
+      <SimpleGrid
+        columns={{ sm: 2, md: 3, lg: 4, xl: 5, '2xl': 6 }}
+        spacing="10px"
+        px="8"
+        area="10"
+      >
         <Card
           djname="Knives"
           bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
