@@ -1,8 +1,6 @@
 import PageContainer from '../components/PageContainer'
 import { Center, SimpleGrid, Image, Container } from '@chakra-ui/react'
 
-import dummyPhoto from '../public/group.jpg'
-
 export default function About() {
   return (
     <PageContainer title="About">
