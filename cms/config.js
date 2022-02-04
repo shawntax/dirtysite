@@ -43,6 +43,25 @@ const config = {
         },
       ],
     },
+    {
+      name: 'events',
+      label: 'Events',
+      folder: 'content/events',
+      create: true,
+      slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+      editor: {
+        preview: true
+      },
+      fields: [
+        { label: 'Title', name: 'title', widget: 'string' },
+        { label: 'Publish Date', name: 'date', widget: 'datetime' },
+        { label: 'Event Date', name: 'eventDate', widget: 'string' },
+        { label: 'Venue', name: 'venue', widget: 'string' },
+        { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
+        { label: 'Featured Image', name: 'featuredImage', widget: 'image' },
+        { label: 'Body', name: 'body', widget: 'markdown' }
+      ]
+    },
   ],
 }
 
