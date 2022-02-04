@@ -1,39 +1,65 @@
-import { Component } from 'react';
-import Header from './partials/header'
+import PageContainer from '../components/PageContainer'
+import { SimpleGrid } from '@chakra-ui/react'
+import Card from '../components/Card'
 
-export default class Roster extends Component {
-  render() {
-    return (
-      <>
-        <Header />
-        <main className="h-max bg-gray-200 lg:flex flex-wrap -mx-1 lg:-mx-4 py-10 justify-center">
-  
-          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
-            <img src="/knives-7.png" className=''/>
-            <h3 className='text-white text-center text-2xl'>Knives</h3>
-            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
-          </div> 
-            
-          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
-            <img src="/knives-7.png" className=''/>
-            <h3 className='text-white text-center text-2xl'>Knives</h3>
-            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
-          </div> 
-      
-          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
-            <img src="/knives-7.png" className=''/>
-            <h3 className='text-white text-center text-2xl'>Knives</h3>
-            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
-          </div> 
-
-          <div className="bg-neutral-700  rounded-xl mx-5 my-5 p-8 ">
-            <img src="/knives-7.png" className=''/>
-            <h3 className='text-white text-center text-2xl'>Knives</h3>
-            <p className='text-white text-center'>Praesent molestie eros sed cursus dictum. Morbi eget euismod purus. Pellentesque vel justo in lectus maximus sodales. </p>
-          </div> 
-
-        </main>
-      </>
-    );
-  }
+export default function Roster() {
+  return (
+    <PageContainer title="Roster">
+      <SimpleGrid
+        columns={{ sm: 2, md: 3, lg: 4, xl: 5, '2xl': 6 }}
+        spacing="10px"
+        px="8"
+        area="10"
+      >
+        <Card
+          djName="Knives"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="djknives"
+          fbLink="djknivesofficial"
+          scLink="djknivesofficial"
+          djPhoto="group.jpg"
+        />
+        <Card
+          djName="JaxxT"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="jaxxtofficial"
+          fbLink="jaxxtofficial"
+          scLink="jaxxtofficial"
+          djPhoto="group.jpg"
+        />
+        <Card
+          djName="CatLiu"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="catliu"
+          fbLink="catliu"
+          scLink="catliu"
+          djPhoto="group.jpg"
+        />
+        <Card
+          djName="Glaas"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="glaasmusic"
+          fbLink="glaas"
+          scLink="glaasmusic"
+          djPhoto="group.jpg"
+        />
+        <Card
+          djName="i2i"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="glaasmusic"
+          fbLink="glaas"
+          scLink="glaasmusic"
+          djPhoto="group.jpg"
+        />
+        <Card
+          djName="Aanster"
+          bio="Lorem Ipsum dorito delicious. Illus dorus parabem."
+          instaLink="glaasmusic"
+          fbLink="glaas"
+          scLink="glaasmusic"
+          djPhoto="group.jpg"
+        />
+      </SimpleGrid>
+    </PageContainer>
+  )
 }

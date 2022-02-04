@@ -1,17 +1,15 @@
-import { Component } from 'react';
-import { attributes } from '../content/pages/home.md';
-import Header from './partials/header'
-export default class Home extends Component {
-  render() {
-    let { hero_title, hero_subtitle } = attributes;
-    return (
-      <>
-        <Header />
-        <main className="h-screen bg-black text-white flex flex-col justify-center items-center">
-          <h1 className="text-2xl my-5">{hero_title}</h1>
-          <p className="italic">{hero_subtitle}</p>
-        </main>
-      </>
-    );
-  }
+import PageContainer from '../components/PageContainer'
+import { Flex, Text } from '@chakra-ui/react'
+import { attributes } from '../content/pages/home.md'
+
+export default function Home() {
+  let { hero_title, hero_subtitle } = attributes
+  return (
+    <PageContainer title="Home">
+      <Flex direction="column" p="5" textColor="white" border="2px">
+        <Text fontSize="5xl">{hero_title}</Text>
+        <Text fontSize="xl">{hero_subtitle}</Text>
+      </Flex>
+    </PageContainer>
+  )
 }
