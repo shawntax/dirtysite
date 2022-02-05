@@ -1,37 +1,30 @@
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import { Box, Image, Center, Link } from '@chakra-ui/react'
+import { Box, Image, Center, Link, Text } from '@chakra-ui/react'
 
 const Card = (props) => {
-  const { djName, djPhoto, bio, instaLink, fbLink, scLink } = props
-
+  const { djName, djPhoto } = props
   return (
-    <Box bg="gray.700" borderRadius="lg" px="4" py="5">
-      <Image mx="auto" pt="2" borderRadius="full" src={djPhoto} alt="djPhoto" />
-      <Box px="15%">
-        <Box bg="black" mx="auto" w="auto" pb="1" mt="4" borderRadius="full">
-          <Center textColor="white" fontSize="x-large">
-            {djName}
-          </Center>
+    <Link href={`/artists/${djName}`}>
+      <Box
+        bg="white"
+        mb="5"
+        pb="1"
+        _hover={{
+          bg: 'gray.800',
+          textColor: 'white',
+        }}
+      >
+        <Image mx="auto" h="90%" src={djPhoto} alt="djPhoto" />
+        <Box>
+          <Box w="fill" pl="5">
+            <Text fontSize="large" isTruncated>
+              {djName}
+            </Text>
+          </Box>
         </Box>
       </Box>
-      <Center px="6" py="3" textColor="white">
-        {bio}
-      </Center>
-      <Box d="flex" justifyContent="center">
-        <Link href={'https://instagram.com/' + instaLink}>
-          {' '}
-          <Image src="instagram.svg" h="10" mx="3" />{' '}
-        </Link>{' '}
-        <Link href={'https://facebook.com/' + fbLink}>
-          {' '}
-          <Image src="facebook.svg" h="10" mx="3" />{' '}
-        </Link>{' '}
-        <Link href={'https://soundcloud.com/' + scLink}>
-          {' '}
-          <Image src="soundcloud.svg" h="10" mx="3" />{' '}
-        </Link>
-      </Box>
-    </Box>
+    </Link>
   )
 }
 
