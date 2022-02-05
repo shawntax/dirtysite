@@ -62,6 +62,22 @@ const config = {
         { label: 'Body', name: 'body', widget: 'markdown' }
       ]
     },
+    {
+      name: 'artists',
+      label: 'Artists',
+      folder: 'content/artists',
+      create: true,
+      editor: {
+        preview: true
+      },
+      fields: [
+        { label: 'DJ Name', name: 'djName', widget: 'string' },
+        { label: 'Instagram link', name: 'InstaLink', widget: 'string'},
+        { label: 'Facebook link', name: 'fbLink', widget: 'string'},
+        { label: 'Soundcloud link', name: 'scLink', widget: 'string'},
+        { label: 'DJ Photo', name: 'djPhoto', widget: 'image'}
+      ]
+    }
   ],
 }
 
