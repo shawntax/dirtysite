@@ -1,6 +1,5 @@
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
-import { Box, Image, Center, Link, Text } from '@chakra-ui/react'
+import React from 'react'
+import { Box, Image, Link, Text } from '@chakra-ui/react'
 
 const Card = (props) => {
   const { djName, djPhoto } = props
