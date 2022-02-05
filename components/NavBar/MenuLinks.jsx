@@ -28,7 +28,7 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="/about">About</MenuItem>
-        <MenuItem to="/roster">Roster</MenuItem>
+        <MenuItem to="/artists">Artists</MenuItem>
         <MenuItem to="/events">Events</MenuItem>
         <MenuItem to="/contact">Contact</MenuItem>
       </Stack>
