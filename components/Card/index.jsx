@@ -1,13 +1,12 @@
 import React from 'react'
-import { Box, Image, Link, Text } from '@chakra-ui/react'
+import { Box, Image, Link, Text, Slide } from '@chakra-ui/react'
 
 const Card = (props) => {
   const { djName, djPhoto } = props
   return (
     <Link href={`/artists/${djName}`}>
       <Box
-        bg="white"
-        mb="5"
+        bg="gray.100"
         pb="1"
         _hover={{
           bg: 'gray.800',
