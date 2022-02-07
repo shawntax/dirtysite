@@ -1,8 +1,8 @@
 import { Box, Center, Image, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
-import { GetStaticProps } from 'next'
 import PageContainer from '../components/PageContainer'
-import Artists from './artists'
+
+/**Need to understand how we import content dynamically for this */
 import { attributes } from '../content/artists/knives.md'
 
 function Artist() {
@@ -13,8 +13,8 @@ function Artist() {
   return (
     <>
       <PageContainer title="Artist">
-        <Box px="2">
-          <Box>
+        <Box px="4">
+          <Box mt="8">
             <Image
               mx="auto"
               src="../group.jpg"
@@ -27,11 +27,11 @@ function Artist() {
               {artist[1]}
             </Text>
           </Box>
-          <Center d="flex" mb="5">
+          <Box d="flex" mb="5">
             <Image src="../instagram.svg" h="20" />
             <Image src="../facebook.svg" h="20" px="5" />
             <Image src="../soundcloud.svg" h="20" />
-          </Center>
+          </Box>
           <Text textColor="gray.200">{bio}</Text>
         </Box>
       </PageContainer>
