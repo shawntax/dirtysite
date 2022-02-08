@@ -75,7 +75,8 @@ const config = {
         { label: 'Instagram link', name: 'InstaLink', widget: 'string'},
         { label: 'Facebook link', name: 'fbLink', widget: 'string'},
         { label: 'Soundcloud link', name: 'scLink', widget: 'string'},
-        { label: 'DJ Photo', name: 'djPhoto', widget: 'image'}
+        { label: 'DJ Photo', name: 'djPhoto', widget: 'image'},
+        { label: 'Bio', name: 'bio', widget: 'markdown'}
       ]
     }
   ],
