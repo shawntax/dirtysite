@@ -9,13 +9,13 @@ const PageContainer = ({ children, title }) => {
       <NavBar />
       <Box bg="gray.100" w="100%" py="6">
         <Center>
-          <Heading as="h1" size="md" color="black">
+          <Heading as="h1" size="md">
             {title}
           </Heading>
         </Center>
       </Box>
       {children}
-      <Footer/>
+      <Footer />
     </VStack>
   )
 }
