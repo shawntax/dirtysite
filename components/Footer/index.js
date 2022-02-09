@@ -6,7 +6,7 @@ const Footer = (props) => {
     <footer>
       <Box>
         <div class="text-white">
-          <p>Dirty Not Sorry | © 2021 All rights reserved.</p>
+          <p>Dirty Not Sorry | © 2022 All rights reserved.</p>
         </div>  
       </Box>
     </footer>
