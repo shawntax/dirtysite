@@ -15,6 +15,7 @@ const PageContainer = ({ children, title }) => {
         </Center>
       </Box>
       {children}
+      <Footer/>
     </VStack>
   )
 }
