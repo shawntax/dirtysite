@@ -17,11 +17,11 @@ import {
 export default function Events() {
   return (
     <PageContainer title="Events">
-      <Wrap w="80%" justify="center">
+      <Wrap w="80%" justify="center" bg="" pb="10">
         <WrapItem>
-          <Image src="sample.jpg" h="300px" w="240px" borderRadius="md" />
+          <Image src="sample.jpg" h="310px" w="250px" borderRadius="md" />
         </WrapItem>
-        <Container>
+        <Container bg="">
           <WrapItem>
             <Box bg="gray.100" w="100%" p="4" borderRadius="md">
               <Box truncate>
@@ -32,7 +32,33 @@ export default function Events() {
                 <Divider orientation="horizontal" />
                 <Divider orientation="horizontal" />
               </Box>
-              <Text pb="5">Content</Text>
+              <Text pb="5">Content content content</Text>
+              <Center>
+                <Button textColor="gray.100" bg="gray.800">
+                  Get Tickets
+                </Button>
+              </Center>
+            </Box>
+          </WrapItem>
+        </Container>
+      </Wrap>
+
+      <Wrap w="80%" justify="center" bg="" mb="10">
+        <WrapItem>
+          <Image src="sample.jpg" h="310px" w="250px" borderRadius="md" />
+        </WrapItem>
+        <Container bg="ink">
+          <WrapItem>
+            <Box bg="gray.100" w="100%" p="4" borderRadius="md">
+              <Box truncate>
+                <Link textColor="blue">FOMO at Public works</Link>
+                <Text>Saturday April 20th 2024</Text>
+                <Divider orientation="horizontal" />
+                <Divider orientation="horizontal" />
+                <Divider orientation="horizontal" />
+                <Divider orientation="horizontal" />
+              </Box>
+              <Text pb="5">Content content content</Text>
               <Center>
                 <Button textColor="gray.100" bg="gray.800">
                   Get Tickets
