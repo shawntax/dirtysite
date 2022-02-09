@@ -34,7 +34,11 @@ export default function Events() {
               </Box>
               <Text pb="5">Content content content</Text>
               <Center>
-                <Button textColor="gray.100" bg="gray.800">
+                <Button
+                  _hover={{ bg: 'gray.400', textColor: 'gray.800' }}
+                  textColor="gray.100"
+                  bg="gray.800"
+                >
                   Get Tickets
                 </Button>
               </Center>
