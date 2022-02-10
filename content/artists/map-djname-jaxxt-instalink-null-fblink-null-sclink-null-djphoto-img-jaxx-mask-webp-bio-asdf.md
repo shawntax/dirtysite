@@ -3,6 +3,6 @@ djName: JaxxT
 InstaLink: "null"
 fbLink: "null"
 scLink: "null"
-djPhoto: img/jaxx-mask.webp
-bio: asdf
+djPhoto: img/l1006091.jpg
+bio: Bringing serious heat on the decks
 ---
