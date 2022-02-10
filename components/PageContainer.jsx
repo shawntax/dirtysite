@@ -7,9 +7,9 @@ const PageContainer = ({ children, title }) => {
     // weird white space on /artists and /about. Other pages are good.
     <VStack justify="between" pb="20" bg={'black'}>
       <NavBar />
-      <Box bg="gray.100" w="100%" py="6">
+      <Box bg="black" w="100%" py="6">
         <Center>
-          <Heading as="h1" size="md">
+          <Heading as="h1" size="md" color="white">
             {title}
           </Heading>
         </Center>
