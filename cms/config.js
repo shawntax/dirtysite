@@ -52,6 +52,7 @@ const config = {
       editor: {
         preview: true
       },
+      format: 'json',
       fields: [
         { label: 'Title', name: 'title', widget: 'string' },
         { label: 'Publish Date', name: 'date', widget: 'datetime' },
@@ -59,7 +60,7 @@ const config = {
         { label: 'Venue', name: 'venue', widget: 'string' },
         { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
         { label: 'Featured Image', name: 'featuredImage', widget: 'image' },
-        { label: 'Body', name: 'body', widget: 'markdown' }
+        { label: 'Body', name: 'body', widget: 'markdown' },
       ]
     },
     {
@@ -70,7 +71,6 @@ const config = {
       editor: {
         preview: true
       },
-      extension: 'json',
       format: 'json',
       fields: [
         { label: 'DJ Name', name: 'djName', widget: 'string' },

@@ -5,7 +5,7 @@ import Card from '../components/Card'
 export default function Artists() {
   const importAll = (r) => r.keys().map(r)
   const artists = importAll(
-    require.context('../content/artists', false, /\.md$/)
+    require.context('../content/artists', false, /\.json$/)
   )
 
   return (
@@ -18,12 +18,7 @@ export default function Artists() {
         pt="5"
       >
         {artists.map((artist) => {
-          return (
-            <Card
-              djName={artist.attributes.djName}
-              djPhoto={artist.attributes.djPhoto}
-            ></Card>
-          )
+          return <Card djName={artist.djName} djPhoto={artist.djPhoto}></Card>
         })}
       </SimpleGrid>
     </PageContainer>
