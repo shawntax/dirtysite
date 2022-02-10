@@ -32,7 +32,7 @@ export default function Events() {
                   borderRadius="md"
                 />
               </WrapItem>
-              <Container>
+              <Container pb="10">
                 <WrapItem>
                   <Box bg="gray.100" w="100%" p="4" borderRadius="md">
                     <Box truncate>
