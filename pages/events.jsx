@@ -53,7 +53,7 @@ export default function Events() {
                       skipHtml
                     />
                     <Center>
-                      <Link href={event.ticketLink}>
+                      <Link href={event.ticketLink} pt="8">
                         <Button
                           _hover={{ bg: 'gray.400', textColor: 'gray.800' }}
                           textColor="gray.100"
