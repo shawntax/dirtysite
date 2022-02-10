@@ -70,6 +70,8 @@ const config = {
       editor: {
         preview: true
       },
+      extension: 'json',
+      format: 'json',
       fields: [
         { label: 'DJ Name', name: 'djName', widget: 'string' },
         { label: 'Instagram link', name: 'InstaLink', widget: 'string'},
