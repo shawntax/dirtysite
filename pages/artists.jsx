@@ -11,8 +11,9 @@ export default function Artists() {
 
   const artistList = artists.forEach((element) => {
     console.log('BRO', element)
-    return <GridItem djName={element.attributes.djName}></GridItem>
+    return <Card djName={element.attributes.djName}></Card>
   })
+  console.log('MAN', artistList)
   return (
     <PageContainer title="Artists">
       <SimpleGrid
