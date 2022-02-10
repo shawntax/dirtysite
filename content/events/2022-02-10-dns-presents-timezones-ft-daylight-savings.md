@@ -5,6 +5,14 @@ eventDate: 8:00 PM September 29th 2022
 venue: Public works
 ticketLink: https://tixr.com
 featuredImage: img/sample.jpg
+description: |-
+  Does ths hit different?
+
+  * BUllet point
+  * plural
+
+  1. Numbered list
+  2. for sure
 ---
 This is the body of the post
 
