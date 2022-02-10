@@ -1,7 +1,6 @@
 import PageContainer from '../components/PageContainer'
 import { GridItem, SimpleGrid } from '@chakra-ui/react'
 import Card from '../components/Card'
-import { render } from 'react-dom'
 
 export default function Artists() {
   const importAll = (r) => r.keys().map(r)
