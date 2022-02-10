@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
-import { Box, Link } from '@chakra-ui/react'
+import React from 'react'
+import { Center } from '@chakra-ui/react'
 
-const Footer = (props) => {
+const Footer = () => {
   return (
-    <footer>
-      <Box>
-        <div class="text-white">
-          <p>Dirty Not Sorry | © 2022 All rights reserved.</p>
-        </div>  
-      </Box>
-    </footer>
+    <Center as="footer" color="white">
+      © 2022 Dirty Not Sorry
+    </Center>
   )
 }
 
-export default Footer;
+export default Footer

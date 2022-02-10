@@ -1,20 +1,14 @@
-import { Heading, VStack, Box, Center, Text } from '@chakra-ui/react'
+import { VStack, Container } from '@chakra-ui/react'
 import NavBar from './NavBar'
 import Footer from './Footer'
 
-const PageContainer = ({ children, title }) => {
+const PageContainer = ({ children }) => {
   return (
-    // weird white space on /artists and /about. Other pages are good.
-    <VStack justify="between" pb="20" bg={'black'}>
+    <VStack h="100vh" justify="space-between" bg="black">
       <NavBar />
-      <Box bg="gray.100" w="100%" py="6">
-        <Center>
-          <Heading as="h1" size="md">
-            {title}
-          </Heading>
-        </Center>
-      </Box>
-      {children}
+      <Container centerContent border="1px" borderColor="pink.200">
+        {children}
+      </Container>
       <Footer />
     </VStack>
   )
