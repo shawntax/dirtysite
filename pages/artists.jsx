@@ -1,8 +1,13 @@
 import PageContainer from '../components/PageContainer'
-import { SimpleGrid } from '@chakra-ui/react'
+import { GridItem, SimpleGrid } from '@chakra-ui/react'
 import Card from '../components/Card'
 
 export default function Artists() {
+  const importAll = (r) => r.keys().map(r)
+  const artists = importAll(
+    require.context('../content/artists', false, /\.md$/)
+  )
+
   return (
     <PageContainer title="Artists">
       <SimpleGrid
@@ -12,13 +17,14 @@ export default function Artists() {
         px="5"
         pt="5"
       >
-        <Card djName="Knives" djPhoto="group.jpg" hoverPhoto="knives-7.png" />
-        <Card djName="JaxxT" djPhoto="group.jpg" />
-        <Card djName="CatLiu" djPhoto="group.jpg" />
-        <Card djName="Glaas" djPhoto="group.jpg" />
-        <Card djName="i2i" djPhoto="group.jpg" />
-        <Card djName="Aanster & Mikey the Lad" djPhoto="group.jpg" />
-        <Card djName="Damasek" djPhoto="group.jpg" />
+        {artists.map((artist) => {
+          return (
+            <Card
+              djName={artist.attributes.djName}
+              djPhoto={artist.attributes.djPhoto}
+            ></Card>
+          )
+        })}
       </SimpleGrid>
     </PageContainer>
   )
