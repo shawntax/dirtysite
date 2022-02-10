@@ -1,19 +1,23 @@
 import React from 'react'
-import { Center } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 
 const Footer = () => {
   return (
-    <Center
+    <Flex
       as="footer"
+      justify="center"
+      align="center"
       fontSize={{
         base: 'xs',
         md: 'lg',
       }}
       color="white"
+      bg="black"
+      w="100%"
       py="3"
     >
-      © 2022 Dirty Not Sorry
-    </Center>
+      <p>© 2022 Dirty Not Sorry</p>
+    </Flex>
   )
 }
 

@@ -6,7 +6,7 @@ const PageContainer = ({ children }) => {
   return (
     <VStack h="100vh" justify="space-between" bg="black">
       <NavBar />
-      <Container centerContent border="1px" borderColor="pink.200">
+      <Container w="100%" maxW="container.xl" centerContent bg="black">
         {children}
       </Container>
       <Footer />
