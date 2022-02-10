@@ -3,6 +3,9 @@ import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
 
 function MyApp({ Component, pageProps }) {
+  if (Component.name == 'AdminPage') {
+    return <Component {...pageProps} />
+  }
   return (
     <ChakraProvider>
       <Component {...pageProps} />
