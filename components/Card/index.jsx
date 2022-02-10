@@ -6,14 +6,21 @@ const Card = (props) => {
   return (
     <Link href={`/artists/${djName}`}>
       <Box
-        bg="gray.100"
+        bg="gray.200"
         pb="1"
         _hover={{
           bg: 'gray.800',
           textColor: 'white',
         }}
       >
-        <Image mx="auto" h="90%" src={djPhoto} alt="djPhoto" />
+        <Image
+          mx="auto"
+          h="90%"
+          src={djPhoto}
+          alt="djPhoto"
+          h="fill"
+          w="fill"
+        />
         <Box>
           <Box w="fill" pl="5">
             <Text fontSize="large" isTruncated>
