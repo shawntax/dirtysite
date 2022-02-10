@@ -3,7 +3,7 @@ const config = {
   backend: {
     name: 'github',
     repo: 'dirtynotsorry/dirtysite',
-    branch: 'main',
+    branch: 'stage',
   },
   media_folder: 'public/img',
   public_folder: 'img',
