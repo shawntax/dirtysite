@@ -41,8 +41,12 @@ function Artist() {
             <Link href={artist.instaLink}>
               <Image src="../instagram.svg" h="20" />
             </Link>
-            <Image src="../facebook.svg" h="20" px="5" />
-            <Image src="../soundcloud.svg" h="20" />
+            <Link href={artist.fbLink}>
+              <Image src="../facebook.svg" h="20" px="5" />
+            </Link>
+            <Link href={artist.scLink}>
+              <Image src="../soundcloud.svg" h="20" />
+            </Link>
           </Box>
 
           <ReactMarkdown
