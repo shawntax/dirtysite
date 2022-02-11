@@ -1,8 +1,10 @@
 {
-  "djName": "Glaas",
+  "id": 1,
+  "slug": "glaas",
+  "name": "Glaas",
   "InstaLink": "null",
   "fbLink": "null",
   "scLink": "null",
-  "djPhoto": "img/252967437_2094509624034990_333828011053146016_n.jpg",
+  "photoUrl": "../img/glass.jpg",
   "bio": "Shattering sound!\n\n\n\n* Destroying \n* the\n* sound\n* spectrum\n\n1. # heading\n2. *italic*"
 }

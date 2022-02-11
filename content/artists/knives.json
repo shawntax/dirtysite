@@ -1,8 +1,10 @@
 {
-  "djName": "Knives",
+  "id": 0,
+  "slug": "knives",
+  "name": "Knives",
   "InstaLink": "NULL",
   "fbLink": "null",
   "scLink": "NULL",
-  "djPhoto": "img/knives-7.png",
+  "photoUrl": "../img/knives.png",
   "bio": "Knives delivering those deep cuts"
 }
