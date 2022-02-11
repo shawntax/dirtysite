@@ -8,7 +8,7 @@ export default function Logo(props) {
     <Box {...props}>
       <NextLink href="/" passHref>
         <Link>
-          <LogoMark />
+          <img src="/logo_white_horz.png"/>
         </Link>
       </NextLink>
     </Box>
