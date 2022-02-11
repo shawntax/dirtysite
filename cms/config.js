@@ -50,8 +50,9 @@ const config = {
       create: true,
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
       editor: {
-        preview: true
+        preview: true,
       },
+      format: 'json',
       fields: [
         { label: 'Title', name: 'title', widget: 'string' },
         { label: 'Publish Date', name: 'date', widget: 'datetime' },
@@ -59,8 +60,8 @@ const config = {
         { label: 'Venue', name: 'venue', widget: 'string' },
         { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
         { label: 'Featured Image', name: 'featuredImage', widget: 'image' },
-        { label: 'Body', name: 'body', widget: 'markdown' }
-      ]
+        { label: 'Body', name: 'body', widget: 'markdown' },
+      ],
     },
     {
       name: 'artists',
@@ -68,17 +69,18 @@ const config = {
       folder: 'content/artists',
       create: true,
       editor: {
-        preview: true
+        preview: true,
       },
+      format: 'json',
       fields: [
-        { label: 'DJ Name', name: 'djName', widget: 'string' },
-        { label: 'Instagram link', name: 'InstaLink', widget: 'string'},
-        { label: 'Facebook link', name: 'fbLink', widget: 'string'},
-        { label: 'Soundcloud link', name: 'scLink', widget: 'string'},
-        { label: 'DJ Photo', name: 'djPhoto', widget: 'image'},
-        { label: 'Bio', name: 'bio', widget: 'markdown'}
-      ]
-    }
+        { label: 'DJ Name', name: 'name', widget: 'string' },
+        { label: 'Instagram link', name: 'InstaLink', widget: 'string' },
+        { label: 'Facebook link', name: 'fbLink', widget: 'string' },
+        { label: 'Soundcloud link', name: 'scLink', widget: 'string' },
+        { label: 'DJ Photo', name: 'photoUrl', widget: 'image' },
+        { label: 'Bio', name: 'bio', widget: 'markdown' },
+      ],
+    },
   ],
 }
 
