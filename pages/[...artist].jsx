@@ -1,15 +1,25 @@
-import { Box, Center, Image, Text } from '@chakra-ui/react'
+import { Box, Image, Text, Link } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import PageContainer from '../components/PageContainer'
-
-/**Need to understand how we import content dynamically for this */
-import { attributes } from '../content/artists/knives.md'
+import ReactMarkdown from 'react-markdown'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
 function Artist() {
   const router = useRouter()
-  const artist = router.query.artist || []
-  let { bio } = attributes
+  let artist = {}
+  const dj = router.query.artist || []
 
+  const importAll = (r) => r.keys().map(r)
+  const artists = importAll(
+    require.context('../content/artists', false, /\.json$/)
+  )
+
+  for (let i = 0; i < artists.length; i++) {
+    if (dj[1] == artists[i].djName) {
+      artist = artists[i]
+    }
+  }
+  artist.djPhoto = '../' + artist.djPhoto
   return (
     <>
       <PageContainer title="Artist">
@@ -17,22 +27,28 @@ function Artist() {
           <Box mt="8">
             <Image
               mx="auto"
-              src="../group.jpg"
+              src={artist.djPhoto}
               borderRadius="3xl"
               alt="djPhoto"
             />
           </Box>
           <Box>
             <Text my="5" as="h1" textColor="white" fontSize="3xl">
-              {artist[1]}
+              {artist.djName}
             </Text>
           </Box>
           <Box d="flex" mb="5">
-            <Image src="../instagram.svg" h="20" />
+            <Link href={artist.instaLink}>
+              <Image src="../instagram.svg" h="20" />
+            </Link>
             <Image src="../facebook.svg" h="20" px="5" />
             <Image src="../soundcloud.svg" h="20" />
           </Box>
-          <Text textColor="gray.200">{bio}</Text>
+
+          <ReactMarkdown
+            components={ChakraUIRenderer()}
+            children={artist.bio}
+          />
         </Box>
       </PageContainer>
     </>
