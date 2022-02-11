@@ -10,13 +10,7 @@ export default function Artists() {
 
   return (
     <PageContainer title="Artists">
-      <SimpleGrid
-        columns={{ sm: 2, md: 3, lg: 4, xl: 5, '2xl': 6 }}
-        spacingY="6"
-        spacingX="6"
-        px="5"
-        pt="5"
-      >
+      <SimpleGrid minChildWidth="200px" spacing="30px" p="5" bg="black">
         {artists.map((artist) => {
           return <Card djName={artist.djName} djPhoto={artist.djPhoto}></Card>
         })}

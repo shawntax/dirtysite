@@ -6,7 +6,7 @@ export default function Home() {
   let { hero_title, hero_subtitle } = attributes
   return (
     <PageContainer title="Home">
-      <Flex direction="column" p="5" textColor="white" border="2px">
+      <Flex direction="column" p="5" color="white">
         <Text fontSize="5xl">{hero_title}</Text>
         <Text fontSize="xl">{hero_subtitle}</Text>
       </Flex>

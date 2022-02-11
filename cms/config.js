@@ -50,7 +50,7 @@ const config = {
       create: true,
       slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
       editor: {
-        preview: true
+        preview: true,
       },
       format: 'json',
       fields: [
@@ -61,7 +61,7 @@ const config = {
         { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
         { label: 'Featured Image', name: 'featuredImage', widget: 'image' },
         { label: 'Body', name: 'body', widget: 'markdown' },
-      ]
+      ],
     },
     {
       name: 'artists',
@@ -69,18 +69,18 @@ const config = {
       folder: 'content/artists',
       create: true,
       editor: {
-        preview: true
+        preview: true,
       },
       format: 'json',
       fields: [
         { label: 'DJ Name', name: 'djName', widget: 'string' },
-        { label: 'Instagram link', name: 'InstaLink', widget: 'string'},
-        { label: 'Facebook link', name: 'fbLink', widget: 'string'},
-        { label: 'Soundcloud link', name: 'scLink', widget: 'string'},
-        { label: 'DJ Photo', name: 'djPhoto', widget: 'image'},
-        { label: 'Bio', name: 'bio', widget: 'markdown'}
-      ]
-    }
+        { label: 'Instagram link', name: 'InstaLink', widget: 'string' },
+        { label: 'Facebook link', name: 'fbLink', widget: 'string' },
+        { label: 'Soundcloud link', name: 'scLink', widget: 'string' },
+        { label: 'DJ Photo', name: 'djPhoto', widget: 'image' },
+        { label: 'Bio', name: 'bio', widget: 'markdown' },
+      ],
+    },
   ],
 }
 

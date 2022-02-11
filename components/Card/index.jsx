@@ -1,34 +1,19 @@
 import React from 'react'
-import { Box, Image, Link, Text, Slide } from '@chakra-ui/react'
+import { Flex, Box, Image, Link, Text, chakra } from '@chakra-ui/react'
 
 const Card = (props) => {
   const { djName, djPhoto } = props
   return (
-    <Link href={`/artists/${djName}`}>
-      <Box
-        bg="gray.200"
-        pb="1"
-        _hover={{
-          bg: 'gray.800',
-          textColor: 'white',
-        }}
-      >
-        <Image
-          mx="auto"
-          h="90%"
-          src={djPhoto}
-          alt="djPhoto"
-          h="fill"
-          w="fill"
-        />
-        <Box>
-          <Box w="fill" pl="5">
-            <Text fontSize="large" isTruncated>
-              {djName}
-            </Text>
+    <Link>
+      <Flex>
+        <Box shadow="lg">
+          <Box w={56} h={56} bgGradient="linear(to-r, green.200, pink.500)" />
+          {/* <Image w="full" h={56} fit="cover" src="" alt="avatar" /> */}
+          <Box w="100%" py={1} pl={3} bg="gray.100" color="black">
+            <chakra.span>{djName}</chakra.span>
           </Box>
         </Box>
-      </Box>
+      </Flex>
     </Link>
   )
 }
