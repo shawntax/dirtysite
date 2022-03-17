@@ -2,7 +2,7 @@ import React from 'react'
 import NextLink from 'next/link'
 import { Box, Stack, Link, Text } from '@chakra-ui/react'
 
-const MenuItem = ({ children, isLast, to = '/', ...rest }) => {
+const MenuItem = ({ children, to = '/', ...rest }) => {
   return (
     <NextLink href={to} passHref>
       <Link>
@@ -31,6 +31,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="/artists">Artists</MenuItem>
         <MenuItem to="/events">Events</MenuItem>
         <MenuItem to="/contact">Contact</MenuItem>
+        <MenuItem to="https://shop.dirtynotsorry.com">Shop</MenuItem>
       </Stack>
     </Box>
   )

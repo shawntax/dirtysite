@@ -19,6 +19,7 @@ module.exports = {
   extends: ['eslint:recommended', 'next/core-web-vitals', 'prettier'],
   plugins: ['prettier', 'react'],
   rules: {
+    'react/no-children-prop': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/anchor-is-valid': 'off',

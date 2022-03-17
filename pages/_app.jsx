@@ -1,9 +1,10 @@
+import { ChakraProvider } from '@chakra-ui/react'
 import '../styles/globals.css'
 
-import { ChakraProvider } from '@chakra-ui/react'
+// import { ChakraProvider } from '@chakra-ui/react'
 
 function MyApp({ Component, pageProps }) {
-  if (Component.name == 'AdminPage') {
+  if (Component.displayName == 'AdminPage') {
     return <Component {...pageProps} />
   }
   return (

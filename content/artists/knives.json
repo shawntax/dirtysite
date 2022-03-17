@@ -2,9 +2,9 @@
   "id": 0,
   "slug": "knives",
   "name": "Knives",
-  "InstaLink": "NULL",
-  "fbLink": "null",
-  "scLink": "NULL",
-  "photoUrl": "../img/knives.png",
+  "instaLink": "https://instagram.com/djknivesofficial",
+  "fbLink": "https://facebook.com/djknivesofficial",
+  "scLink": "https://soundcloud.com/djknivesofficial",
+  "photoUrl": "/media/knives.jpg",
   "bio": "Knives delivering those deep cuts"
 }

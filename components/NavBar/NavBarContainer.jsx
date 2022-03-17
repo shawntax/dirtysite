@@ -11,6 +11,7 @@ const NavBarContainer = ({ children, ...props }) => {
       p={8}
       bg="transparent"
       color="white"
+      maxW="container.xl"
       {...props}
     >
       {children}
