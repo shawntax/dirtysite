@@ -11,7 +11,12 @@ const NavBar = (props) => {
 
   return (
     <NavBarContainer {...props}>
-      <Logo w="200px" />
+      <Logo
+        w={{
+          base: '90px',
+          md: '150px',
+        }}
+      />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} />
     </NavBarContainer>

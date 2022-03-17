@@ -56,7 +56,7 @@ const config = {
       fields: [
         { label: 'Title', name: 'title', widget: 'string' },
         { label: 'Publish Date', name: 'date', widget: 'datetime' },
-        { label: 'Event Date', name: 'eventDate', widget: 'string' },
+        { label: 'Event Date', name: 'eventDate', widget: 'datetime' },
         { label: 'Venue', name: 'venue', widget: 'string' },
         { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
         { label: 'Featured Image', name: 'featuredImage', widget: 'image' },
@@ -67,6 +67,7 @@ const config = {
       name: 'artists',
       label: 'Artists',
       folder: 'content/artists',
+      identifier_field: 'name',
       create: true,
       editor: {
         preview: true,
@@ -74,7 +75,7 @@ const config = {
       format: 'json',
       fields: [
         { label: 'DJ Name', name: 'name', widget: 'string' },
-        { label: 'Instagram link', name: 'InstaLink', widget: 'string' },
+        { label: 'Instagram link', name: 'instaLink', widget: 'string' },
         { label: 'Facebook link', name: 'fbLink', widget: 'string' },
         { label: 'Soundcloud link', name: 'scLink', widget: 'string' },
         { label: 'DJ Photo', name: 'photoUrl', widget: 'image' },

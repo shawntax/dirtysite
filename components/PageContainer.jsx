@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const PageContainer = ({ children }) => {
   return (
-    <VStack h="100vh" justify="space-between" bg="black">
+    <VStack minH="100vh" justify="space-between" bg="black">
       <NavBar />
       <Container w="100%" maxW="container.xl" bg="black">
         {children}

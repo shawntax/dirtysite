@@ -14,7 +14,7 @@ const Footer = () => {
       color="white"
       bg="black"
       w="100%"
-      py="3"
+      py="8"
     >
       <p>© 2022 Dirty Not Sorry</p>
     </Flex>

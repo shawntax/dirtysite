@@ -2,9 +2,9 @@
   "id": 1,
   "slug": "glaas",
   "name": "Glaas",
-  "InstaLink": "null",
-  "fbLink": "null",
-  "scLink": "null",
-  "photoUrl": "../img/glass.jpg",
+  "instaLink": "https://instagram.com/glaasmusic",
+  "fbLink": "https://facebook.com/glaasmusic",
+  "scLink": "https://soundcloud.com/glaasmusic",
+  "photoUrl": "/img/glass.jpg",
   "bio": "Shattering sound!\n\n\n\n* Destroying \n* the\n* sound\n* spectrum\n\n1. # heading\n2. *italic*"
 }

@@ -1,18 +1,40 @@
 import { Box, Image, Text, Link, Center } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import PageContainer from '../../components/PageContainer'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
-function Artist() {
-  const router = useRouter()
-  const { slug } = router.query
+export async function getStaticProps(context) {
   const importAll = (r) => r.keys().map(r)
   const artists = importAll(
     require.context('../../content/artists', false, /\.json$/)
   )
-  const artist = artists.find((x) => x.slug === slug) || {}
-  console.log(artist)
+
+  const artist = artists.find((x) => x.slug === context.params.slug) || {}
+  return {
+    props: { artist },
+  }
+}
+
+export async function getStaticPaths() {
+  const importAll = (r) => r.keys().map(r)
+  const artists = importAll(
+    require.context('../../content/artists', false, /\.json$/)
+  )
+  const paths = artists.map((artist) => {
+    return {
+      params: {
+        slug: artist.slug,
+      },
+    }
+  })
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+function Artist({ artist }) {
   return (
     <PageContainer title="Artist">
       <Center>
@@ -27,13 +49,13 @@ function Artist() {
           </Box>
           <Box d="flex" mb="5">
             <Link href={artist.instaLink}>
-              <Image src="../instagram.svg" h="10" alt="insta" />
+              <Image src="/instagram.svg" h="10" alt="insta" />
             </Link>
             <Link href={artist.fbLink}>
-              <Image src="../facebook.svg" h="10" px="5" alt="fb" />
+              <Image src="/facebook.svg" h="10" px="5" alt="fb" />
             </Link>
             <Link href={artist.scLink}>
-              <Image src="../soundcloud.svg" h="10" alt="soundcloud" />
+              <Image src="/soundcloud.svg" h="10" alt="soundcloud" />
             </Link>
           </Box>
           <ReactMarkdown
