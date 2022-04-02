@@ -89,6 +89,7 @@ const collections = [
     },
     format: 'json',
     fields: [
+      { label: 'ID', name: 'id', widget: 'ncw-id' },
       { label: 'DJ Name', name: 'name', widget: 'string' },
       { label: 'Instagram link', name: 'instaLink', widget: 'string' },
       { label: 'Facebook link', name: 'fbLink', widget: 'string' },
