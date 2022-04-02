@@ -5,7 +5,7 @@ import Footer from '@components/Footer'
 const PageContainer = ({ children, bg, title }) => {
   return (
     <VStack minH="100vh" justify="space-between" bg={bg}>
-      <NavBar title={title} />
+      <NavBar />
       <Heading color="white">{title}</Heading>
       <Container w="100%" maxW="container.xl">
         {children}

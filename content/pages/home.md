@@ -1,4 +1,4 @@
 ---
 hero_title: Home
-hero_subtitle: "## THE UNKEMPT AND UNAPOLOGETIC ARTIST & PROMOTION COLLECTIVE"
+hero_subtitle: "## The unkempt and unapologetic electronic music collective"
 ---
