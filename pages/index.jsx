@@ -1,5 +1,12 @@
 import PageContainer from '@components/PageContainer'
-import { Text, Box, Container, Heading, useMediaQuery } from '@chakra-ui/react'
+import {
+  Text,
+  Box,
+  Flex,
+  Container,
+  Heading,
+  useMediaQuery,
+} from '@chakra-ui/react'
 import { attributes } from '@content/pages/home.md'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
@@ -14,23 +21,29 @@ export default function Home() {
 
   if (isLargerThan768 && isDisplayingInBrowser) {
     return (
-      <PageContainer bg="black">
-        <Container h="100%" w="100%" pos="relative" centerContent>
-          <video
-            autoPlay
-            muted
-            loop
-            style={{
-              position: 'relative',
-              left: 0,
-              top: 0,
-              height: '100%',
-              width: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <source src="/media/background-video.mp4" />
-          </video>
+      <PageContainer fullWidthContainer bg="black">
+        <video
+          autoPlay
+          muted
+          loop
+          style={{
+            position: 'relative',
+            top: 0,
+            left: 0,
+            height: '100%',
+            width: '100%',
+            objectFit: 'cover',
+          }}
+        >
+          <source src="/media/background-video.mp4" />
+        </video>
+
+        <Container pos="relative" maxW="container.md" centerContent>
+          <Heading as="h1" color="white" textTransform="uppercase">
+            <ReactMarkdown components={ChakraUIRenderer()}>
+              {hero_subtitle}
+            </ReactMarkdown>
+          </Heading>
         </Container>
       </PageContainer>
     )
