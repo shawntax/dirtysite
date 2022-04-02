@@ -6,26 +6,36 @@
     "npm": ">= 8"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx netlify-cms-proxy-server & next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "export": "npm run build && next export",
+    "clean": "npx del-cli .next out",
     "serve": "serve out"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.3",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@fontsource/oswald": "^4.5.5",
+    "@fontsource/roboto": "^4.5.3",
     "chakra-ui-markdown-renderer": "^4.0.0",
     "framer-motion": "^5.6.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
     "netlify-cms-app": "^2.15.65",
     "netlify-identity-widget": "^1.9.2",
-    "next": "12.0.8",
+    "next": "^12.1.4",
+    "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "react-markdown": "^7.0.0"
+    "react-markdown": "^7.0.0",
+    "responsive-loader": "^2.3.0",
+    "sharp": "^0.30.3",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
@@ -33,6 +43,7 @@
     "@netlify/plugin-nextjs": "^4.2.7",
     "@svgr/webpack": "^6.2.1",
     "autoprefixer": "^10.4.2",
+    "chokidar": "^3.5.3",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
     "eslint-config-prettier": "^8.3.0",
@@ -41,10 +52,10 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "frontmatter-markdown-loader": "^3.6.3",
-    "postcss": "^8.4.5",
+    "pino": "^7.9.2",
+    "pino-pretty": "^7.6.0",
     "prettier": "^2.5.1",
-    "serve": "^13.0.2",
-    "tailwindcss": "^3.0.15"
+    "serve": "^13.0.2"
   },
   "browserslist": [
     "> 1%",

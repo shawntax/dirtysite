@@ -1,4 +1,4 @@
 ---
-hero_title: Dirty Not Sorry
-hero_subtitle: Unkempt and unapologetic artist + promotion collective
+hero_title: Home
+hero_subtitle: "## THE UNKEMPT AND UNAPOLOGETIC ARTIST & PROMOTION COLLECTIVE"
 ---

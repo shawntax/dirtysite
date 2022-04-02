@@ -1,7 +1,5 @@
 import dynamic from 'next/dynamic'
-import config from '../cms/config'
-import netlifyAuth from '../netlifyAuth.js'
-import { useEffect, useState } from 'react'
+import config from '@cms/config'
 
 const CMS = dynamic(
   () =>
@@ -12,15 +10,6 @@ const CMS = dynamic(
 )
 
 const AdminPage = () => {
-  let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated)
-
-  useEffect(() => {
-    netlifyAuth.initialize((user) => {
-      setLoggedIn(!!user)
-    })
-  }, [loggedIn])
-
   return <CMS />
 }
-AdminPage.displayName = 'AdminPage'
 export default AdminPage

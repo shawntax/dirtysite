@@ -1,4 +1,7 @@
-[build]
-  command = "next build"
-  publish = ".next"
+[dev]
+  autoLaunch = false
 
+[build]
+  NETLIFY_NEXT_PLUGIN_SKIP = true
+  command = "next export"
+  publish = "out"

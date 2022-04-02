@@ -3,7 +3,6 @@ import {
   Box,
   Text,
   Center,
-  Image,
   Wrap,
   WrapItem,
   Divider,
@@ -14,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
-
+import OptImage from '../../components/OptImage'
 export async function getStaticProps() {
   const importAll = (r) => r.keys().map(r)
   let events = importAll(
@@ -50,27 +49,26 @@ export async function getStaticProps() {
   })
 
   return {
-    props: { events: sortEventsByDate.reverse() },
+    props: { events: sortEventsByDate },
   }
 }
 
 export default function Events({ events }) {
   return (
-    <PageContainer title="Events">
-      <Wrap w="80%" mx="auto" justify="center" bg="" pb="10">
+    <PageContainer title="Events" bg="black">
+      <Wrap w="80%" mx="auto" justify="center" bg="" py="10">
         {events.map((event) => {
           return (
             <>
               <WrapItem key={event.slug}>
-                <Image
-                  src={event.featuredImage}
-                  h="310px"
-                  w="250px"
+                <OptImage
+                  filename={event.featuredImage}
+                  boxSize={{ sm: '350px', md: '450px' }}
                   borderRadius="md"
                   alt="Event Flyer"
                 />
               </WrapItem>
-              <Container pb="10" px="0">
+              <Container pb="20" px="0">
                 <WrapItem>
                   <Box bg="" w="100%" p="4" borderRadius="md">
                     <Box truncate>
@@ -83,10 +81,6 @@ export default function Events({ events }) {
                       <Text textColor="gray.200">
                         {event.displayDate} @ {event.venue}
                       </Text>
-                      <Divider orientation="horizontal" />
-                      <Divider orientation="horizontal" />
-                      <Divider orientation="horizontal" />
-                      <Divider orientation="horizontal" />
                     </Box>
                     <ReactMarkdown components={ChakraUIRenderer()} skipHtml />
                     <Center>
@@ -102,6 +96,10 @@ export default function Events({ events }) {
                     </Center>
                   </Box>
                 </WrapItem>
+                <Divider orientation="horizontal" />
+                <Divider orientation="horizontal" />
+                <Divider orientation="horizontal" />
+                <Divider orientation="horizontal" />
               </Container>
             </>
           )

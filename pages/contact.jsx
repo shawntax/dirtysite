@@ -1,4 +1,4 @@
-import PageContainer from '../components/PageContainer'
+import PageContainer from '@components/PageContainer'
 import {
   Button,
   Container,
@@ -7,9 +7,10 @@ import {
   FormLabel,
   FormControl,
 } from '@chakra-ui/react'
+
 export default function Contact() {
   return (
-    <PageContainer title="Contact">
+    <PageContainer title="Contact" bg="black">
       <Container>
         <Text textColor={'white'} fontSize="2xl" pb="4">
           Join the DNS Family for free guest list to our events!

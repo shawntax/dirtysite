@@ -11,24 +11,23 @@ import {
 import PageContainer from '../../components/PageContainer'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
-
+import OptImage from '../../components/OptImage'
 function Event({ event }) {
-  //const [isLargerThan768] = useMediaQuery('(max-width: 768px)')
   return (
-    <PageContainer title="Event">
+    <PageContainer title="Event" bg="black">
       <Center>
-        <Box px="4" color="white">
+        <Box d={{ lg: 'flex' }} px="4" color="white">
           <Box mt="8">
             <Center>
-              <Image
-                maxW={300}
-                src={`../${event.featuredImage}`}
+              <OptImage
+                maxW={{ lg: 500, xl: 600 }}
+                filename={event.featuredImage}
                 alt="Event Photo"
-                borderRadius={'4'}
+                borderRadius="xl"
               />
             </Center>
           </Box>
-          <Box>
+          <Box ml={{ lg: '10' }}>
             <Box>
               <Text my="5" as="h1" textColor="white" fontSize="3xl">
                 {event.title}
@@ -39,18 +38,15 @@ function Event({ event }) {
             </Box>
             <Divider mb="4" mt="-2" />
             <Box d="flex" mb="5"></Box>
-            <ReactMarkdown
-              components={ChakraUIRenderer()}
-              children={event.body}
-            />
+            <ReactMarkdown components={ChakraUIRenderer()} />
+            <Center>
+              <Link href={event.ticketLink}>
+                <Button textColor={'black'} mt="20">
+                  Get Tickets
+                </Button>
+              </Link>
+            </Center>
           </Box>
-          <Center>
-            <Link href={event.ticketLink}>
-              <Button textColor={'black'} mt="5">
-                Get Tickets
-              </Button>
-            </Link>
-          </Center>
         </Box>
       </Center>
     </PageContainer>

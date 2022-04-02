@@ -1,10 +1,11 @@
 {
-  "id": 3,
-  "slug": "jaxxT",
-  "name": "Jaxx T",
-  "instaLink": "https://instagram.com/jaxxtofficial",
-  "fbLink": "https://facebook.com/jaxxtofficial",
-  "scLink": "https://soundcloud.com/jaxxtofficial",
-  "photoUrl": "/img/jaxxt-6.jpg",
-  "bio": "Bringing serious heat on the decks."
-}
+    "id": 3,
+    "slug": "jaxxT",
+    "name": "Jaxx T",
+    "instaLink": "https://instagram.com/jaxxtofficial",
+    "fbLink": "https://facebook.com/jaxxtofficial",
+    "scLink": "https://soundcloud.com/jaxxtofficial",
+    "photoUrl": "media/jaxxt-6.jpg",
+    "bio": "Bringing serious heat on the decks."
+  }
+  

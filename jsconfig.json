@@ -1,0 +1,13 @@
+{
+  "exclude": ["./node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/*"],
+      "@content/*": ["./content/*"],
+      "@cms/*": ["./cms/*"],
+      "@public/*": ["./public/*"]
+    }
+  }
+}
