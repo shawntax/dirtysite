@@ -1,10 +1,8 @@
 {
-  "id": 0,
-  "slug": "knives",
   "name": "Knives",
   "instaLink": "https://instagram.com/djknivesofficial",
   "fbLink": "https://facebook.com/djknivesofficial",
   "scLink": "https://soundcloud.com/djknivesofficial",
-  "photoUrl": "media/knives.jpg",
-  "bio": "Knives delivering those deep cuts"
+  "bio": "Knives delivering those deep cuts",
+  "photoUrl": "/public/media/knives.jpg"
 }

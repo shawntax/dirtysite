@@ -1,10 +1,8 @@
 {
-  "id": 4,
-  "slug": "damasek",
   "name": "Damasek",
   "instaLink": "https://instagram.com/damasek_music",
   "fbLink": "https://facebook.com/damasek_music",
   "scLink": "https://soundcloud.com/damasek",
-  "photoUrl": "media/damasek.jpg",
-  "bio": "A bio! *Super cool!!!*"
+  "bio": "A bio! *Super cool!!!*",
+  "photoUrl": "/public/media/damasek.jpg"
 }

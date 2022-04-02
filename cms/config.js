@@ -4,10 +4,9 @@ const devConfig = {
   backend: {
     name: 'github',
     repo: 'dirtynotsorry/dirtysite',
-    branch: 'stage',
+    branch: 'source',
   },
   media_folder: 'public/media',
-  public_folder: '/public',
 }
 
 const prodConfig = {
@@ -83,6 +82,7 @@ const collections = [
     label: 'Artists',
     folder: 'content/artists',
     identifier_field: 'name',
+    slug: '{{slug}}',
     create: true,
     editor: {
       preview: true,
@@ -93,7 +93,12 @@ const collections = [
       { label: 'Instagram link', name: 'instaLink', widget: 'string' },
       { label: 'Facebook link', name: 'fbLink', widget: 'string' },
       { label: 'Soundcloud link', name: 'scLink', widget: 'string' },
-      { label: 'DJ Photo', name: 'photoUrl', widget: 'image' },
+      {
+        label: 'DJ Photo',
+        name: 'photoUrl',
+        widget: 'image',
+        choose_url: false,
+      },
     ],
   },
 ]

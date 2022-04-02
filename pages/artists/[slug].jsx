@@ -1,24 +1,19 @@
-import {
-  Box,
-  Image,
-  Text,
-  Link,
-  // useMediaQuery,
-  Divider,
-  SimpleGrid,
-} from '@chakra-ui/react'
+import { Box, Image, Text, Link, Divider, SimpleGrid } from '@chakra-ui/react'
 
-import PageContainer from '../../components/PageContainer'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
-import OptImage from '../../components/OptImage'
+import PageContainer from '@components/PageContainer'
+import Photo from '@components/Photo'
+
+import { fetchArtists } from '@helpers/cms.helpers'
+
 function Artist({ artist }) {
   return (
     <PageContainer title="Artist" pb="5" bg="black">
       <Box color="white">
         <Box mt="8" d="flex">
           <SimpleGrid columns={{ sm: 1, md: 2 }} bg="">
-            <OptImage filename={artist.photoUrl} />
+            <Photo fileName={artist.photoFileName} />
             <Box p="4">
               <Box>
                 <Text mb="5" as="h1" textColor="white" fontSize={'5xl'}>
@@ -72,13 +67,7 @@ function Artist({ artist }) {
 
 export async function getStaticProps(context) {
   const slug = context.params.slug
-  const importAll = (r) => r.keys().map(r)
-  const artists = importAll(
-    require.context('../../content/artists', false, /\.json$/)
-  )
-  artists.map((artist) => {
-    artist['slug'] = artist.name.toLowerCase().replace(/\s/g, '')
-  })
+  const artists = fetchArtists()
   const artist = artists.find((x) => x.slug === slug) || {}
 
   return {
@@ -89,17 +78,9 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const paths = []
 
-  const importAll = (r) => r.keys().map(r)
-  const artists = importAll(
-    require.context('../../content/artists', false, /\.json$/)
-  )
-  artists.map((artist) => {
-    artist['slug'] = artist.name.toLowerCase().replace(/\s/g, '')
-  })
+  const artists = fetchArtists()
 
-  artists.map((artist) =>
-    paths.push({ params: { slug: artist.slug.toString() } })
-  )
+  artists.forEach((artist) => paths.push({ params: { slug: artist.slug } }))
 
   return {
     paths,

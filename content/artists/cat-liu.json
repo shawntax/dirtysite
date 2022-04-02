@@ -1,10 +1,8 @@
 {
-  "id": 2,
-  "slug": "cat-liu",
   "name": "Cat Liu",
   "instaLink": "https://instagram.com/djcatliu",
   "fbLink": "https://www.facebook.com/CatherineLewisLiu",
   "scLink": "https://soundcloud.com/catliu",
-  "photoUrl": "media/cat-yolo.jpg",
-  "bio": "Sick house beats brought to you by the one and only CatLiu"
+  "bio": "Sick house beats brought to you by the one and only CatLiu",
+  "photoUrl": "/public/media/cat-liu.jpg"
 }
