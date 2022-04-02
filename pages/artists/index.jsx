@@ -10,7 +10,7 @@ export default function Artists() {
     <PageContainer title="Artists" h="100%" bg="black">
       <SimpleGrid minChildWidth="200px" spacing="20px" p="5" bg="black">
         {artists.map((artist) => {
-          return <ArtistCard key={artist.slug} artist={artist} />
+          return <ArtistCard key={artist.id} artist={artist} />
         })}
       </SimpleGrid>
     </PageContainer>
