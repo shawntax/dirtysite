@@ -1,9 +1,9 @@
 import NextLink from 'next/link'
 import { Link, Text } from '@chakra-ui/react'
 
-const NCLink = ({ children, to = '/', ...rest }) => (
+const NCLink = ({ children, to = '/', target, ...rest }) => (
   <NextLink href={to} passHref>
-    <Link>
+    <Link target={target}>
       <Text {...rest}>{children}</Text>
     </Link>
   </NextLink>
