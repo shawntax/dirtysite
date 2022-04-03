@@ -2,13 +2,13 @@ import { VStack, Container, Heading } from '@chakra-ui/react'
 import NavBar from '@components/NavBar'
 import Footer from '@components/Footer'
 
-const PageContainer = ({ children, bg, title, fullWidthContainer }) => {
+const PageContainer = ({ children, bg, title, fullWidthContent }) => {
   return (
     <VStack minH="100vh" justify="space-between" bg={bg}>
       <NavBar />
       <Heading color="white">{title}</Heading>
-      {fullWidthContainer ? (
-        <Container minW="100vw" h="full" maxW="container.xl">
+      {fullWidthContent ? (
+        <Container minW="100vw" mx={0} px={0} h="full" maxW="container.xl">
           {children}
         </Container>
       ) : (
