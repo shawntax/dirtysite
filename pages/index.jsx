@@ -15,19 +15,7 @@ export default function Home() {
   if (isLargerThan768 && isDisplayingInBrowser) {
     return (
       <PageContainer fullWidthContent bg="black">
-        <video
-          autoPlay
-          muted
-          loop
-          style={{
-            position: 'relative',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '100%',
-            objectFit: 'cover',
-          }}
-        >
+        <video autoPlay muted loop width="100%">
           <source src="/media/background-video.mp4" />
         </video>
       </PageContainer>

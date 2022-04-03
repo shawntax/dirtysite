@@ -8,7 +8,14 @@ const PageContainer = ({ children, bg, title, fullWidthContent }) => {
       <NavBar />
       <Heading color="white">{title}</Heading>
       {fullWidthContent ? (
-        <Container minW="100vw" mx={0} px={0} h="full" maxW="container.xl">
+        <Container
+          minW="100vw"
+          mx={0}
+          px={0}
+          overflowX="hidden"
+          h="full"
+          maxW="container.2xl"
+        >
           {children}
         </Container>
       ) : (
