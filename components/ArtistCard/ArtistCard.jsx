@@ -5,7 +5,7 @@ import Photo from '@components/Photo'
 const ArtistCard = ({ artist }) => {
   const { name, slug, photoFileName } = artist
   return (
-    <NCLink href={`/artists/${encodeURIComponent(slug)}`}>
+    <NCLink to={`/artists/${encodeURIComponent(slug)}`}>
       <Flex border="2px">
         <Box w="100%" shadow="lg">
           <Photo w="full" fit="cover" h={56} fileName={photoFileName} />

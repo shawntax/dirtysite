@@ -15,7 +15,7 @@ export default function Home() {
   if (isLargerThan768 && isDisplayingInBrowser) {
     return (
       <PageContainer fullWidthContent bg="black">
-        <video autoPlay muted loop width="100%">
+        <video muted loop width="100%">
           <source src="/media/background-video.mp4" />
         </video>
       </PageContainer>

@@ -5,7 +5,7 @@ import NCLink from '@components/NCLink'
 export default function Logo(props) {
   return (
     <Box {...props}>
-      <NCLink href="/">
+      <NCLink to="/">
         <Image src="/brand/logo.svg" alt="Dirty Not Sorry" />
       </NCLink>
     </Box>
