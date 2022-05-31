@@ -1,7 +1,7 @@
 import { Box, Container, Text } from '@chakra-ui/react'
 import { getLayout } from '@components/HomeLayout'
 import Hero from '@components/Hero'
-import EventList from '@components/Eventz'
+import EventList from '@components/Events'
 import { react as AboutContent } from '@content/pages/about.md'
 import { fetchEvents } from '@helpers/cms.helpers'
 

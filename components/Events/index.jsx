@@ -1,2 +1,2 @@
-export * from './Events'
-export { default } from './Events'
+export * from './EventList'
+export { default } from './EventList'

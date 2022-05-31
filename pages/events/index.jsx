@@ -1,5 +1,5 @@
 import { SimpleGrid } from '@chakra-ui/react'
-import EventCard from '@components/Eventz/EventCard'
+import EventCard from '@components/Events/EventCard'
 import { getLayout } from '@components/SiteLayout'
 import { fetchEvents } from '@helpers/cms.helpers'
 

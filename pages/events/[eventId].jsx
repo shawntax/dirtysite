@@ -18,11 +18,15 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const paths = []
-
   const events = fetchEvents()
 
-  events.forEach((event) => paths.push({ params: { eventId: event.id } }))
+  const paths = events.map((event) => {
+    return {
+      params: {
+        eventId: event.id,
+      },
+    }
+  })
 
   return {
     paths,

@@ -1,6 +1,7 @@
 import { chakra } from '@chakra-ui/react'
 
 const Photo = ({ fileName, ...props }) => {
+  // TODO: handle a null fileName
   return (
     <picture>
       <source

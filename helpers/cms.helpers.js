@@ -25,7 +25,8 @@ export function fetchEvents() {
 
   const result = events
     .map((event) => {
-      event.featuredImageFileName = event.featuredImageUrl?.split('/').pop()
+      event.featuredImageFileName =
+        event.featuredImageUrl?.split('/').pop() ?? null
       return event
     })
     .sort((a, b) => {
