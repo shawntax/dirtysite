@@ -1,4 +1,5 @@
 import slugify from 'slugify'
+import dayjs from 'dayjs'
 
 const importAll = (r) => r.keys().map(r)
 
@@ -14,5 +15,22 @@ export function fetchArtists() {
     artist.photoFileName = url?.split('/').pop()
     return artist
   })
+  return result
+}
+
+export function fetchEvents() {
+  let events = importAll(
+    require.context('../content/events', false, /^(.\/).*(.json)$/)
+  )
+
+  const result = events
+    .map((event) => {
+      event.featuredImageFileName = event.featuredImageUrl?.split('/').pop()
+      return event
+    })
+    .sort((a, b) => {
+      return dayjs(a.eventDate) - dayjs(b.eventDate)
+    })
+
   return result
 }

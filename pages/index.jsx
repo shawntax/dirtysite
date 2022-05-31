@@ -1,36 +1,41 @@
-import PageContainer from '@components/PageContainer'
-import { Container, Heading, useMediaQuery } from '@chakra-ui/react'
-import { attributes } from '@content/pages/home.md'
-import ReactMarkdown from 'react-markdown'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import { Box, Container, Text } from '@chakra-ui/react'
+import { getLayout } from '@components/HomeLayout'
+import Hero from '@components/Hero'
+import EventList from '@components/Eventz'
+import { react as AboutContent } from '@content/pages/about.md'
+import { fetchEvents } from '@helpers/cms.helpers'
 
-export default function Home() {
-  const [isLargerThan768, isDisplayingInBrowser] = useMediaQuery([
-    '(min-width: 768px)',
-    '(display-mode: browser)',
-  ])
+export default function Home({ events }) {
+  return (
+    <>
+      <Hero />
+      <Container
+        as="section"
+        centerContent
+        maxW={{ base: 'container.lg', xl: 'container.lg' }}
+        py={{ base: '12', lg: '24' }}
+      >
+        <Box maxW="container.lg" py={{ base: '2', lg: '12' }} px="4">
+          <Text fontSize="3xl">
+            <AboutContent />
+          </Text>
+        </Box>
 
-  const { hero_subtitle } = attributes
+        <EventList events={events} />
+      </Container>
+    </>
+  )
+}
 
-  if (isLargerThan768 && isDisplayingInBrowser) {
-    return (
-      <PageContainer fullWidthContent bg="black">
-        <video autoPlay muted loop width="100%">
-          <source src="/media/background-video.mp4" />
-        </video>
-      </PageContainer>
-    )
-  } else {
-    return (
-      <PageContainer bg="black">
-        <Container maxW="container.md" centerContent>
-          <Heading as="h1" color="white" textTransform="uppercase">
-            <ReactMarkdown components={ChakraUIRenderer()}>
-              {hero_subtitle}
-            </ReactMarkdown>
-          </Heading>
-        </Container>
-      </PageContainer>
-    )
+export async function getStaticProps() {
+  const events = fetchEvents()
+
+  return {
+    props: {
+      events,
+    },
   }
 }
+
+Home.pageName = 'Home'
+Home.getLayout = getLayout

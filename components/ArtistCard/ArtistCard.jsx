@@ -6,10 +6,16 @@ const ArtistCard = ({ artist }) => {
   const { name, slug, photoFileName } = artist
   return (
     <NCLink to={`/artists/${encodeURIComponent(slug)}`}>
-      <Flex border="2px">
-        <Box w="100%" shadow="lg">
+      <Flex>
+        <Box w="100%" shadow="lg" role="group">
           <Photo w="full" fit="cover" h={56} fileName={photoFileName} />
-          <Box py={1} pl={3} bg="gray.100" color="black">
+          <Box
+            py={1}
+            pl={3}
+            bg="gray.100"
+            color="black"
+            _groupHover={{ textDecoration: 'underline' }}
+          >
             <chakra.span>{name}</chakra.span>
           </Box>
         </Box>

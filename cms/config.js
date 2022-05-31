@@ -27,18 +27,14 @@ const collections = [
     label: 'Pages',
     files: [
       {
-        label: 'Home',
-        name: 'home',
-        file: 'content/pages/home.md',
+        label: 'Hero',
+        name: 'hero',
+        file: 'content/pages/hero.md',
+
         fields: [
           {
-            label: 'Hero Title',
-            name: 'hero_title',
-            widget: 'string',
-          },
-          {
-            label: 'Hero Subtitle',
-            name: 'hero_subtitle',
+            label: 'Hero Text',
+            name: 'body',
             widget: 'markdown',
           },
         ],
@@ -49,8 +45,8 @@ const collections = [
         file: 'content/pages/about.md',
         fields: [
           {
-            label: 'About DNS',
-            name: 'about_dns',
+            label: 'About',
+            name: 'body',
             widget: 'markdown',
           },
         ],
@@ -62,19 +58,43 @@ const collections = [
     label: 'Events',
     folder: 'content/events',
     create: true,
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+    slug: '{{slug}}-{{id}}',
+    identifier_field: 'title',
     editor: {
       preview: true,
     },
     format: 'json',
     fields: [
+      { label: 'ID', name: 'id', widget: 'ncw-id' },
       { label: 'Title', name: 'title', widget: 'string' },
-      { label: 'Publish Date', name: 'date', widget: 'datetime' },
+      { label: 'Publish Date', name: 'publishDate', widget: 'datetime' },
       { label: 'Event Date', name: 'eventDate', widget: 'datetime' },
+      {
+        label: 'Event Location',
+        name: 'eventLocation',
+        widget: 'select',
+        options: ['San Francisco, CA', 'Denver, CO'],
+      },
       { label: 'Venue', name: 'venue', widget: 'string' },
       { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
-      { label: 'Featured Image', name: 'featuredImage', widget: 'image' },
-      // { label: 'Body', name: 'body', widget: 'markdown' }
+      {
+        label: 'Ticket Link Text',
+        name: 'linkText',
+        widget: 'select',
+        options: ['TICKETS', 'GUEST LIST', 'RSVP'],
+      },
+      {
+        label: 'Featured Image',
+        name: 'featuredImageUrl',
+        widget: 'image',
+        required: false,
+      },
+      {
+        label: 'Description',
+        name: 'description',
+        widget: 'markdown',
+        required: false,
+      },
     ],
   },
   {

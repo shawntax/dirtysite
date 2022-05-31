@@ -14,5 +14,7 @@ const CMS = dynamic(
 const AdminPage = () => {
   return <CMS />
 }
-AdminPage.displayName = 'AdminPage'
+
+AdminPage.pageName = 'AdminPage'
+
 export default AdminPage

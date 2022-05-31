@@ -1,15 +1,16 @@
 import React from 'react'
 import { chakra } from '@chakra-ui/react'
 
-const OptimizedImage = ({ filename, ...props }) => (
+const OptimizedImage = ({ fileName, ...props }) => (
   <picture>
     <source
-      srcSet={require(`../../public/${filename}?webp`)}
+      srcSet={require(`../../public/${fileName}?webp`)}
       type="image/webp"
     />
-    <source srcSet={require(`../../public/${filename}`)} type="image/jpg" />
+    <source srcSet={require(`../../public/${fileName}`)} type="image/jpg" />
+
     <chakra.img
-      src={require(`../../public/${filename}?webp`)}
+      src={require(`../../public/${fileName}?webp`)}
       alt=""
       objectFit="cover"
       {...props}

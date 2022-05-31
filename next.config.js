@@ -32,7 +32,7 @@ module.exports = withPlugins(
     [
       withOptimizedImages,
       {
-        optimizeImagesInDev: true,
+        optimizeImagesInDev: false,
         handleImages: ['jpeg', 'jpg', 'png', 'webp'],
         removeOriginalExtension: true,
         responsive: {

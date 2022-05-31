@@ -4,9 +4,9 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./components/*"],
+      "@theme/*": ["./theme/*"],
       "@helpers/*": ["./helpers/*"],
       "@hooks/*": ["./hooks/*"],
-      "@styles/*": ["./styles/*"],
       "@content/*": ["./content/*"],
       "@cms/*": ["./cms/*"],
       "@public/*": ["./public/*"]

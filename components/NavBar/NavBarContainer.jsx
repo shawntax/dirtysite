@@ -1,21 +1,30 @@
-import { Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
-const NavBarContainer = ({ children, ...props }) => {
+const NavBarContainer = ({
+  clientWindowHeight,
+  isOpen,
+  children,
+  ...props
+}) => {
+  const bgColor = {
+    base: isOpen ? 'black' : clientWindowHeight > 250 ? 'black' : '',
+    xl: isOpen ? (clientWindowHeight > 250 ? 'black' : 'transparent') : '',
+  }
   return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
+    <Box
+      position={props.fixed ? 'fixed' : 'static'}
+      zIndex={900}
+      bg={bgColor}
       w="100%"
-      p={8}
-      bg="transparent"
-      color="white"
-      maxW="container.xl"
+      py={8}
+      px={{ base: '5', sm: '20' }}
+      d={{ base: 'block', xl: 'flex' }}
+      pb={{ base: isOpen && props.fixed ? '100vh' : '8', xl: '8' }}
+      transitionDuration="500ms"
       {...props}
     >
       {children}
-    </Flex>
+    </Box>
   )
 }
 

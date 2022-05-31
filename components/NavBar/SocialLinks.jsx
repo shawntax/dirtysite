@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Stack, Link, Text } from '@chakra-ui/react'
+import { Box, Stack } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import {
   SiTwitch,
