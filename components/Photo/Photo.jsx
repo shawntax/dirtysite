@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { chakra } from '@chakra-ui/react'
 
 const Photo = ({ fileName, ...props }) => {
@@ -17,6 +18,10 @@ const Photo = ({ fileName, ...props }) => {
       />
     </picture>
   )
+}
+
+Photo.propTypes = {
+  fileName: PropTypes.string,
 }
 
 export default Photo

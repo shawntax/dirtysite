@@ -17,7 +17,7 @@ const MenuItem = ({ children, to = '/', ...rest }) => {
           display="block"
           casing="uppercase"
           textDecoration={
-            router.asPath === to ? 'line-through #FFF' : 'initial'
+            router.asPath.includes(to) ? 'line-through #FFF' : 'initial'
           }
           {...rest}
         >

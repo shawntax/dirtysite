@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Center, Image } from '@chakra-ui/react'
 
 function Hero() {
   return (
@@ -28,6 +28,14 @@ function Hero() {
         >
           <source src="/media/background-video.mp4" />
         </video>
+      </Box>
+
+      <Box pos="relative" top="40%">
+        <Image
+          src="brand/logo-vert.svg"
+          alt=""
+          height={{ base: '32', lg: '60', xl: '80' }}
+        />
       </Box>
     </Box>
   )

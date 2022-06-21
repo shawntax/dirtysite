@@ -1,11 +1,13 @@
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
 import theme from '@theme/index'
+import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
 
 const HomeLayout = ({ children }) => {
   return (
     <ChakraProvider theme={theme}>
+      <Favicon />
       <Flex
         direction="column"
         align="center"

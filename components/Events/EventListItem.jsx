@@ -1,4 +1,5 @@
 import { chakra, Flex, Text, Button } from '@chakra-ui/react'
+import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
 
 const EventListItem = ({ event }) => {
@@ -12,25 +13,37 @@ const EventListItem = ({ event }) => {
       }}
       gap={{ base: '2', md: '4' }}
     >
-      <Text fontWeight="bold">{event.title}</Text>
+      <NCLink to={`/events/${event.slug}`}>
+        <Text fontWeight="bold">{event.title}</Text>
+      </NCLink>
       <Flex direction={{ base: 'column', sm: 'row' }} align="center">
         <Text>{event.venue}</Text>
         <chakra.span display={{ base: 'none', sm: 'block' }} px="4">
           •
         </chakra.span>
-        <Text>{dayjs(event.eventDate).format('MMM DD')}</Text>
+        <Text textColor="gray.400">
+          {dayjs(event.eventDate).format('MMM DD')}
+        </Text>
       </Flex>
-      <Button
+      <NCLink
+        to={event.ticketLink}
+        target="_blank"
+        rel="noopener"
         marginInlineStart={{ base: 'none', md: 'auto' }}
-        variant="outline"
-        minW={{ base: '28', lg: '32' }}
-        fontSize={{ base: 'xl', lg: '2xl' }}
-        textTransform="uppercase"
-        borderRadius="0"
-        _hover={{ color: 'black', bg: 'white' }}
+        _hover={{ textDecoration: 'none' }}
       >
-        {event.linkText}
-      </Button>
+        <Button
+          variant="outline"
+          colorScheme="white"
+          minW={{ base: '28', lg: '32' }}
+          fontSize={{ base: 'xl', lg: '2xl' }}
+          textTransform="uppercase"
+          borderRadius="0"
+          _hover={{ color: 'black', bg: 'white' }}
+        >
+          {event.linkText}
+        </Button>
+      </NCLink>
     </Flex>
   )
 }

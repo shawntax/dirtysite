@@ -7,6 +7,10 @@ import fonts from './fonts'
 const overrides = {
   styles,
   fonts,
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: true,
+  },
 }
 
 export default extendTheme(overrides)

@@ -1,23 +1,22 @@
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
 import theme from '@theme/index'
+import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
-import PageHeader from '@components/PageHeader'
 import Footer from '@components/Footer'
-import { useRouter } from 'next/router'
 
 const SiteLayout = ({ children }) => {
-  const { pathname } = useRouter()
   return (
     <ChakraProvider theme={theme}>
-      <Flex direction="column" align="center" minHeight="100vh">
+      <Favicon />
+      <Flex direction="column" align="center">
         <Nav />
         <Container
           as="main"
-          maxW="container.lg"
-          p={{ base: '8', md: '2' }}
+          maxW={{ base: 'container.lg', xl: 'container.xl' }}
+          px={{ base: '4', md: '8' }}
           mt={{ base: '24', md: '32' }}
+          minH="100vh"
         >
-          <PageHeader>{pathname.replace('/', '')}</PageHeader>
           {children}
         </Container>
         <Footer />

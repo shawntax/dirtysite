@@ -19,7 +19,7 @@ export function fetchArtists() {
 }
 
 export function fetchEvents() {
-  let events = importAll(
+  const events = importAll(
     require.context('../content/events', false, /^(.\/).*(.json)$/)
   )
 
@@ -27,6 +27,8 @@ export function fetchEvents() {
     .map((event) => {
       event.featuredImageFileName =
         event.featuredImageUrl?.split('/').pop() ?? null
+      const slug = `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`
+      event.slug = slugify(slug, { lower: true })
       return event
     })
     .sort((a, b) => {

@@ -27,15 +27,20 @@ const collections = [
     label: 'Pages',
     files: [
       {
-        label: 'Hero',
-        name: 'hero',
-        file: 'content/pages/hero.md',
-
+        label: 'Home (SEO)',
+        name: 'home',
+        file: 'content/pages/home.md',
         fields: [
           {
-            label: 'Hero Text',
+            label: 'Home',
             name: 'body',
             widget: 'markdown',
+            required: false,
+          },
+          {
+            label: 'SEO Description',
+            name: 'seoDesc',
+            widget: 'text',
           },
         ],
       },
@@ -49,6 +54,47 @@ const collections = [
             name: 'body',
             widget: 'markdown',
           },
+          {
+            label: 'SEO Description',
+            name: 'seoDesc',
+            widget: 'text',
+          },
+        ],
+      },
+      {
+        label: 'Events Index (SEO)',
+        name: 'events-index',
+        file: 'content/pages/events.md',
+        fields: [
+          {
+            label: 'Events',
+            name: 'body',
+            widget: 'markdown',
+            required: false,
+          },
+          {
+            label: 'SEO Description',
+            name: 'seoDesc',
+            widget: 'text',
+          },
+        ],
+      },
+      {
+        label: 'Artists Index (SEO)',
+        name: 'artists-index',
+        file: 'content/pages/artists.md',
+        fields: [
+          {
+            label: 'Artists',
+            name: 'body',
+            widget: 'markdown',
+            required: false,
+          },
+          {
+            label: 'SEO Description',
+            name: 'seoDesc',
+            widget: 'text',
+          },
         ],
       },
     ],
@@ -58,7 +104,8 @@ const collections = [
     label: 'Events',
     folder: 'content/events',
     create: true,
-    slug: '{{slug}}-{{id}}',
+    slug: '{{title}}-{{fields.eventDate}}',
+    summary: "{{title | upper}} - {{fields.eventDate | date('MM/DD')}}",
     identifier_field: 'title',
     editor: {
       preview: true,
@@ -67,8 +114,18 @@ const collections = [
     fields: [
       { label: 'ID', name: 'id', widget: 'ncw-id' },
       { label: 'Title', name: 'title', widget: 'string' },
-      { label: 'Publish Date', name: 'publishDate', widget: 'datetime' },
-      { label: 'Event Date', name: 'eventDate', widget: 'datetime' },
+      {
+        label: 'Publish Date',
+        name: 'publishDate',
+        widget: 'datetime',
+        time_format: false,
+      },
+      {
+        label: 'Event Date',
+        name: 'eventDate',
+        widget: 'datetime',
+        time_format: false,
+      },
       {
         label: 'Event Location',
         name: 'eventLocation',
@@ -87,7 +144,7 @@ const collections = [
         label: 'Featured Image',
         name: 'featuredImageUrl',
         widget: 'image',
-        required: false,
+        required: true,
       },
       {
         label: 'Description',

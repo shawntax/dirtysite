@@ -1,64 +1,50 @@
 import { getLayout } from '@components/SiteLayout'
-import { Box, Image, Text, Link, Divider, SimpleGrid } from '@chakra-ui/react'
-import ReactMarkdown from 'react-markdown'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import { Flex, Box, Heading, VStack, Text } from '@chakra-ui/react'
 import Photo from '@components/Photo'
-
+import NCLink from '@components/NCLink'
+import { SiFacebook, SiInstagram, SiSoundcloud } from 'react-icons/si'
 import { fetchArtists } from '@helpers/cms.helpers'
 
 function Artist({ artist }) {
   return (
-    <Box color="white">
-      <Box mt="8" d="flex">
-        <SimpleGrid columns={{ sm: 1, md: 2 }} bg="">
-          <Photo fileName={artist.photoFileName} />
-          <Box p="4">
-            <Box>
-              <Text mb="5" as="h1" textColor="white" fontSize={'5xl'}>
-                {artist.name}
-              </Text>
-            </Box>
-            <Divider mb="4" mt="-2" />
-            <Box d="flex" mb="8">
-              <Link href={artist.instaLink}>
-                <Image
-                  _hover={{
-                    filter: 'brightness(10%)',
-                  }}
-                  src="../instagram.svg"
-                  h="10"
-                  boxSize="60px"
-                  alt="insta"
-                />
-              </Link>
-              <Link href={artist.fbLink} px="5">
-                <Image
-                  _hover={{
-                    filter: 'brightness(10%)',
-                  }}
-                  src="../facebook.svg"
-                  h="10"
-                  boxSize="60px"
-                  alt="fb"
-                />
-              </Link>
-              <Link href={artist.scLink}>
-                <Image
-                  _hover={{
-                    filter: 'brightness(10%)',
-                  }}
-                  src="../soundcloud.svg"
-                  h="10"
-                  boxSize="60px"
-                  alt="soundcloud"
-                />
-              </Link>
-            </Box>
-            <ReactMarkdown components={ChakraUIRenderer()}></ReactMarkdown>
-          </Box>
-        </SimpleGrid>
+    <Flex
+      direction={{ base: 'column', lg: 'row' }}
+      justify="center"
+      maxW="container.lg"
+    >
+      <Box
+        w={{ base: 'fit', md: '60', lg: '96' }}
+        h="auto"
+        mx={{ base: 'auto', lg: '8' }}
+        border="1px"
+        borderColor="gray.800"
+      >
+        <Photo fileName={artist.photoFileName} />
       </Box>
-    </Box>
+      <Flex direction="column" my={{ base: '4', lg: 'none' }}>
+        <Heading>{artist.name}</Heading>
+        <VStack fontSize="2xl" align="start" spacing="0" mt="4">
+          <NCLink to={artist.fbLink}>
+            <Flex align="center" spacing="2">
+              <SiFacebook />
+              <Text pl="2">Facebook</Text>
+            </Flex>
+          </NCLink>
+          <NCLink to={artist.instaLink}>
+            <Flex align="center" spacing="2">
+              <SiInstagram />
+              <Text pl="2">Instagram</Text>
+            </Flex>
+          </NCLink>
+          <NCLink to={artist.scLink}>
+            <Flex align="center" spacing="2">
+              <SiSoundcloud />
+              <Text pl="2">SoundCloud</Text>
+            </Flex>
+          </NCLink>
+        </VStack>
+      </Flex>
+    </Flex>
   )
 }
 
@@ -68,16 +54,20 @@ export async function getStaticProps(context) {
   const artist = artists.find((x) => x.slug === slug) || {}
 
   return {
-    props: { artist: artist },
+    props: { artist },
   }
 }
 
 export async function getStaticPaths() {
-  const paths = []
-
   const artists = fetchArtists()
 
-  artists.forEach((artist) => paths.push({ params: { slug: artist.slug } }))
+  const paths = artists.map((artist) => {
+    return {
+      params: {
+        slug: artist.slug,
+      },
+    }
+  })
 
   return {
     paths,

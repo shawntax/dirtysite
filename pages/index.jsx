@@ -1,13 +1,17 @@
 import { Box, Container, Text } from '@chakra-ui/react'
 import { getLayout } from '@components/HomeLayout'
 import Hero from '@components/Hero'
+import PageHeader from '@components/PageHeader'
 import EventList from '@components/Events'
+import { attributes } from '@content/pages/home.md'
 import { react as AboutContent } from '@content/pages/about.md'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Home({ events }) {
+  const { seoDesc } = attributes
   return (
     <>
+      <PageHeader title="Home" seoDesc={seoDesc} />
       <Hero />
       <Container
         as="section"

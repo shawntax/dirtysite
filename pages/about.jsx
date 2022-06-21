@@ -1,11 +1,16 @@
 import { getLayout } from '@components/SiteLayout'
 import { SimpleGrid, Center } from '@chakra-ui/react'
+import PageHeader from '@components/PageHeader'
 import Photo from '@components/Photo'
-import { react as AboutContent } from '@content/pages/about.md'
+import { attributes, react as AboutContent } from '@content/pages/about.md'
 
 export default function About() {
+  const { seoDesc } = attributes
   return (
     <>
+      <PageHeader title="About" seoDesc={seoDesc}>
+        About
+      </PageHeader>
       <Center textColor="white" fontSize="3xl">
         <AboutContent />
       </Center>
