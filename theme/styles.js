@@ -5,6 +5,7 @@ const styles = {
       margin: 0,
       color: 'white',
       bg: 'black',
+      scrollBehavior: 'smooth',
     },
   },
 }

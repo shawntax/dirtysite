@@ -1,11 +1,13 @@
-import { Box, Center, Image } from '@chakra-ui/react'
+import { Box, Image, Flex, Link } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import { BiChevronDown } from 'react-icons/bi'
 
 function Hero() {
   return (
     <Box
       position="relative"
       direction="column"
-      h={{ base: '26rem', lg: '100vh' }}
+      h="100vh"
       w="100vw"
       align="center"
       justify="center"
@@ -37,6 +39,27 @@ function Hero() {
           height={{ base: '32', lg: '56', xl: '60' }}
         />
       </Box>
+      <Flex
+        w="full"
+        justifyContent="center"
+        alignItems="center"
+        pos="absolute"
+        bottom="55px"
+      >
+        <Link href="#about">
+          <motion.div
+            animate={{ y: [0, 30, 0] }}
+            transition={{
+              repeat: Infinity,
+              repeatType: 'loop',
+              duration: 1,
+              repeatDelay: 1,
+            }}
+          >
+            <BiChevronDown size={50} color="white" />
+          </motion.div>
+        </Link>
+      </Flex>
     </Box>
   )
 }

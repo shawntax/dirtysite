@@ -14,6 +14,7 @@ export default function Home({ events }) {
       <PageHeader title="Home" seoDesc={seoDesc} />
       <Hero />
       <Container
+        id="about"
         as="section"
         centerContent
         maxW={{ base: 'container.lg', xl: 'container.lg' }}
