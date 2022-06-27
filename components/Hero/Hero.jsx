@@ -34,7 +34,7 @@ function Hero() {
         <Image
           src="brand/logo-vert.svg"
           alt=""
-          height={{ base: '32', lg: '60', xl: '80' }}
+          height={{ base: '32', lg: '56', xl: '60' }}
         />
       </Box>
     </Box>
