@@ -32,7 +32,7 @@ function Hero() {
         </video>
       </Box>
 
-      <Box pos="relative" top="40%">
+      <Box pos="relative" top={{ base: '30%', md: '40%' }}>
         <Image
           src="brand/logo-vert.svg"
           alt=""
@@ -44,7 +44,7 @@ function Hero() {
         justifyContent="center"
         alignItems="center"
         pos="absolute"
-        bottom="55px"
+        bottom={{ base: '30%', md: '10%' }}
       >
         <Link href="#about">
           <motion.div
