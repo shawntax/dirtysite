@@ -1,5 +1,13 @@
 import { getLayout } from '@components/SiteLayout'
-import { Flex, Box, Heading, Text, Button, Divider } from '@chakra-ui/react'
+import {
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Button,
+  Divider,
+  AspectRatio,
+} from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
@@ -10,7 +18,7 @@ export default function Event({ event }) {
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
-      justify={{ base: 'center', md: 'space-between' }}
+      justify="center"
       px={{ base: 0, lg: '10' }}
     >
       <Flex direction="column" align={{ base: 'center', lg: 'start' }}>
@@ -58,15 +66,19 @@ export default function Event({ event }) {
         )}
       </Flex>
       <Box
-        w={{ base: 'fit', lg: '500px' }}
+        w={{ base: 'full', lg: '500px' }}
         h="auto"
         mx={{ base: 'auto', lg: '8' }}
+        order={-1}
       >
-        <Photo
-          fileName={event.featuredImageFileName}
-          border="1px"
-          borderColor="gray.800"
-        />
+        <AspectRatio ratio={1 / 1}>
+          <Photo
+            fileName={event.featuredImageFileName}
+            objectFit="cover"
+            border="1px"
+            borderColor="gray.800"
+          />
+        </AspectRatio>
       </Box>
     </Flex>
   )

@@ -1,5 +1,5 @@
 import { getLayout } from '@components/SiteLayout'
-import { Flex, Box, Heading, VStack, Text } from '@chakra-ui/react'
+import { Flex, Box, Heading, VStack, Text, AspectRatio } from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import { SiFacebook, SiInstagram, SiSoundcloud } from 'react-icons/si'
@@ -13,13 +13,20 @@ function Artist({ artist }) {
       maxW="container.lg"
     >
       <Box
-        w={{ base: 'fit', md: '60', lg: '96' }}
+        w={{ base: 'full', md: '60', lg: '96' }}
         h="auto"
         mx={{ base: 'auto', lg: '8' }}
         border="1px"
         borderColor="gray.800"
       >
-        <Photo fileName={artist.photoFileName} />
+        <AspectRatio ratio={4 / 3}>
+          <Photo
+            h="full"
+            w="full"
+            objectFit="cover"
+            fileName={artist.photoFileName}
+          />
+        </AspectRatio>
       </Box>
       <Flex direction="column" my={{ base: '4', lg: 'none' }}>
         <Heading>{artist.name}</Heading>
