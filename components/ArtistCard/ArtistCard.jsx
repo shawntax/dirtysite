@@ -1,4 +1,4 @@
-import { Flex, Box, Text } from '@chakra-ui/react'
+import { Flex, Box, Text, AspectRatio } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
 
@@ -11,17 +11,24 @@ const ArtistCard = ({ artist }) => {
     >
       <Flex>
         <Box
-          w="100%"
+          w="full"
           shadow="lg"
           border="1px"
           borderColor="gray.800"
           role="group"
         >
-          <Photo w="full" fit="cover" h={56} fileName={photoFileName} />
+          <AspectRatio ratio={4 / 3}>
+            <Photo
+              h="full"
+              w="full"
+              objectFit="cover"
+              fileName={photoFileName}
+            />
+          </AspectRatio>
           <Box
             py={1}
             pl={3}
-            fontSize={{ base: 'xl', lg: '2xl' }}
+            fontSize="2xl"
             bg="black"
             color="white"
             _groupHover={{ textDecoration: 'line-through' }}
