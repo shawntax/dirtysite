@@ -1,4 +1,4 @@
-import { Flex, Box, Button, Text } from '@chakra-ui/react'
+import { Flex, Box, Button, Text, AspectRatio } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
@@ -7,18 +7,15 @@ const EventCard = ({ event }) => {
   const { slug, featuredImageFileName } = event
   return (
     <Flex justify={{ base: 'center', md: 'start' }} p={{ base: '2', md: '4' }}>
-      <Box role="group">
+      <Box role="group" w="full" mx="8">
         <NCLink
           to={`/events/${encodeURIComponent(slug)}`}
           _hover={{ textDecoration: 'none' }}
         >
-          <Photo
-            w={{ base: '60', md: '80' }}
-            h="80"
-            fit="cover"
-            fileName={featuredImageFileName}
-          />
-          <Flex direction={{ base: 'row' }} justify="space-between">
+          <AspectRatio ratio={1 / 1}>
+            <Photo objectFit="cover" fileName={featuredImageFileName} />
+          </AspectRatio>
+          <Flex direction={{ base: 'row' }} justify="space-between" mt="2">
             <Text fontSize={{ base: '2xl', xl: '3xl' }} noOfLines={1} maxW={72}>
               {event.title}
             </Text>
