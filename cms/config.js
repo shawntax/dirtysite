@@ -104,7 +104,7 @@ const collections = [
     label: 'Events',
     folder: 'content/events',
     create: true,
-    slug: '{{title}}-{{fields.eventDate}}',
+    slug: '{{title}}-{{fields.id}}',
     summary: "{{title | upper}} - {{fields.eventDate | date('MM/DD')}}",
     identifier_field: 'title',
     editor: {
