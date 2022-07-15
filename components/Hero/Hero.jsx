@@ -44,7 +44,7 @@ function Hero() {
         justifyContent="center"
         alignItems="center"
         pos="absolute"
-        bottom={{ base: '30%', md: '10%' }}
+        bottom={{ base: '20%', md: '10%' }}
       >
         <Link href="#about">
           <motion.div
