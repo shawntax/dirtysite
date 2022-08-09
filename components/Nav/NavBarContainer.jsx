@@ -57,7 +57,6 @@ const NavBarContainer = ({ children, ...props }) => {
       color="white"
       px={{ base: '4', md: '8' }}
       py="4"
-      {...props}
     >
       {children}
     </Flex>

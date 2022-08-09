@@ -20,10 +20,13 @@ export default function Home({ events }) {
         maxW={{ base: 'container.lg', xl: 'container.lg' }}
         py={{ base: '12', lg: '24' }}
       >
-        <Box maxW="container.lg" py={{ base: '2', lg: '12' }} px="4">
-          <Text fontSize="3xl">
-            <AboutContent />
-          </Text>
+        <Box
+          fontSize="3xl"
+          maxW="container.lg"
+          py={{ base: '2', lg: '12' }}
+          px="4"
+        >
+          <AboutContent />
         </Box>
 
         <EventList events={events} />

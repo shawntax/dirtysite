@@ -14,7 +14,7 @@ const HomeLayout = ({ children }) => {
         minHeight="100vh"
         overflowX="hidden"
       >
-        <Nav isHomePage />
+        <Nav isHomePage={true} />
         <Container as="main" maxW="100vw" p="0" m="0">
           {children}
         </Container>

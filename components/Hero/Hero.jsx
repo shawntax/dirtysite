@@ -14,7 +14,6 @@ function Hero() {
     >
       <Box opacity="0.50" overflow="hidden">
         <video
-          webkit-playsInline
           playsInline
           autoPlay
           muted
