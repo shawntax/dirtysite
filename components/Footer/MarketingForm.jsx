@@ -28,7 +28,7 @@ export default function MarketingForm() {
       data: qs.stringify(values),
     }
 
-    const [error, { data }] = await safeAwait(axios('/', options))
+    const [error, data] = await safeAwait(axios('/robots.txt', options))
 
     if (error) {
       console.error(error.message)
