@@ -14,8 +14,7 @@ const SiteLayout = ({ children }) => {
           as="main"
           maxW={{ base: 'container.lg', xl: 'container.xl' }}
           px={{ base: '4', md: '8' }}
-          mt={{ base: '24', md: '32' }}
-          minH="100vh"
+          my={{ base: '24', md: '32' }}
         >
           {children}
         </Container>

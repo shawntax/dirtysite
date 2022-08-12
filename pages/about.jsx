@@ -7,7 +7,7 @@ import { attributes, react as AboutContent } from '@content/pages/about.md'
 export default function About() {
   const { seoDesc } = attributes
   return (
-    <div>
+    <>
       <PageHeader title="About" seoDesc={seoDesc}>
         About
       </PageHeader>
@@ -25,7 +25,7 @@ export default function About() {
         <Photo fileName="group-2.jpg" height="100%" width="100%" alt="group" />
         <Photo fileName="group-4.jpg" height="100%" width="100%" alt="group" />
       </SimpleGrid>
-    </div>
+    </>
   )
 }
 About.pageName = 'About'

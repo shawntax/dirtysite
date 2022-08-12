@@ -1,20 +1,22 @@
 import React from 'react'
-import { Container, Flex, Text } from '@chakra-ui/react'
+import { SimpleGrid, Box, Text } from '@chakra-ui/react'
+import CommunityWidget from './CommunityWidget'
+import MarketingForm from './MarketingForm'
 
 const Footer = () => (
-  <Container maxW="container.lg">
-    <Flex
-      direction="column"
-      w="100%"
-      p={5}
-      align="center"
-      justify="space-between"
-    >
-      <Text pt={16} pb={4} color="white">
-        © 2022 Dirty Not Sorry
-      </Text>
-    </Flex>
-  </Container>
+  <SimpleGrid
+    maxW="container.lg"
+    width="100%"
+    px="2"
+    spacing={2}
+    columns={{ base: 1, md: 2 }}
+  >
+    <MarketingForm />
+    <CommunityWidget />
+    <Text pt={16} pb={4} color="white" mx="auto">
+      © 2022 Dirty Not Sorry
+    </Text>
+  </SimpleGrid>
 )
 
 export default Footer
