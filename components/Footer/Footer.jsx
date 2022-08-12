@@ -1,5 +1,5 @@
 import React from 'react'
-import { SimpleGrid, Box, Text } from '@chakra-ui/react'
+import { SimpleGrid, Text } from '@chakra-ui/react'
 import CommunityWidget from './CommunityWidget'
 import MarketingForm from './MarketingForm'
 

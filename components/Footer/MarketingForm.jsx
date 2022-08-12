@@ -14,13 +14,13 @@ export default function MarketingForm() {
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting, errors },
   } = useForm()
 
   function onSubmit(values) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        alert(JSON.stringify(values, null, 2))
+        console.log(values)
         resolve()
       }, 3000)
     })
@@ -31,14 +31,26 @@ export default function MarketingForm() {
       <Heading as="h2" size="xl">
         Newsletter
       </Heading>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        name="marketing-newsletter"
+      >
+        <Input type="hidden" name="form-name" value="marketing-newsletter" />
+        <label hidden>
+          bots only:
+          <Input type="hidden" name="bot-field" />
+        </label>
         <FormControl isInvalid={errors.name}>
           <FormLabel fontSize="2xl" htmlFor="name">
             First name
           </FormLabel>
           <Input
             id="name"
-            htmlSize={30}
+            type="text"
+            size="lg"
+            htmlSize={10}
             width="auto"
             {...register('name', {
               required: true,
@@ -63,12 +75,17 @@ export default function MarketingForm() {
           </FormLabel>
           <Input
             id="email"
-            htmlSize={30}
+            type="email"
+            size="lg"
+            htmlSize={20}
             width="auto"
             {...register('email', {
               required: true,
-              pattern:
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: 'Invalid email address',
+              },
             })}
           />
           <FormErrorMessage>
