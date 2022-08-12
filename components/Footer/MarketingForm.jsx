@@ -25,10 +25,10 @@ export default function MarketingForm() {
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: qs.stringify(values),
+      data: qs.stringify({ 'form-name': 'marketing-newsletter', ...values }),
     }
 
-    const [error, data] = await safeAwait(axios('/robots.txt', options))
+    const [error, data] = await safeAwait(axios('/', options))
 
     if (error) {
       console.error(error.message)
@@ -48,7 +48,7 @@ export default function MarketingForm() {
         data-netlify-honeypot="bot-field"
         name="marketing-newsletter"
       >
-        <Input type="hidden" name="form-name" value="marketing-newsletter" />
+        <input type="hidden" name="form-name" value="marketing-newsletter" />
         <label hidden>
           bots only:
           <Input type="hidden" name="bot-field" />
