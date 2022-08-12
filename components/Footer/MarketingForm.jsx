@@ -1,5 +1,9 @@
-import { useForm } from 'react-hook-form'
 import React from 'react'
+import { useForm } from 'react-hook-form'
+import qs from 'qs'
+import axios from 'axios'
+import safeAwait from 'safe-await'
+
 import {
   Box,
   Heading,
@@ -17,13 +21,20 @@ export default function MarketingForm() {
     formState: { isSubmitting, errors },
   } = useForm()
 
-  function onSubmit(values) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log(values)
-        resolve()
-      }, 3000)
-    })
+  async function onSubmit(values) {
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: qs.stringify(values),
+    }
+
+    const [error, { data }] = await safeAwait(axios('/', options))
+
+    if (error) {
+      console.error(error.message)
+    } else {
+      console.log(data)
+    }
   }
 
   return (
