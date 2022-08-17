@@ -4,31 +4,19 @@ const safeAwait = require('safe-await')
 require('dotenv').config()
 
 exports.handler = async (event, context) => {
-  const client = axios.create({
-    baseURL: 'https://dirty-not-sorry.myshopify.com/admin/api/2022-07/',
-    headers: {
-      'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_ACCESS_TOKEN,
-    },
-  })
+  const submission = JSON.parse(event.body)
 
-  const [error, { data }] = await safeAwait(
-    client.get('customers.json?limit=10')
-  )
+  console.log(submission)
 
-  if (error) {
-    console.log(error)
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        status: 'oops',
-      }),
-    }
-  }
+  // const client = axios.create({
+  // baseURL: 'https://dirty-not-sorry.myshopify.com/admin/api/2022-07/',
+  // headers: {
+  // 'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_ACCESS_TOKEN,
+  // },
+  // })
 
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      data,
-    }),
+    body: JSON.stringify(submission),
   }
 }

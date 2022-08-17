@@ -24,11 +24,16 @@ export default function MarketingForm() {
   async function onSubmit(values) {
     const options = {
       method: 'POST',
-      headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: qs.stringify({ 'form-name': 'marketing-newsletter', ...values }),
+      headers: { 'content-type': 'application/json' },
+      data: JSON.stringify(values),
     }
 
-    const [error, data] = await safeAwait(axios('/', options))
+    const [error, { data }] = await safeAwait(
+      axios(
+        `${process.env.NEXT_PUBLIC_FUNCTIONS_URL}/newsletter-signup`,
+        options
+      )
+    )
 
     if (error) {
       console.error(error.message)
@@ -42,17 +47,17 @@ export default function MarketingForm() {
       <Heading as="h2" size="xl">
         Newsletter
       </Heading>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        name="marketing-newsletter"
-      >
-        <input type="hidden" name="form-name" value="marketing-newsletter" />
-        <label hidden>
-          bots only:
-          <Input type="hidden" name="bot-field" />
-        </label>
+      <form onSubmit={handleSubmit(onSubmit)} name="marketing-newsletter">
+        <FormControl>
+          <Input
+            type="text"
+            id="form_email"
+            name="username"
+            sx={{ display: 'none !important' }}
+            tabIndex="-1"
+            autocomplete="false"
+          />
+        </FormControl>
         <FormControl isInvalid={errors.name}>
           <FormLabel fontSize="2xl" htmlFor="name">
             First name
