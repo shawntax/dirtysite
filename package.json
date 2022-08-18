@@ -28,6 +28,7 @@
     "axios": "^0.27.2",
     "chakra-ui-markdown-renderer": "^4.0.0",
     "dayjs": "^1.11.2",
+    "email-validator-node": "^1.1.3",
     "framer-motion": "^6.3.3",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
