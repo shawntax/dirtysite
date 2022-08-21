@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import qs from 'qs'
 import axios from 'axios'
 import safeAwait from 'safe-await'
 
@@ -19,10 +17,9 @@ export default function MarketingForm() {
   const {
     handleSubmit,
     register,
-    formState: { isSubmitting, errors, isSubmitSuccessful },
+    formState: { isSubmitting, errors, isDirty, isValid, isSubmitSuccessful },
     setError,
-    reset,
-  } = useForm()
+  } = useForm({ mode: 'onTouched', reValidateMode: 'onBlur' })
 
   async function onSubmit(values) {
     const options = {
@@ -48,11 +45,7 @@ export default function MarketingForm() {
     }
   }
 
-  /*   useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset({ name: '', email: '' })
-    }
-  }, [isSubmitSuccessful, reset]) */
+  const NAME_REGEX = /^\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/
 
   const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
 
@@ -87,7 +80,10 @@ export default function MarketingForm() {
               htmlSize={10}
               width="auto"
               {...register('name', {
-                required: true,
+                required: {
+                  value: true,
+                  message: 'Give us a name, please!',
+                },
                 minLength: {
                   value: 2,
                   message: 'Name must be at least 2 characters',
@@ -95,6 +91,10 @@ export default function MarketingForm() {
                 maxLength: {
                   value: 20,
                   message: 'Name cannot be more than 20 characters',
+                },
+                pattern: {
+                  value: NAME_REGEX,
+                  message: 'Name contains invalid characters',
                 },
               })}
             />
@@ -114,7 +114,10 @@ export default function MarketingForm() {
               htmlSize={20}
               width="auto"
               {...register('email', {
-                required: true,
+                required: {
+                  value: true,
+                  message: 'Give us an email, please!',
+                },
                 pattern: {
                   value: EMAIL_REGEX,
                   message: 'Invalid email address',
@@ -125,10 +128,13 @@ export default function MarketingForm() {
               {errors.email && errors.email.message}
             </FormErrorMessage>
           </FormControl>
+          <p>{isDirty ? 'dirty' : 'not dirty'}</p>
+          <p>{isValid ? 'valid' : 'invalid'}</p>
           <Button
             mt={4}
             bgColor="white"
             color="black"
+            disabled={!isValid}
             isLoading={isSubmitting}
             type="submit"
           >

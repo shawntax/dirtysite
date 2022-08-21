@@ -23,12 +23,35 @@ exports.handler = async (event, context) => {
       body: `Invalid email`,
     }
   }
-  // const client = axios.create({
-  // baseURL: 'https://dirty-not-sorry.myshopify.com/admin/api/2022-07/',
-  // headers: {
-  // 'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_ACCESS_TOKEN,
-  // },
-  // })
+
+  const client = axios.create({
+    baseURL: 'https://dirty-not-sorry.myshopify.com/admin/api/2022-07/',
+    headers: {
+      'X-Shopify-Access-Token': process.env.SHOPIFY_ADMIN_ACCESS_TOKEN,
+    },
+  })
+
+  const [error, data] = await safeAwait(
+    client.post('customers.json', {
+      customer: {
+        email,
+        first_name: name,
+        email_marketing_consent: {
+          state: 'subscribed',
+          opt_in_level: 'single_opt_in',
+        },
+        verified_email: true,
+        tags: 'newsletter',
+      },
+    })
+  )
+
+  if (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(error),
+    }
+  }
 
   return {
     statusCode: 200,

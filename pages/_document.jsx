@@ -20,6 +20,11 @@ export default class MyDocument extends NextDocument {
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
+          <script
+            async
+            data-community-embed-id="9c175af3-61df-4a61-a6ed-837a311113b1"
+            src="https://mgu-embed.community.com/embed.js"
+          ></script>
         </body>
       </Html>
     )
