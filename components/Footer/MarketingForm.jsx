@@ -31,7 +31,7 @@ export default function MarketingForm() {
 
     const URL =
       process.env.CONTEXT === 'deploy-preview'
-        ? `${process.env.DEPLOY_URL}/,netlify/functions/newsletter-signup`
+        ? `${process.env.DEPLOY_URL}/.netlify/functions/newsletter-signup`
         : `${process.env.NEXT_PUBLIC_FUNCTIONS_URL}/newsletter-signup`
 
     const [error, res] = await safeAwait(axios(URL, options))
