@@ -7,6 +7,12 @@ require('dotenv').config()
 exports.handler = async (event, context) => {
   const { name, email, username } = JSON.parse(event.body)
 
+  if (event.httpMethod === 'GET') {
+    return {
+      statusCode: 405,
+    }
+  }
+
   if (username !== '') {
     return {
       statusCode: 200,

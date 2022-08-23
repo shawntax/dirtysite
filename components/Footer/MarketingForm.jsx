@@ -29,12 +29,12 @@ export default function MarketingForm() {
       data: JSON.stringify(values),
     }
 
-    const [error, res] = await safeAwait(
-      axios(
-        `${process.env.NEXT_PUBLIC_FUNCTIONS_URL}/newsletter-signup`,
-        options
-      )
-    )
+    const URL =
+      process.env.CONTEXT === 'deploy-preview'
+        ? `${process.env.DEPLOY_URL}/,netlify/functions/newsletter-signup`
+        : `${process.env.NEXT_PUBLIC_FUNCTIONS_URL}/newsletter-signup`
+
+    const [error, res] = await safeAwait(axios(URL, options))
 
     if (error) {
       const {
@@ -46,7 +46,7 @@ export default function MarketingForm() {
     }
   }
 
-  const NAME_REGEX = /^\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+$/
+  const NAME_REGEX = /^\b([A-ZÀ-ÿ-,a-z. ']+[ ]*)+$/
 
   const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
 
