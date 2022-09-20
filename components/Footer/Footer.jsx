@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Stack, StackDivider, Flex, Center, Box } from '@chakra-ui/react'
 import CommunityWidget from './CommunityWidget'
-import CommunityForm from './CommunityForm'
+// import CommunityForm from './CommunityForm'
 import MarketingForm from './MarketingForm'
 
 const Footer = () => (
@@ -24,9 +24,9 @@ const Footer = () => (
       align="center"
       px={{ base: 0, sm: '8' }}
     > */}
-      <Box w="full" px={{ base: '16', md: '4' }} py={{ base: '2', md: '9' }}>
+      {/* <Box w="full" px={{ base: '16', md: '4' }} py={{ base: '2', md: '9' }}>
         <MarketingForm />
-      </Box>
+      </Box> */}
       <Box w="full" px="8">
         <CommunityWidget />
       </Box>
