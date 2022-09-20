@@ -1,4 +1,4 @@
-import { Box, Container, Text } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import { getLayout } from '@components/HomeLayout'
 import Hero from '@components/Hero'
 import PageHeader from '@components/PageHeader'
