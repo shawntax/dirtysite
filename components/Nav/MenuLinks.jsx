@@ -16,8 +16,11 @@ const MenuItem = ({ children, to = '/', ...rest }) => {
         <Text
           display="block"
           casing="uppercase"
-          textDecoration={
-            router.asPath.includes(to) ? 'line-through #FFF' : 'initial'
+          transform={
+            router.asPath.includes(to) ? 'scale(1.2)' : 'scale(1)'
+          }
+          fontWeight={
+            router.asPath.includes(to) ? 'bold':'normal'
           }
           {...rest}
         >
