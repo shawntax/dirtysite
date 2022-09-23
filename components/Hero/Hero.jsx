@@ -14,7 +14,6 @@ function Hero() {
     >
       <Box opacity="0.50" overflow="hidden">
         <video
-          webkit-playsInline
           playsInline
           autoPlay
           muted
@@ -44,7 +43,7 @@ function Hero() {
         justifyContent="center"
         alignItems="center"
         pos="absolute"
-        bottom={{ base: '20%', md: '10%' }}
+        bottom={{ base: '15%', md: '10%' }}
       >
         <Link href="#about">
           <motion.div

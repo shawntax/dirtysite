@@ -19,7 +19,7 @@ const NavBar = (props) => {
       getDisclosureProps={getDisclosureProps}
     />
   ) : (
-    <NavBarContainer isHomePage={isHomePage} isOpen={isOpen} {...props}>
+    <NavBarContainer isHomePage={isHomePage} isOpen={isOpen}>
       <Logo w={{ base: '52', md: '60', xl: '80' }} orientation="horizontal" />
       <MenuLinks isOpen={isOpen} />
       <SocialLinks isOpen={isOpen} />

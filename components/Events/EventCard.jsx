@@ -30,7 +30,7 @@ const EventCard = ({ event }) => {
           target="_blank"
           rel="noopener"
         >
-          <Button
+          {/* <Button
             variant="outline"
             colorScheme="white"
             mt="4"
@@ -39,6 +39,18 @@ const EventCard = ({ event }) => {
             textTransform="uppercase"
             borderRadius="0"
             _hover={{ color: 'black', bg: 'white' }}
+          >
+            {event.linkText}
+          </Button> */}
+          <Button
+            w="full"
+            fontSize="xl"
+            borderRadius="full"
+            mt="6"
+            py="4"
+            bgColor="white"
+            color="black"
+            type="submit"
           >
             {event.linkText}
           </Button>
