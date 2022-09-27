@@ -12,7 +12,7 @@ export default function Events({ events }) {
       <PageHeader title="Events" seoDesc={seoDesc}>
         Upcoming Events
       </PageHeader>
-      <SimpleGrid minChildWidth="200px" spacing="12" mt="5">
+      <SimpleGrid minChildWidth="300px" spacing="12" mt="5">
         {events.map((event) => {
           {
             return <EventCard key={event.id} event={event} />
