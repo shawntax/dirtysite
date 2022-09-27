@@ -28,7 +28,7 @@ function Artist({ artist }) {
         border="1px"
         borderColor="gray.800"
       >
-        <AspectRatio ratio={4 / 3}>
+        <AspectRatio ratio={1 / 1}>
           <Photo
             h="full"
             w="full"
