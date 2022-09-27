@@ -168,9 +168,14 @@ const collections = [
     fields: [
       { label: 'ID', name: 'id', widget: 'ncw-id' },
       { label: 'DJ Name', name: 'name', widget: 'string' },
-      { label: 'Instagram link', name: 'instaLink', widget: 'string' },
-      { label: 'Facebook link', name: 'fbLink', widget: 'string' },
-      { label: 'Soundcloud link', name: 'scLink', widget: 'string' },
+      { label: 'Instagram link', name: 'instaLink', widget: 'string', required: false },
+      { label: 'Facebook link', name: 'fbLink', widget: 'string', required: false },
+      { label: 'Soundcloud link', name: 'scLink', widget: 'string', required: false },
+      { label: 'Twitter link', name: 'twitterLink', widget: 'string', required: false },
+      { label: 'Mixcloud link', name: 'mcLink', widget: 'string', required: false },
+      { label: 'TikTok link', name: 'tiktokLink', widget: 'string', required: false },
+      { label: 'Twitch link', name: 'twitchLink', widget: 'string', required: false },
+      { label: 'Spotify link', name: 'spotLink', widget: 'string', required: false },
       {
         label: 'DJ Photo',
         name: 'photoUrl',
