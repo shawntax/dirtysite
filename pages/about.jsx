@@ -1,73 +1,32 @@
-import PageContainer from '../components/PageContainer'
-import { Center, Box, Grid, GridItem } from '@chakra-ui/react'
-import NCImage from '../components/NCImage'
+import { getLayout } from '@components/SiteLayout'
+import { SimpleGrid, Center } from '@chakra-ui/react'
+import PageHeader from '@components/PageHeader'
+import Photo from '@components/Photo'
+import { attributes, react as AboutContent } from '@content/pages/about.md'
+
 export default function About() {
+  const { seoDesc } = attributes
   return (
-    <PageContainer title="About">
-      <Box minH="100vh">
-        <Center textColor={'white'} fontSize={'6xl'}>
-          WIP
-        </Center>
-        <Grid
-          h="600"
-          bg=""
-          templateRows="repeat(12, 1fr)"
-          templateColumns="repeat(6, 1fr)"
-          gap={2}
-          pb="10"
-        >
-          <GridItem rowSpan={[6]} colSpan={[6, 4, 2]} bg="">
-            <NCImage
-              src="/media/group-acraze.jpg"
-              height="1000"
-              width="1500"
-              borderRadius="xl"
-              quality={50}
-              alt=""
-            />
-          </GridItem>
-          <GridItem rowSpan={[3, 6]} colSpan={[3, 2]} bg="">
-            <NCImage
-              src="/media/group.jpg"
-              height="1000"
-              width="1500"
-              borderRadius="xl"
-              quality={50}
-              alt=""
-            />
-          </GridItem>
-          <GridItem rowSpan={[3, 6]} colSpan={[3, 2]} bg="">
-            <NCImage
-              src="/media/group-2.jpg"
-              height="1000"
-              width="1500"
-              borderRadius="xl"
-              quality={50}
-              alt=""
-            />
-          </GridItem>
-          <GridItem rowSpan={[6]} colSpan={[3]} bg="">
-            <NCImage
-              src="/media/group-3.jpg"
-              height="900"
-              width="1500"
-              borderRadius="xl"
-              quality={50}
-              alt=""
-            />
-          </GridItem>
-          <GridItem rowSpan={[6]} colSpan={[3]} bg="">
-            <NCImage
-              src="/media/group-4.jpg"
-              height="900"
-              width="1500"
-              borderRadius="xl"
-              quality={50}
-              alt=""
-            />
-          </GridItem>
-        </Grid>
-      </Box>
-    </PageContainer>
+    <>
+      <PageHeader title="About" seoDesc={seoDesc}>
+        About
+      </PageHeader>
+      <Center textColor="white" fontSize="3xl">
+        <AboutContent />
+      </Center>
+      <SimpleGrid columns={{ base: 1, lg: 2 }} mt="4" spacing="8">
+        <Photo
+          fileName="group-acraze.jpg"
+          height="100%"
+          width="100%"
+          alt="group"
+        />
+        <Photo fileName="group.jpg" height="100%" width="100%" alt="group" />
+        <Photo fileName="group-2.jpg" height="100%" width="100%" alt="group" />
+        <Photo fileName="group-4.jpg" height="100%" width="100%" alt="group" />
+      </SimpleGrid>
+    </>
   )
 }
+About.pageName = 'About'
+About.getLayout = getLayout

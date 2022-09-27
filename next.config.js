@@ -1,4 +1,10 @@
-module.exports = {
+const withPlugins = require('next-compose-plugins')
+const withOptimizedImages = require('next-optimized-images')
+
+const nextConfig = {
+  images: {
+    disableStaticImages: true,
+  },
   reactStrictMode: true,
   webpack: (config) => {
     config.module.rules.push({
@@ -8,11 +14,32 @@ module.exports = {
     })
 
     config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
+      test: /\.svg$/,
       use: ['@svgr/webpack'],
+    })
+
+    config.module.rules.push({
+      test: /\.mp4$/i,
+      use: 'file-loader?name=videos/[name].[ext]',
     })
 
     return config
   },
 }
+
+module.exports = withPlugins(
+  [
+    [
+      withOptimizedImages,
+      {
+        optimizeImagesInDev: false,
+        handleImages: ['jpeg', 'jpg', 'png', 'webp'],
+        removeOriginalExtension: true,
+        responsive: {
+          adapter: require('responsive-loader/sharp'),
+        },
+      },
+    ],
+  ],
+  nextConfig
+)

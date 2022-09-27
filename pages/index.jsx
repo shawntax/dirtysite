@@ -1,16 +1,49 @@
-import PageContainer from '../components/PageContainer'
-import { Flex, Text } from '@chakra-ui/react'
-import { attributes } from '../content/pages/home.md'
+import { Box, Container } from '@chakra-ui/react'
+import { getLayout } from '@components/HomeLayout'
+import Hero from '@components/Hero'
+import PageHeader from '@components/PageHeader'
+import EventList from '@components/Events'
+import { attributes } from '@content/pages/home.md'
+import { react as AboutContent } from '@content/pages/about.md'
+import { fetchEvents } from '@helpers/cms.helpers'
 
-export default function Home() {
-  let { hero_title, hero_subtitle } = attributes
-
+export default function Home({ events }) {
+  const { seoDesc } = attributes
   return (
-    <PageContainer title="Home">
-      <Flex direction="column" p="5" color="white">
-        <Text fontSize="5xl">{hero_title}</Text>
-        <Text fontSize="xl">{hero_subtitle}</Text>
-      </Flex>
-    </PageContainer>
+    <>
+      <PageHeader title="Home" seoDesc={seoDesc} />
+      <Hero />
+      <Container
+        id="about"
+        as="section"
+        centerContent
+        maxW={{ base: 'container.lg', xl: 'container.lg' }}
+        py={{ base: '12', lg: '24' }}
+      >
+        <Box
+          fontSize="3xl"
+          maxW="container.lg"
+          py={{ base: '2', lg: '12' }}
+          px="4"
+        >
+          <AboutContent />
+        </Box>
+
+        <EventList events={events} />
+      </Container>
+    </>
   )
 }
+
+export async function getStaticProps() {
+  const events = fetchEvents()
+
+  return {
+    props: {
+      events,
+    },
+  }
+}
+
+Home.pageName = 'Home'
+Home.getLayout = getLayout

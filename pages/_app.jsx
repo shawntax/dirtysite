@@ -1,17 +1,18 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import '../styles/globals.css'
+import '@fontsource/oswald/500.css'
+import '@fontsource/darker-grotesque/500.css'
 
-// import { ChakraProvider } from '@chakra-ui/react'
+import SiteLayout from '@components/SiteLayout'
 
-function MyApp({ Component, pageProps }) {
-  if (Component.displayName == 'AdminPage') {
+function App({ Component, pageProps }) {
+  const { pageName } = Component
+  if (pageName === 'AdminPage') {
     return <Component {...pageProps} />
+  } else {
+    const getLayout =
+      Component.getLayout || ((page) => <SiteLayout children={page} />)
+
+    return getLayout(<Component {...pageProps} />)
   }
-  return (
-    <ChakraProvider>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
 }
 
-export default MyApp
+export default App
