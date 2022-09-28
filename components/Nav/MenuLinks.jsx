@@ -18,7 +18,7 @@ const MenuItem = ({ children, to = '/', ...rest }) => {
           casing="uppercase"
           // transform={router.asPath.includes(to) ? 'scale(1.2)' : 'scale(1)'}
           textDecoration={
-            router.asPath.includes(to) ? 'line-through #FFF' : 'initial'
+            router.asPath.includes(to) ? 'underline #FFF' : 'initial'
           }
           fontWeight={router.asPath.includes(to) ? 'bold' : 'normal'}
           {...rest}

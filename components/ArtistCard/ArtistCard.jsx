@@ -31,7 +31,7 @@ const ArtistCard = ({ artist }) => {
             fontSize="2xl"
             bg="black"
             color="white"
-            _groupHover={{ textDecoration: 'line-through' }}
+            _groupHover={{ textDecoration: 'underline' }}
           >
             <Text>{name}</Text>
           </Box>
