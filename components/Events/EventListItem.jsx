@@ -32,7 +32,7 @@ const EventListItem = ({ event }) => {
         marginInlineStart={{ base: 'none', md: 'auto' }}
         _hover={{ textDecoration: 'none' }}
       >
-        <Button
+        {/* <Button
           variant="outline"
           colorScheme="white"
           minW={{ base: '28', lg: '32' }}
@@ -40,6 +40,18 @@ const EventListItem = ({ event }) => {
           textTransform="uppercase"
           borderRadius="0"
           _hover={{ color: 'black', bg: 'white' }}
+        >
+          {event.linkText}
+        </Button> */}
+        <Button
+          w="full"
+          fontSize="xl"
+          borderRadius="full"
+          mt="6"
+          py="4"
+          bgColor="white"
+          color="black"
+          type="submit"
         >
           {event.linkText}
         </Button>
