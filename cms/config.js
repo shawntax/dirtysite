@@ -15,7 +15,7 @@ const prodConfig = {
   backend: {
     name: 'github',
     repo: 'dirtynotsorry/dirtysite',
-    branch: 'stage',
+    branch: 'prod',
   },
   media_folder: 'public/media',
   public_folder: '/public',
