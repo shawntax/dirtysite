@@ -1,5 +1,6 @@
 const devConfig = {
   local_backend: true,
+  editorial_workflow: false,
   cms_manual_init: true,
   backend: {
     name: 'github',
@@ -10,12 +11,12 @@ const devConfig = {
 }
 
 const prodConfig = {
-  editorial_workflow: true,
+  editorial_workflow: false,
   cms_manual_init: true,
   backend: {
     name: 'github',
     repo: 'dirtynotsorry/dirtysite',
-    branch: 'prod',
+    branch: 'main',
   },
   media_folder: 'public/media',
   public_folder: '/public',

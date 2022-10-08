@@ -1,9 +1,12 @@
 import { useEffect, useState, useRef } from 'react'
 import { Box } from '@chakra-ui/react'
 
+const EMBED_ID = '8f9f5079-99cf-451f-b2fc-8baafc2a652d'
+
 const CommunityWidget = () => {
   const ref = useRef(null)
   const status = useScript('https://mgu-embed.community.com/embed.js', ref)
+  console.log('Community status: ', status)
   return <Box id="community-embed" ref={ref} w="100%" />
 }
 
@@ -32,10 +35,7 @@ function useScript(src, ref) {
       script.async = true
       script.setAttribute('data-status', 'loading')
       script.setAttribute('data-nscript', 'afterInteractive')
-      script.setAttribute(
-        'data-community-embed-id',
-        '8f9f5079-99cf-451f-b2fc-8baafc2a652d'
-      )
+      script.setAttribute('data-community-embed-id', EMBED_ID)
       // Add script to document body
       document.body.appendChild(script)
 

@@ -2,7 +2,6 @@ import React from 'react'
 import { Stack } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import {
-  SiDiscord,
   SiTwitch,
   SiFacebook,
   SiTwitter,
@@ -16,13 +15,6 @@ const SocialLinks = ({ isOpen }) => {
     <Stack
       spacing="6"
       direction="row"
-      // direction={{
-      //   base: 'column',
-      //   xl: 'row',
-      //   lg: 'row',
-      //   md: 'row',
-      //   sm: 'column',
-      // }}
       align="center"
       py={{ base: '6', lg: isOpen && '12' }}
       display={{
@@ -33,7 +25,6 @@ const SocialLinks = ({ isOpen }) => {
       justify={{ base: 'center', xl: 'flex-end' }}
     >
       <Stack spacing="5" direction={{ base: 'column', lg: 'row' }}>
-        {/* <Stack spacing="5" direction={{ base: 'row' }}> */}
         <NCLink
           to="https://www.twitch.tv/dirtynotsorry"
           _hover={{ transform: 'scale(1.2)' }}
@@ -54,13 +45,6 @@ const SocialLinks = ({ isOpen }) => {
         </NCLink>
       </Stack>
       <Stack spacing="5" direction={{ base: 'column', lg: 'row' }}>
-        {/* <Stack spacing="5" direction={{ base: 'row' }}> */}
-        {/* <NCLink
-          to="https://discord.gg/YF6gfXdVYf"
-          _hover={{ transform: 'scale(1.2)' }}
-        >
-          <SiDiscord size="30px" />
-        </NCLink> */}
         <NCLink
           to="https://www.facebook.com/dirtynotsorry"
           _hover={{ transform: 'scale(1.2)' }}

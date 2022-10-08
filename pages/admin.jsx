@@ -12,14 +12,6 @@ const CMS = dynamic(
 )
 
 const AdminPage = () => {
-  let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated)
-
-  useEffect(() => {
-    netlifyAuth.initialize((user) => {
-      setLoggedIn(!!user)
-    })
-  }, [loggedIn])
-
   return <CMS />
 }
 

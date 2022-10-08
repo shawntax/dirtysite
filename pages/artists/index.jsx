@@ -8,7 +8,6 @@ import { attributes } from '@content/pages/artists.md'
 export default function Artists({ artists }) {
   const { seoDesc } = attributes
 
-export default function Artists({ artists }) {
   return (
     <>
       <PageHeader title="Artists" seoDesc={seoDesc}>
