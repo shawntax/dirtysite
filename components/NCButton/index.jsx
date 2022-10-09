@@ -1,2 +1,2 @@
-export * from "./NCButton";
-export { default } from "./NCButton";
+export * from './NCButton'
+export { default } from './NCButton'
