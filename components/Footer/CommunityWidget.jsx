@@ -5,8 +5,7 @@ const EMBED_ID = '8f9f5079-99cf-451f-b2fc-8baafc2a652d'
 
 const CommunityWidget = () => {
   const ref = useRef(null)
-  const status = useScript('https://mgu-embed.community.com/embed.js', ref)
-  console.log('Community status: ', status)
+  useScript('https://mgu-embed.community.com/embed.js', ref)
   return <Box id="community-embed" ref={ref} w="100%" />
 }
 
