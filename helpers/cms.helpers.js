@@ -9,7 +9,6 @@ export function fetchArtists() {
   )
   const result = artists.map((artist) => {
     artist.slug = slugify(artist.name, { lower: true })
-
     // grab the file name from the url to use in the dynamic path of the Photo component
     const url = artist.photoUrl ?? null
     artist.photoFileName = url?.split('/').pop()
@@ -25,8 +24,7 @@ export function fetchEvents() {
 
   const result = events
     .map((event) => {
-      event.featuredImageFileName =
-        event.featuredImageUrl?.split('/').pop() ?? null
+      event.photoFileName = event.photoUrl?.split('/').pop() ?? null
       const slug = `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`
       event.slug = slugify(slug, { lower: true })
       return event

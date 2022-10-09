@@ -4,12 +4,12 @@ import {
   Box,
   Heading,
   Text,
-  Button,
   Divider,
   AspectRatio,
 } from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
+import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 
 import { fetchEvents } from '@helpers/cms.helpers'
@@ -32,6 +32,9 @@ export default function Event({ event }) {
         <Heading as="h1" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
           {event.title}
         </Heading>
+        <Text as="h2" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
+          {event.venue}
+        </Text>
 
         <NCLink
           to={event.ticketLink}
@@ -40,29 +43,7 @@ export default function Event({ event }) {
           py="2"
           _hover={{ textDecoration: 'none' }}
         >
-          {/* <Button
-            variant="outline"
-            colorScheme="white"
-            w="full"
-            fontSize={{ base: '2xl', lg: '3xl' }}
-            textTransform="uppercase"
-            borderRadius="0"
-            _hover={{ color: 'black', bg: 'white' }}
-          >
-            {event.linkText}
-          </Button> */}
-          <Button
-            w="full"
-            fontSize="xl"
-            borderRadius="full"
-            mt="6"
-            py="4"
-            bgColor="white"
-            color="black"
-            type="submit"
-          >
-            {event.linkText}
-          </Button>
+          <NCButton>{event.linkText}</NCButton>
         </NCLink>
         {event.description && (
           <>
@@ -85,10 +66,11 @@ export default function Event({ event }) {
       >
         <AspectRatio ratio={1 / 1}>
           <Photo
-            fileName={event.featuredImageFileName}
+            fileName={event.photoFileName}
+            layout="fill"
             objectFit="cover"
             border="1px"
-            borderColor="gray.800"
+            bordercolor="gray.800"
           />
         </AspectRatio>
       </Box>

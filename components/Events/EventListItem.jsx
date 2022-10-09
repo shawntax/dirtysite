@@ -1,5 +1,6 @@
-import { chakra, Flex, Text, Button } from '@chakra-ui/react'
+import { chakra, Flex, Text } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
+import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 
 const EventListItem = ({ event }) => {
@@ -32,29 +33,7 @@ const EventListItem = ({ event }) => {
         marginInlineStart={{ base: 'none', md: 'auto' }}
         _hover={{ textDecoration: 'none' }}
       >
-        {/* <Button
-          variant="outline"
-          colorScheme="white"
-          minW={{ base: '28', lg: '32' }}
-          fontSize={{ base: 'xl', lg: '2xl' }}
-          textTransform="uppercase"
-          borderRadius="0"
-          _hover={{ color: 'black', bg: 'white' }}
-        >
-          {event.linkText}
-        </Button> */}
-        <Button
-          w="full"
-          fontSize="xl"
-          borderRadius="full"
-          mt="6"
-          py="4"
-          bgColor="white"
-          color="black"
-          type="submit"
-        >
-          {event.linkText}
-        </Button>
+        <NCButton>{event.linkText}</NCButton>
       </NCLink>
     </Flex>
   )

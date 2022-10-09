@@ -19,7 +19,6 @@ const prodConfig = {
     branch: 'main',
   },
   media_folder: 'public/media',
-  public_folder: '/public',
 }
 
 const collections = [
@@ -143,8 +142,9 @@ const collections = [
       },
       {
         label: 'Featured Image',
-        name: 'featuredImageUrl',
+        name: 'photoUrl',
         widget: 'image',
+        choose_url: false,
         required: true,
       },
       {
@@ -222,6 +222,7 @@ const collections = [
         name: 'photoUrl',
         widget: 'image',
         choose_url: false,
+        required: true,
       },
     ],
   },

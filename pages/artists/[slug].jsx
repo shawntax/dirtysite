@@ -32,6 +32,7 @@ function Artist({ artist }) {
           <Photo
             h="full"
             w="full"
+            layout="fill"
             objectFit="cover"
             fileName={artist.photoFileName}
           />

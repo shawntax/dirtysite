@@ -1,11 +1,9 @@
-const withPlugins = require('next-compose-plugins')
-const withOptimizedImages = require('next-optimized-images')
-
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    disableStaticImages: true,
+    loader: 'custom',
+    unoptimized: true,
   },
   webpack: (config) => {
     config.module.rules.push({
@@ -32,19 +30,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlugins(
-  [
-    [
-      withOptimizedImages,
-      {
-        optimizeImagesInDev: false,
-        handleImages: ['jpeg', 'jpg', 'png', 'webp'],
-        removeOriginalExtension: true,
-        responsive: {
-          adapter: require('responsive-loader/sharp'),
-        },
-      },
-    ],
-  ],
-  nextConfig
-)
+module.exports = nextConfig

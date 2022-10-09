@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types'
-import { chakra } from '@chakra-ui/react'
+import Image from 'next/image'
 
 const Photo = ({ fileName, ...props }) => {
-  // TODO: handle a null fileName
+  // opt-out of image optimization, no-op
+  const customLoader = ({ src }) => {
+    return src
+  }
+
   return (
-    <picture>
-      <source
-        srcSet={require(`@public/media/${fileName}?webp`)}
-        type="image/webp"
-      />
-      <source srcSet={require(`@public/media/${fileName}`)} type="image/jpg" />
-      <chakra.img
-        src={require(`@public/media/${fileName}?webp`)}
-        alt={fileName}
-        objectFit={props.fit ?? 'fill'}
-        {...props}
-      />
-    </picture>
+    <Image
+      loader={customLoader}
+      unoptimized={true}
+      src={`/media/${fileName}`}
+      alt={fileName}
+      layout={props.layout ?? 'intrinsic'}
+      objectFit={props.objectFit ?? 'fill'}
+      {...props}
+    />
   )
 }
 

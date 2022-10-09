@@ -18,12 +18,7 @@ const ArtistCard = ({ artist }) => {
           role="group"
         >
           <AspectRatio ratio={4 / 3}>
-            <Photo
-              h="full"
-              w="full"
-              objectFit="cover"
-              fileName={photoFileName}
-            />
+            <Photo fileName={photoFileName} layout="fill" objectFit="cover" />
           </AspectRatio>
           <Box
             py={1}
