@@ -1,6 +1,6 @@
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
   images: {
     loader: 'custom',
     unoptimized: true,
