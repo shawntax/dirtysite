@@ -2,17 +2,48 @@ import { getLayout } from '@components/SiteLayout'
 import { Flex, Box, Heading, VStack, Text, AspectRatio } from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
+import { fetchArtists } from '@helpers/cms.helpers'
 import {
-  SiFacebook,
   SiInstagram,
+  SiFacebook,
+  SiTiktok,
+  SiTwitter,
   SiMixcloud,
   SiSoundcloud,
   SiSpotify,
-  SiTiktok,
   SiTwitch,
-  SiTwitter,
 } from 'react-icons/si'
-import { fetchArtists } from '@helpers/cms.helpers'
+
+const SOCIALS = [
+  {
+    type: 'instagram',
+    urlPrefix: 'https://instagram.com/',
+    icon: <SiInstagram />,
+  },
+  {
+    type: 'facebook',
+    urlPrefix: 'https://facebook.com/',
+    icon: <SiFacebook />,
+  },
+  { type: 'tiktok', urlPrefix: 'https://tiktok.com/@', icon: <SiTiktok /> },
+  { type: 'twitter', urlPrefix: 'https://twitter.com/', icon: <SiTwitter /> },
+  { type: 'twitch', urlPrefix: 'https://twitch.tv/', icon: <SiTwitch /> },
+  {
+    type: 'spotify',
+    urlPrefix: 'https://open.spotify.com/artist/',
+    icon: <SiSpotify />,
+  },
+  {
+    type: 'soundcloud',
+    urlPrefix: 'https://soundcloud.com/',
+    icon: <SiSoundcloud />,
+  },
+  {
+    type: 'mixcloud',
+    urlPrefix: 'https://mixcloud.com/',
+    icon: <SiMixcloud />,
+  },
+]
 
 function Artist({ artist }) {
   return (
@@ -41,93 +72,19 @@ function Artist({ artist }) {
       <Flex direction="column" my={{ base: '4', lg: 'none' }}>
         <Heading>{artist.name}</Heading>
         <VStack fontSize="2xl" align="start" spacing="0" mt="4">
-          {artist.fbLink ? (
-            <NCLink to={artist.fbLink}>
-              <Flex align="center" spacing="2">
-                <SiFacebook />
-                <Text pl="2">Facebook</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.instaLink ? (
-            <NCLink to={artist.instaLink}>
-              <Flex align="center" spacing="2">
-                <SiInstagram />
-                <Text pl="2">Instagram</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.scLink ? (
-            <NCLink to={artist.scLink}>
-              <Flex align="center" spacing="2">
-                <SiSoundcloud />
-                <Text pl="2">SoundCloud</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.tiktokLink ? (
-            <NCLink to={artist.tiktokLink}>
-              <Flex align="center" spacing="2">
-                <SiTiktok />
-                <Text pl="2">TikTok</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.twitchLink ? (
-            <NCLink to={artist.twitchLink}>
-              <Flex align="center" spacing="2">
-                <SiTwitch />
-                <Text pl="2">Twitch</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.twitterLink ? (
-            <NCLink to={artist.twitterLink}>
-              <Flex align="center" spacing="2">
-                <SiTwitter />
-                <Text pl="2">Twitter</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.mcLink ? (
-            <NCLink to={artist.mcLink}>
-              <Flex align="center" spacing="2">
-                <SiMixcloud />
-                <Text pl="2">Mixcloud</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
-
-          {artist.spotLink ? (
-            <NCLink to={artist.spotLink}>
-              <Flex align="center" spacing="2">
-                <SiSpotify />
-                <Text pl="2">Spotify</Text>
-              </Flex>
-            </NCLink>
-          ) : (
-            <></>
-          )}
+          {artist.socials.map((social, index) => {
+            const { type, urlPrefix, icon } = SOCIALS.find(
+              (s) => s.type === social.type
+            )
+            return (
+              <NCLink key={index} to={`${urlPrefix}${social.handle}`}>
+                <Flex align="center" spacing="2">
+                  {icon}
+                  <Text pl="2">{type.toUpperCase()}</Text>
+                </Flex>
+              </NCLink>
+            )
+          })}
         </VStack>
       </Flex>
     </Flex>

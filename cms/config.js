@@ -21,6 +21,17 @@ const prodConfig = {
   media_folder: 'public/media',
 }
 
+const SOCIALS = [
+  'instagram',
+  'facebook',
+  'tiktok',
+  'twitter',
+  'twitch',
+  'spotify',
+  'soundcloud',
+  'mixcloud',
+]
+
 const collections = [
   {
     name: 'pages',
@@ -170,52 +181,27 @@ const collections = [
       { label: 'ID', name: 'id', widget: 'ncw-id' },
       { label: 'DJ Name', name: 'name', widget: 'string' },
       {
-        label: 'Instagram link',
-        name: 'instaLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'Facebook link',
-        name: 'fbLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'Soundcloud link',
-        name: 'scLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'Twitter link',
-        name: 'twitterLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'Mixcloud link',
-        name: 'mcLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'TikTok link',
-        name: 'tiktokLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'Twitch link',
-        name: 'twitchLink',
-        widget: 'string',
-        required: false,
-      },
-      {
-        label: 'Spotify link',
-        name: 'spotLink',
-        widget: 'string',
-        required: false,
+        label: 'Socials',
+        name: 'socials',
+        widget: 'list',
+        description: 'test',
+        collapsed: true,
+        minimize_collapsed: true,
+        types: SOCIALS.map((site) => {
+          return {
+            widget: 'object',
+            label: site.toUpperCase(),
+            name: site,
+            summary: '{{fields.handle}}',
+            fields: [
+              {
+                label: "Handle (don't include @)",
+                name: 'handle',
+                widget: 'string',
+              },
+            ],
+          }
+        }),
       },
       {
         label: 'DJ Photo',

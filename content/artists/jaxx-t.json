@@ -1,8 +1,19 @@
 {
   "name": "Jaxx T",
-  "instaLink": "https://instagram.com/jaxxtofficial",
-  "fbLink": "https://facebook.com/jaxxtofficial",
-  "scLink": "https://soundcloud.com/jaxxtofficial",
   "photoUrl": "/public/media/jaxx-t.jpg",
-  "id": "azxeCXQM9"
+  "id": "azxeCXQM9",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "jaxxtofficial"
+    },
+    {
+      "type": "facebook",
+      "handle": "jaxxtofficial"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "jaxxtofficial"
+    }
+  ]
 }

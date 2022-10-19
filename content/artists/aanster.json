@@ -1,8 +1,19 @@
 {
   "name": "Aanster",
-  "instaLink": "https://www.instagram.com/aanster/",
-  "fbLink": "https://www.facebook.com/aansterofficial",
-  "scLink": "https://soundcloud.com/aanster",
   "photoUrl": "/public/media/aanster.jpg",
-  "id": "nL03Zdq9h"
+  "id": "nL03Zdq9h",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "aanster"
+    },
+    {
+      "type": "facebook",
+      "handle": "aansterofficial"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "aanster"
+    }
+  ]
 }

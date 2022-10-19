@@ -1,8 +1,19 @@
 {
   "name": "Amstar",
-  "instaLink": "https://www.instagram.com/amstar.wav/",
-  "scLink": "https://soundcloud.com/amstarmusic",
-  "fbLink": "https://www.facebook.com/amstarmusic",
   "photoUrl": "/public/media/amstar.jpg",
-  "id": "8ZVkfAIp2"
+  "id": "8ZVkfAIp2",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "amstar.wav"
+    },
+    {
+      "type": "facebook",
+      "handle": "amstarmusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "amstarmusic"
+    }
+  ]
 }

@@ -1,8 +1,19 @@
 {
   "id": "hg3-vYd1M",
   "name": "ADXRE",
-  "instaLink": "https://www.instagram.com/adxre/",
-  "scLink": "https://soundcloud.com/adxre",
-  "fbLink": "https://www.facebook.com/ADXREmusic",
-  "photoUrl": "/public/media/adxre.jpg"
+  "photoUrl": "/public/media/adxre.jpg",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "adxre"
+    },
+    {
+      "type": "facebook",
+      "handle": "ADXREmusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "adxre"
+    }
+  ]
 }

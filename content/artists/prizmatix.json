@@ -1,8 +1,19 @@
 {
   "id": "3Xq8kgx5Q",
   "name": "Prizmatix",
-  "instaLink": "https://www.instagram.com/prizmatixmusic/",
-  "fbLink": "https://www.facebook.com/prizmatixmusic",
-  "scLink": "https://soundcloud.com/djprizmatix",
-  "photoUrl": "/public/media/prizmatix.jpg"
+  "photoUrl": "/public/media/prizmatix.jpg",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "prizmatixmusic"
+    },
+    {
+      "type": "facebook",
+      "handle": "prizmatixmusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "djprizmatix"
+    }
+  ]
 }

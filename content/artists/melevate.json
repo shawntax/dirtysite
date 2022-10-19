@@ -1,8 +1,19 @@
 {
   "id": "FxmJ19M4t",
   "name": "Melevate",
-  "instaLink": "https://www.instagram.com/melevatemusic/",
-  "scLink": "https://soundcloud.com/melevate",
-  "fbLink": "https://www.facebook.com/melanie.tan.1234",
-  "photoUrl": "/public/media/melevate.jpg"
+  "photoUrl": "/public/media/melevate.jpg",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "melevatemusic"
+    },
+    {
+      "type": "facebook",
+      "handle": "melanie.tan.1234"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "melevate"
+    }
+  ]
 }

@@ -1,5 +1,7 @@
 import slugify from 'slugify'
 import dayjs from 'dayjs'
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
+dayjs.extend(isSameOrBefore)
 
 const importAll = (r) => r.keys().map(r)
 
@@ -9,9 +11,7 @@ export function fetchArtists() {
   )
   const result = artists.map((artist) => {
     artist.slug = slugify(artist.name, { lower: true })
-    // grab the file name from the url to use in the dynamic path of the Photo component
-    const url = artist.photoUrl ?? null
-    artist.photoFileName = url?.split('/').pop()
+    artist.photoFileName = artist.photoUrl?.split('/').pop() ?? null
     return artist
   })
   return result
@@ -22,16 +22,21 @@ export function fetchEvents() {
     require.context('../content/events', false, /^(.\/).*(.json)$/)
   )
 
-  const result = events
+  const upcomingEvents = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
-      const slug = `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`
-      event.slug = slugify(slug, { lower: true })
+      event.slug = slugify(
+        `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
+        { lower: true }
+      )
       return event
+    })
+    .filter(({ eventDate }) => {
+      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
     })
 
-  return result
+  return upcomingEvents
 }

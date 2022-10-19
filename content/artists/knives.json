@@ -1,8 +1,19 @@
 {
   "name": "Knives",
-  "instaLink": "https://instagram.com/djknivesofficial",
-  "fbLink": "https://facebook.com/djknivesofficial",
-  "scLink": "https://soundcloud.com/djknivesofficial",
   "photoUrl": "/public/media/knives.jpg",
-  "id": "4TRjBRxx4"
+  "id": "4TRjBRxx4",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "djknives"
+    },
+    {
+      "type": "facebook",
+      "handle": "djknivesofficial"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "djknivesofficial"
+    }
+  ]
 }

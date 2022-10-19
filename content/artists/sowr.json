@@ -1,6 +1,23 @@
 {
   "id": "zG-bo1e_A",
   "name": "SOWR",
-  "instaLink": "https://www.instagram.com/sowr.mp3/",
-  "photoUrl": "/public/media/sowr.jpg"
+  "photoUrl": "/public/media/sowr.jpg",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "sowr.mp3"
+    },
+    {
+      "type": "twitch",
+      "handle": "sowrsounds"
+    },
+    {
+      "type": "twitter",
+      "handle": "sowr20"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "sowrsound"
+    }
+  ]
 }

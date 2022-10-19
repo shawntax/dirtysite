@@ -1,9 +1,19 @@
 {
   "name": "Cat Liu",
-  "instaLink": "https://instagram.com/djcatliu",
-  "fbLink": "https://www.facebook.com/CatherineLewisLiu",
-  "scLink": "https://soundcloud.com/catliu",
-  "bio": "Sick house beats brought to you by the one and only CatLiu",
   "photoUrl": "/public/media/cat-liu.jpg",
-  "id": "o583FUeW4"
+  "id": "o583FUeW4",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "djcatliu"
+    },
+    {
+      "type": "facebook",
+      "handle": "CatherineLewisLiu"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "catliu"
+    }
+  ]
 }

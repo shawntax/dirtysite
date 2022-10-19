@@ -1,8 +1,23 @@
 {
   "id": "u--qmDNiP",
   "name": "N1CO",
-  "instaLink": "https://www.instagram.com/n1comusic/",
-  "fbLink": "https://www.facebook.com/NICOMusic",
-  "scLink": "https://soundcloud.com/nicowho",
-  "photoUrl": "/public/media/nico.jpg"
+  "photoUrl": "/public/media/nico.jpg",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "n1comusic"
+    },
+    {
+      "type": "facebook",
+      "handle": "NICOMusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "nicowho"
+    },
+    {
+      "type": "twitter",
+      "handle": "nco_who"
+    }
+  ]
 }

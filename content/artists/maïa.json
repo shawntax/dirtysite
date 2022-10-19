@@ -1,8 +1,19 @@
 {
   "id": "2KLFKpqYE",
   "name": "Maïa",
-  "instaLink": "https://www.instagram.com/maiiamosaic/",
-  "scLink": "https://soundcloud.com/maya-ayed",
   "photoUrl": "/public/media/maia.jpg",
-  "fbLink": "https://www.facebook.com/maya.ayed.9"
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "maiiamosaic"
+    },
+    {
+      "type": "facebook",
+      "handle": "maya.ayed.9"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "maya-ayed"
+    }
+  ]
 }

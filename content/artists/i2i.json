@@ -1,8 +1,23 @@
 {
   "name": "i2i",
-  "instaLink": "https://instagram.com/i2i_music",
-  "fbLink": "https://facebook.com/i2i_music",
-  "scLink": "https://soundcloud.com/i2i",
   "photoUrl": "/public/media/i2i.jpg",
-  "id": "qAw74oVrm"
+  "id": "qAw74oVrm",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "i2i_music"
+    },
+    {
+      "type": "facebook",
+      "handle": "i2i_music"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "i2imusic"
+    },
+    {
+      "type": "spotify",
+      "handle": "1WYICoQozIS5CYcRiXFirH"
+    }
+  ]
 }

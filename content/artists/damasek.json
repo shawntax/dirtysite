@@ -1,8 +1,19 @@
 {
   "name": "Damasek",
-  "instaLink": "https://instagram.com/damasek_music",
-  "fbLink": "https://facebook.com/damasek_music",
-  "scLink": "https://soundcloud.com/damasek",
   "photoUrl": "/public/media/damasek.jpg",
-  "id": "m-yvyUOwW"
+  "id": "m-yvyUOwW",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "damasek_music"
+    },
+    {
+      "type": "facebook",
+      "handle": "damasek_music"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "damasek"
+    }
+  ]
 }

@@ -26,8 +26,16 @@ function Hero() {
             width: '100%',
             height: '100%',
           }}
+          poster="/media/video-poster.jpg"
         >
-          <source src="/media/background-video.mp4" />
+          <source
+            src="https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.webm"
+            type="video/webm"
+          />
         </video>
       </Box>
 

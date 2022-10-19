@@ -1,8 +1,19 @@
 {
   "name": "GLAAS",
-  "instaLink": "https://instagram.com/glaasmusic",
-  "fbLink": "https://facebook.com/glaasmusic",
-  "scLink": "https://soundcloud.com/glaasmusic",
   "photoUrl": "/public/media/glass.jpg",
-  "id": "U2pRHhGWt"
+  "id": "U2pRHhGWt",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "glaasmusic"
+    },
+    {
+      "type": "facebook",
+      "handle": "glaasmusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "glaasmusic"
+    }
+  ]
 }

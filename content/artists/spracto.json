@@ -1,9 +1,19 @@
 {
   "id": "FhwUeakv_",
   "name": "Spracto",
-  "instaLink": "https://www.instagram.com/spracto/",
-  "fbLink": "https://www.facebook.com/barclay.spracto",
-  "scLink": "https://soundcloud.com/spracto",
   "photoUrl": "/public/media/spracto.jpg",
-  "twitterLink": ""
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "spracto"
+    },
+    {
+      "type": "facebook",
+      "handle": "barclay.spracto"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "spracto"
+    }
+  ]
 }

@@ -1,8 +1,19 @@
 {
   "id": "xWtA465B_",
   "name": "Concussions",
-  "instaLink": "https://www.instagram.com/djconcussions/",
-  "scLink": "https://soundcloud.com/djconcussions",
   "photoUrl": "/public/media/concussions.jpg",
-  "fbLink": "https://www.facebook.com/officialdjconcussions"
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "djconcussions"
+    },
+    {
+      "type": "facebook",
+      "handle": "officialdjconcussions"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "djconcussions"
+    }
+  ]
 }

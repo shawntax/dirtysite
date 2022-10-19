@@ -1,8 +1,19 @@
 {
   "id": "ViIwjl1Rw",
   "name": "Legrant",
-  "instaLink": "https://www.instagram.com/_legrant/",
-  "fbLink": "https://www.facebook.com/austen.jones.56",
-  "scLink": "https://soundcloud.com/austenluego",
-  "photoUrl": "/public/media/legrant.jpg"
+  "photoUrl": "/public/media/legrant.jpg",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "_legrant"
+    },
+    {
+      "type": "facebook",
+      "handle": "austen.jones.56"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "austenluego"
+    }
+  ]
 }
