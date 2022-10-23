@@ -35,18 +35,24 @@ const EventCard = ({ event }) => {
               </Text>
             </Flex>
           </NCLink>
-          <Text textColor="gray.400" fontSize={{ base: 'xl', xl: '2xl' }}>
+          <Text
+            textColor="gray.400"
+            mt="-2"
+            fontSize={{ base: 'xl', xl: '2xl' }}
+          >
             {event.venue}
           </Text>
           <NCLink
-            to={event.ticketLink}
+            to={`https://${event.ticketLink}`}
             _hover={{ textDecoration: 'none' }}
             target="_blank"
             rel="noopener"
           >
-            <NCButton width="full" mt="2">
-              {event.linkText}
-            </NCButton>
+            <Center>
+              <NCButton width="full" mt="2">
+                {event.linkText}
+              </NCButton>
+            </Center>
           </NCLink>
         </Box>
       </Flex>

@@ -37,7 +37,7 @@ export default function Event({ event }) {
         </Text>
 
         <NCLink
-          to={event.ticketLink}
+          to={`https://${event.ticketLink}`}
           target="_blank"
           rel="noopener"
           py="2"

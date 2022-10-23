@@ -8,7 +8,13 @@ const NCButton = ({ children, ...props }) => {
       borderRadius="full"
       bgColor="white"
       color="black"
+      w="44"
       {...props}
+      _hover={{
+        bgColor: 'black',
+        color: 'white',
+        border: '2px solid white',
+      }}
     >
       <Text
         fontSize={props.fontSize ?? 'xl'}

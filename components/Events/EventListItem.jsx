@@ -15,7 +15,9 @@ const EventListItem = ({ event }) => {
       gap={{ base: '2', md: '4' }}
     >
       <NCLink to={`/events/${event.slug}`}>
-        <Text fontWeight="bold">{event.title}</Text>
+        <Text fontWeight="bold" textAlign="center">
+          {event.title}
+        </Text>
       </NCLink>
       <Flex direction={{ base: 'column', sm: 'row' }} align="center">
         <Text>{event.venue}</Text>
@@ -27,7 +29,7 @@ const EventListItem = ({ event }) => {
         </Text>
       </Flex>
       <NCLink
-        to={event.ticketLink}
+        to={`https://${event.ticketLink}`}
         target="_blank"
         rel="noopener"
         marginInlineStart={{ base: 'none', md: 'auto' }}

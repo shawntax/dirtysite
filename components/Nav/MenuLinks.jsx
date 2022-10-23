@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 
 const MenuItem = ({ children, to = '/', ...rest }) => {
   const router = useRouter()
-
   return (
     <NextLink href={to} passHref>
       <Link
@@ -16,7 +15,6 @@ const MenuItem = ({ children, to = '/', ...rest }) => {
         <Text
           display="block"
           casing="uppercase"
-          // transform={router.asPath.includes(to) ? 'scale(1.2)' : 'scale(1)'}
           textDecoration={
             router.asPath.includes(to) ? 'underline #FFF' : 'initial'
           }

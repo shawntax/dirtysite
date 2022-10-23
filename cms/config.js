@@ -144,7 +144,11 @@ const collections = [
         options: ['San Francisco, CA', 'Denver, CO'],
       },
       { label: 'Venue', name: 'venue', widget: 'string' },
-      { label: 'Ticket Link', name: 'ticketLink', widget: 'string' },
+      {
+        label: "Ticket Link (Don't include https:// or www)",
+        name: 'ticketLink',
+        widget: 'string',
+      },
       {
         label: 'Ticket Link Text',
         name: 'linkText',
