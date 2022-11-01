@@ -1,7 +1,7 @@
 import { Box, Container } from '@chakra-ui/react'
 import { getLayout } from '@components/HomeLayout'
-import Hero from '@components/Hero'
 import PageHeader from '@components/PageHeader'
+import Hero from '@components/Hero'
 import EventList from '@components/Events'
 import { attributes } from '@content/pages/home.md'
 import { react as AboutContent } from '@content/pages/about.md'

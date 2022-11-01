@@ -1,8 +1,25 @@
+import { useEffect, useRef } from 'react'
 import { Box, Image, Flex, Link } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { BiChevronDown } from 'react-icons/bi'
 
 function Hero() {
+  const videoRef = useRef()
+
+  useEffect(() => {
+    const promise = videoRef.current.play()
+
+    if (promise !== undefined) {
+      promise
+        .catch(() => {
+          // Auto-play was prevented
+        })
+        .then(() => {
+          // Auto-play started
+        })
+    }
+  }, [])
+
   return (
     <Box
       position="relative"
@@ -12,16 +29,22 @@ function Hero() {
       align="center"
       justify="center"
     >
-      <Box opacity="0.50" overflow="hidden">
+      <Box
+        opacity="0.50"
+        overflow="hidden"
+        pos="absolute"
+        top="0"
+        left="0"
+        w="100%"
+        h="100%"
+      >
         <video
+          ref={videoRef}
           playsInline
           autoPlay
           muted
           loop
           style={{
-            position: 'absolute',
-            top: '0',
-            left: '0',
             objectFit: 'cover',
             width: '100%',
             height: '100%',

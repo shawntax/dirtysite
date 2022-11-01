@@ -2,7 +2,6 @@ import '@fontsource/oswald/500.css'
 import '@fontsource/oswald/700.css'
 import '@fontsource/darker-grotesque/500.css'
 import '@fontsource/darker-grotesque/700.css'
-
 import SiteLayout from '@components/SiteLayout'
 
 function App({ Component, pageProps }) {

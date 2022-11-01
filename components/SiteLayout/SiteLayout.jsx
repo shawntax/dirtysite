@@ -1,26 +1,46 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
+import FBPixelBase from '@components/FBPixelBase'
+import * as fbq from '@helpers/pixel.helpers'
 import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
 
 const SiteLayout = ({ children }) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      fbq.pageView()
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
-    <ChakraProvider theme={theme}>
-      <Favicon />
-      <Flex direction="column" align="center">
-        <Nav />
-        <Container
-          as="main"
-          maxW={{ base: 'container.lg', xl: 'container.xl' }}
-          px={{ base: '4', md: '8' }}
-          my={{ base: '24', md: '32' }}
-        >
-          {children}
-        </Container>
-        <Footer />
-      </Flex>
-    </ChakraProvider>
+    <>
+      <FBPixelBase />
+      <ChakraProvider theme={theme}>
+        <Favicon />
+        <Flex direction="column" align="center">
+          <Nav />
+          <Container
+            as="main"
+            maxW={{ base: 'container.lg', xl: 'container.xl' }}
+            px={{ base: '4', md: '8' }}
+            my={{ base: '24', md: '32' }}
+          >
+            {children}
+          </Container>
+          <Footer />
+        </Flex>
+      </ChakraProvider>
+    </>
   )
 }
 export const getLayout = (page) => <SiteLayout>{page}</SiteLayout>
