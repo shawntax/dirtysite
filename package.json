@@ -8,6 +8,7 @@
   "scripts": {
     "cms-proxy-server": "npx netlify-cms-proxy-server",
     "next:dev": "next dev",
+    "vercel:dev": "vercel dev",
     "dev": "run-p cms-proxy-server  next:dev",
     "build": "next build",
     "start": "next start",
@@ -36,7 +37,8 @@
     "react-hook-form": "^7.34.0",
     "react-icons": "^4.6.0",
     "safe-await": "^2.0.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "vercel": "^28.4.14"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
