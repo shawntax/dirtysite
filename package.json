@@ -25,6 +25,7 @@
     "@fontsource/darker-grotesque": "^4.5.7",
     "@fontsource/oswald": "^4.5.5",
     "@ncwidgets/id": "^0.9.0",
+    "@openlab/vercel-netlify-cms-github": "^1.1.1",
     "axios": "^0.27.2",
     "dayjs": "^1.11.2",
     "email-validator-node": "^1.1.3",
