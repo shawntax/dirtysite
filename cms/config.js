@@ -18,7 +18,7 @@ const prodConfig = {
     repo: 'shawntax/dirtysite',
     branch: 'main',
     base_url: 'https://dirtysite.vercel.app',
-    auth_endpoint: 'api/github/auth',
+    auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
 }
