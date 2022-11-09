@@ -4,7 +4,7 @@ const devConfig = {
   cms_manual_init: true,
   backend: {
     name: 'github',
-    repo: 'dirtynotsorry/dirtysite',
+    repo: 'shawntax/dirtysite',
     branch: 'source',
   },
   media_folder: 'public/media',
@@ -15,7 +15,7 @@ const prodConfig = {
   cms_manual_init: true,
   backend: {
     name: 'github',
-    repo: 'dirtynotsorry/dirtysite',
+    repo: 'shawntax/dirtysite',
     branch: 'main',
   },
   media_folder: 'public/media',
