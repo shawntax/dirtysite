@@ -29,16 +29,22 @@ export default function MarketingForm() {
       data: JSON.stringify(values),
     }
 
-    const URL =
-      process.env.CONTEXT === 'deploy-preview'
-        ? `${process.env.DEPLOY_URL}/.netlify/functions/newsletter-signup`
-        : `${process.env.NEXT_PUBLIC_FUNCTIONS_URL}/newsletter-signup`
+    let URL
+    if (process.env.NODE_ENV === 'development') {
+      URL = `http://localhost:3000/api/newsletter-signup`
+    } else if (process.env.VERCEL_ENV === 'preview') {
+      URL = `${process.env.VERCEL_URL}/api/newsletter-signup`
+    } else {
+      URL = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/newsletter-signup`
+    }
 
     const [error, res] = await safeAwait(axios(URL, options))
 
     if (error) {
       const {
-        response: { data: errorMessage },
+        response: {
+          data: { message: errorMessage },
+        },
       } = error
       setError('email', { type: 'server', errorMessage })
     } else {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, Stack, StackDivider, Flex, Center, Box } from '@chakra-ui/react'
 import CommunityWidget from './CommunityWidget'
+// import MarketingForm from './MarketingForm'
 
 const Footer = () => (
   <Flex
@@ -18,6 +19,7 @@ const Footer = () => (
     >
       <Box w="full" px="8">
         <CommunityWidget />
+        {/* <MarketingForm /> */}
       </Box>
     </Stack>
     <Center>
