@@ -8,7 +8,6 @@
   "scripts": {
     "cms-proxy-server": "npx netlify-cms-proxy-server",
     "next:dev": "next dev",
-    "vercel:dev": "vercel dev",
     "dev": "run-p cms-proxy-server  next:dev",
     "build": "next build",
     "start": "next start",
