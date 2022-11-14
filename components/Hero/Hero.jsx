@@ -67,6 +67,7 @@ function Hero() {
           src="brand/logo-vert.svg"
           alt=""
           height={{ base: '32', lg: '56', xl: '60' }}
+          width="auto"
         />
       </Box>
       <Flex

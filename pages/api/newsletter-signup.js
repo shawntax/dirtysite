@@ -2,32 +2,23 @@ const axios = require('axios')
 const safeAwait = require('safe-await')
 const { checkEmail } = require('email-validator-node')
 
-require('dotenv').config()
+export default async function handler(req, res) {
+  const { method } = req
+  const { name, email, username } = req.body
 
-exports.handler = async (event, context) => {
-  const { name, email, username } = JSON.parse(event.body)
-
-  if (event.httpMethod === 'GET') {
-    return {
-      statusCode: 405,
-    }
+  if (method === 'GET') {
+    return res.status(405).end(`Method ${method} Not Allowed`)
   }
 
   if (username !== '') {
-    return {
-      statusCode: 200,
-      body: 'thanks, bot!',
-    }
+    return res.status(200).end('thanks, bot!')
   }
 
   const { isValid, message } = await checkEmail(email)
 
   if (!isValid) {
     console.log(message)
-    return {
-      statusCode: 400,
-      body: `Invalid email`,
-    }
+    return res.status(400).json({ message: 'Invalid email' })
   }
 
   const client = axios.create({
@@ -53,14 +44,8 @@ exports.handler = async (event, context) => {
   )
 
   if (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify(error),
-    }
+    res.status(500).json({ message: error })
   }
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ name, email }),
-  }
+  res.status(200).json({ message: { name, email } })
 }

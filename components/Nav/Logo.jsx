@@ -11,7 +11,13 @@ export default function Logo(props) {
 
   return (
     <NCLink to="/">
-      <Image {...props} src={url} alt="Dirty Not Sorry" />
+      <Image
+        src={url}
+        alt="Dirty Not Sorry"
+        height="100%"
+        width="100%"
+        {...props}
+      />
     </NCLink>
   )
 }
