@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, Stack, StackDivider, Flex, Center, Box } from '@chakra-ui/react'
-import CommunityWidget from './CommunityWidget'
-// import MarketingForm from './MarketingForm'
+// import CommunityWidget from './CommunityWidget'
+import MarketingForm from './MarketingForm'
 
 const Footer = () => (
   <Flex
@@ -9,7 +9,7 @@ const Footer = () => (
     direction="column"
     justify="space-between"
     px={{ base: 0, sm: '4' }}
-    pt="4"
+    pt="10"
     borderTop="1px"
     borderTopColor="gray.900"
   >
@@ -18,8 +18,8 @@ const Footer = () => (
       divider={<StackDivider borderColor="gray.900" />}
     >
       <Box w="full" px="8">
-        <CommunityWidget />
-        {/* <MarketingForm /> */}
+        {/* <CommunityWidget /> */}
+        <MarketingForm />
       </Box>
     </Stack>
     <Center>
