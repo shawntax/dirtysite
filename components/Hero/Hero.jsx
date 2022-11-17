@@ -6,6 +6,15 @@ import { BiChevronDown } from 'react-icons/bi'
 function Hero() {
   const videoRef = useRef()
 
+  const posterUrl =
+    'https://res.cloudinary.com/dgkrvtqpg/video/upload/so_8.6/v1665981858/background-video-bpjm31.jpg'
+
+  const videoMp4Url =
+    'https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.mp4'
+
+  const videoWebmUrl =
+    'https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.webm'
+
   useEffect(() => {
     const promise = videoRef.current.play()
 
@@ -49,27 +58,21 @@ function Hero() {
             width: '100%',
             height: '100%',
           }}
-          poster="/media/video-poster.jpg"
+          poster={posterUrl}
         >
-          <source
-            src="https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.webm"
-            type="video/webm"
-          />
+          <source src={videoMp4Url} type="video/mp4" />
+          <source src={videoWebmUrl} type="video/webm" />
         </video>
       </Box>
 
-      <Box pos="relative" top={{ base: '30%', md: '40%' }}>
+      {/* <Box pos="relative" top={{ base: '30%', md: '40%' }}>
         <Image
           src="brand/logo-vert.svg"
           alt=""
           height={{ base: '32', lg: '56', xl: '60' }}
           width="auto"
         />
-      </Box>
+      </Box> */}
       <Flex
         w="full"
         justifyContent="center"
