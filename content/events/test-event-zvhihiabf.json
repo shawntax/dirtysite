@@ -1,0 +1,12 @@
+{
+  "ticketLink": "example.com",
+  "linkText": "TICKETS",
+  "eventDate": "2022-12-10T05:53:44.974Z",
+  "eventLocation": "San Francisco, CA",
+  "venue": "Club",
+  "title": "Test Event",
+  "id": "ZvHIHIabf",
+  "description": "**This is some text.**\n\n*italic*\n\n[](https://example.com)https://example.com",
+  "publishDate": "2022-12-06T05:53:44.939Z",
+  "photoUrl": "/public/media/default-photo.jpg"
+}

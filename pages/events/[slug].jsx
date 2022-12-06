@@ -11,7 +11,9 @@ import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
-
+import ReactMarkdown from 'react-markdown'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Event({ event }) {
@@ -47,13 +49,18 @@ export default function Event({ event }) {
         </NCLink>
         {event.description && (
           <>
-            <Divider orientation="horizontal" />
+            <Divider orientation="horizontal" my="4" />
             <Text
               maxW={'container.md'}
               fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
               p={{ base: '4', lg: 0 }}
             >
-              {event.description}
+              <ReactMarkdown
+                remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
+                components={ChakraUIRenderer()}
+                children={event.description}
+                skipHtml
+              />
             </Text>
           </>
         )}
