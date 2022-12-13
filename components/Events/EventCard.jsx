@@ -22,7 +22,7 @@ const EventCard = ({ event }) => {
             <AspectRatio ratio={1 / 1}>
               <Photo fileName={photoFileName} layout="fill" objectFit="cover" />
             </AspectRatio>
-            <Flex direction={{ base: 'row' }} justify="space-between" mt="2">
+            <Flex direction="row" justify="space-between" mt="2">
               <Text
                 fontSize={{ base: '2xl', xl: '3xl' }}
                 noOfLines={1}
@@ -35,13 +35,22 @@ const EventCard = ({ event }) => {
               </Text>
             </Flex>
           </NCLink>
-          <Text
-            textColor="gray.400"
-            mt="-2"
-            fontSize={{ base: 'xl', xl: '2xl' }}
-          >
-            {event.venue}
-          </Text>
+          <Flex direction="row" justify="space-between">
+            <Text
+              textColor="gray.400"
+              mt="-2"
+              fontSize={{ base: 'xl', xl: '2xl' }}
+            >
+              {event.venue}
+            </Text>
+            <Text
+              textColor="gray.500"
+              mt="-2"
+              fontSize={{ base: 'xl', xl: '2xl' }}
+            >
+              {event.format}
+            </Text>
+          </Flex>
           <NCLink
             to={`https://${event.ticketLink}`}
             _hover={{ textDecoration: 'none' }}

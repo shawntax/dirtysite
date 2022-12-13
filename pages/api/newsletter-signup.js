@@ -17,7 +17,6 @@ export default async function handler(req, res) {
   const { isValid, message } = await checkEmail(email)
 
   if (!isValid) {
-    console.log(message)
     return res.status(400).json({ message: 'Invalid email' })
   }
 
@@ -44,8 +43,21 @@ export default async function handler(req, res) {
   )
 
   if (error) {
-    res.status(500).json({ message: error })
+    const {
+      response: {
+        data: { errors },
+      },
+    } = error
+
+    console.log(errors)
+
+    if (errors.email && errors.email[0].includes('taken')) {
+      return res
+        .status(422)
+        .json({ message: 'This email is already subscribed' })
+    }
+    return res.status(500).json({ message: 'Something went wrong' })
   }
 
-  res.status(200).json({ message: { name, email } })
+  return res.status(200).json({ message: { name, email } })
 }

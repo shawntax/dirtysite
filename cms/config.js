@@ -118,14 +118,22 @@ const collections = [
     folder: 'content/events',
     create: true,
     slug: '{{title}}-{{fields.id}}',
-    summary: "{{title | upper}} - {{fields.eventDate | date('MM/DD')}}",
+    summary:
+      "{{title | upper}} - {{fields.eventDate | date('MM/DD')}} ({{fields.format}})",
     identifier_field: 'title',
     editor: {
       preview: true,
     },
+    sortable_fields: ['eventDate', 'format'],
     format: 'json',
     fields: [
       { label: 'ID', name: 'id', widget: 'ncw-id' },
+      {
+        label: 'Format',
+        name: 'format',
+        widget: 'select',
+        options: ['Live', 'Stream'],
+      },
       { label: 'Title', name: 'title', widget: 'string' },
       {
         label: 'Publish Date',
@@ -143,7 +151,7 @@ const collections = [
         label: 'Event Location',
         name: 'eventLocation',
         widget: 'select',
-        options: ['San Francisco, CA', 'Denver, CO'],
+        options: ['San Francisco, CA', 'Denver, CO', 'Online'],
       },
       { label: 'Venue', name: 'venue', widget: 'string' },
       {
