@@ -7,7 +7,7 @@ function Hero() {
   const videoRef = useRef()
 
   const posterUrl =
-    'https://res.cloudinary.com/dgkrvtqpg/video/upload/so_8.6/v1665981858/background-video-bpjm31.jpg'
+    'https://res.cloudinary.com/dgkrvtqpg/video/upload/so_0.0/v1665981858/background-video-bpjm31.jpg'
 
   const videoMp4Url =
     'https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.mp4'
@@ -50,7 +50,6 @@ function Hero() {
         <video
           ref={videoRef}
           playsInline
-          autoPlay
           muted
           loop
           style={{
@@ -65,14 +64,14 @@ function Hero() {
         </video>
       </Box>
 
-      {/* <Box pos="relative" top={{ base: '30%', md: '40%' }}>
+      <Box pos="relative" top={{ base: '30%', md: '40%' }}>
         <Image
           src="brand/logo-vert.svg"
           alt=""
           height={{ base: '32', lg: '56', xl: '60' }}
           width="auto"
         />
-      </Box> */}
+      </Box>
       <Flex
         w="full"
         justifyContent="center"
