@@ -14,6 +14,10 @@
     {
       "type": "soundcloud",
       "handle": "mikeythelad"
+    },
+    {
+      "type": "twitter",
+      "handle": "mikey_the_lad"
     }
   ]
 }
