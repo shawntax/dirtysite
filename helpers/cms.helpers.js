@@ -60,5 +60,21 @@ export function fetchEvents() {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
     })
 
-  return { upcomingLiveEvents, upcomingStreams }
+  const pastEvents = events
+    .map((event) => {
+      event.photoFileName = event.photoUrl?.split('/').pop() ?? null
+      event.slug = slugify(
+        `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
+        { lower: true }
+      )
+      return event
+    })
+    .filter(({ eventDate }) => {
+      return dayjs().isAfter(dayjs(eventDate), 'day')
+    })
+    .sort((a, b) => {
+      return dayjs(b.eventDate) - dayjs(a.eventDate)
+    })
+
+  return { upcomingLiveEvents, upcomingStreams, pastEvents }
 }

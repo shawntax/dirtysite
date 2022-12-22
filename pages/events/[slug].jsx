@@ -17,6 +17,7 @@ import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Event({ event }) {
+  const isPast = dayjs().isAfter(event.eventDate, 'day')
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -29,7 +30,9 @@ export default function Event({ event }) {
           fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
           textColor="gray.400"
         >
-          {dayjs(event.eventDate).format('dddd, MMMM DD')}
+          {isPast
+            ? dayjs(event.eventDate).format('MMMM DD, YYYY')
+            : dayjs(event.eventDate).format('dddd, MMMM DD')}
         </Text>
         <Heading as="h1" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
           {event.title}
@@ -38,15 +41,17 @@ export default function Event({ event }) {
           {event.venue}
         </Text>
 
-        <NCLink
-          to={`https://${event.ticketLink}`}
-          target="_blank"
-          rel="noopener"
-          py="2"
-          _hover={{ textDecoration: 'none' }}
-        >
-          <NCButton>{event.linkText}</NCButton>
-        </NCLink>
+        {!isPast && (
+          <NCLink
+            to={`https://${event.ticketLink}`}
+            target="_blank"
+            rel="noopener"
+            py="2"
+            _hover={{ textDecoration: 'none' }}
+          >
+            <NCButton>{event.linkText}</NCButton>
+          </NCLink>
+        )}
         {event.description && (
           <>
             <Divider orientation="horizontal" my="4" />
@@ -87,10 +92,10 @@ export default function Event({ event }) {
 
 export async function getStaticProps(context) {
   const { slug } = context.params
-  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
+  const { upcomingLiveEvents, upcomingStreams, pastEvents } = fetchEvents()
 
   const event =
-    [...upcomingLiveEvents, ...upcomingStreams].find(
+    [...upcomingLiveEvents, ...upcomingStreams, ...pastEvents].find(
       (event) => event.slug === slug
     ) || {}
 
@@ -100,15 +105,17 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
+  const { upcomingLiveEvents, upcomingStreams, pastEvents } = fetchEvents()
 
-  const paths = [...upcomingLiveEvents, ...upcomingStreams].map((event) => {
-    return {
-      params: {
-        slug: event.slug,
-      },
+  const paths = [...upcomingLiveEvents, ...upcomingStreams, ...pastEvents].map(
+    (event) => {
+      return {
+        params: {
+          slug: event.slug,
+        },
+      }
     }
-  })
+  )
 
   return {
     paths,

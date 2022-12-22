@@ -1,0 +1,66 @@
+import { chakra, Container, Heading, Flex, Text } from '@chakra-ui/react'
+import NCLink from '@components/NCLink'
+import dayjs from 'dayjs'
+import VirtualList from 'react-tiny-virtual-list'
+
+const EventListItem = ({ event }) => {
+  return (
+    <Flex
+      fontSize={{ base: '2xl', lg: '3xl' }}
+      direction={{ base: 'column', md: 'row' }}
+      align={{
+        base: 'center',
+        md: 'baseline',
+      }}
+      justify="space-between"
+      py={2}
+    >
+      <NCLink to={`/events/${event.slug}`}>
+        <Text fontWeight="bold" textAlign="center">
+          {event.title}
+        </Text>
+      </NCLink>
+      <Flex
+        display={{ base: 'none', md: 'flex' }}
+        direction={{ base: 'column', sm: 'row' }}
+        align="center"
+      >
+        <Text>{event.venue}</Text>
+        <chakra.span display={{ base: 'none', sm: 'block' }} px="4">
+          •
+        </chakra.span>
+        <Text textColor="gray.400">
+          {dayjs(event.eventDate).format('MMM DD, YYYY')}
+        </Text>
+      </Flex>
+    </Flex>
+  )
+}
+
+const PastEventList = ({ events }) => {
+  return (
+    <>
+      <Heading py="4">Past Events</Heading>
+      <Container
+        maxW="container.xl"
+        border="1px"
+        borderColor="gray.300"
+        borderStyle="dotted"
+        p={8}
+      >
+        <VirtualList
+          width="100%"
+          height={600}
+          itemCount={events.length}
+          itemSize={50}
+          overscanCount={2}
+          renderItem={({ index }) => (
+            <EventListItem key={events[index].id} event={events[index]} />
+          )}
+        />
+      </Container>
+    </>
+  )
+}
+
+export default PastEventList
