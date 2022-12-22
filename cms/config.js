@@ -243,6 +243,10 @@ const collections = [
 
 let config
 
+console.log(
+  `env: ${process.env.VERCEL_ENV}, branch: ${process.env.VERCEL_GIT_COMMIT_REF}`
+)
+
 if (
   process.env.VERCEL_ENV === 'development' ||
   process.env.NODE_ENV === 'development'
