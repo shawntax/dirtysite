@@ -1,4 +1,4 @@
-import { Heading, SimpleGrid, VStack } from '@chakra-ui/react'
+import { Heading, SimpleGrid } from '@chakra-ui/react'
 import EventCard from '@components/EventList/EventCard'
 import PageHeader from '@components/PageHeader'
 import PastEventList from '@components/PastEventList'

@@ -10,6 +10,19 @@ const devConfig = {
   media_folder: 'public/media',
 }
 
+const previewConfig = {
+  editorial_workflow: false,
+  cms_manual_init: true,
+  backend: {
+    name: 'github',
+    repo: 'shawntax/dirtysite',
+    branch: process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF,
+    base_url: 'https://dirtysite.vercel.app',
+    auth_endpoint: 'api/auth',
+  },
+  media_folder: 'public/media',
+}
+
 const prodConfig = {
   editorial_workflow: false,
   cms_manual_init: true,
@@ -227,9 +240,20 @@ const collections = [
     ],
   },
 ]
-const config =
+
+let config
+
+if (
+  process.env.VERCEL_ENV === 'development' ||
   process.env.NODE_ENV === 'development'
-    ? { ...devConfig, collections }
-    : { ...prodConfig, collections }
+)
+  config = { ...devConfig, collections }
+if (process.env.VERCEL_ENV === 'preview')
+  config = { ...previewConfig, collections }
+if (
+  process.env.VERCEL_ENV === 'production' ||
+  process.env.NODE_ENV === 'production'
+)
+  config = { ...prodConfig, collections }
 
 export default config
