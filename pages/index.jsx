@@ -7,7 +7,7 @@ import { attributes } from '@content/pages/home.md'
 import { react as AboutContent } from '@content/pages/about.md'
 import { fetchEvents } from '@helpers/cms.helpers'
 
-export default function Home({ events }) {
+export default function Home({ upcomingLiveEvents, upcomingStreams }) {
   const { seoDesc } = attributes
   return (
     <>
@@ -29,18 +29,24 @@ export default function Home({ events }) {
           <AboutContent />
         </Box>
 
-        <EventList events={events} />
+        {upcomingLiveEvents.length > 0 && (
+          <EventList title="Upcoming Events" events={upcomingLiveEvents} />
+        )}
+        {upcomingStreams.length > 0 && (
+          <EventList title="Upcoming Streams" events={upcomingStreams} />
+        )}
       </Container>
     </>
   )
 }
 
 export async function getStaticProps() {
-  const events = fetchEvents()
+  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
 
   return {
     props: {
-      events,
+      upcomingLiveEvents,
+      upcomingStreams,
     },
   }
 }

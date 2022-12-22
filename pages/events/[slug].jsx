@@ -87,8 +87,12 @@ export default function Event({ event }) {
 
 export async function getStaticProps(context) {
   const { slug } = context.params
-  const events = fetchEvents()
-  const event = events.find((event) => event.slug === slug) || {}
+  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
+
+  const event =
+    [...upcomingLiveEvents, ...upcomingStreams].find(
+      (event) => event.slug === slug
+    ) || {}
 
   return {
     props: { event },
@@ -96,9 +100,9 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const events = fetchEvents()
+  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
 
-  const paths = events.map((event) => {
+  const paths = [...upcomingLiveEvents, ...upcomingStreams].map((event) => {
     return {
       params: {
         slug: event.slug,

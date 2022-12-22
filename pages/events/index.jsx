@@ -5,30 +5,50 @@ import { getLayout } from '@components/SiteLayout'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { attributes } from '@content/pages/artists.md'
 
-export default function Events({ events }) {
+export default function Events({ upcomingLiveEvents, upcomingStreams }) {
   const { seoDesc } = attributes
   return (
     <>
-      <PageHeader title="Events" seoDesc={seoDesc}>
-        Upcoming Events
-      </PageHeader>
-      <SimpleGrid minChildWidth="300px" spacing="12" mt="5">
-        {events.map((event) => {
-          {
-            return <EventCard key={event.id} event={event} />
-          }
-        })}
-      </SimpleGrid>
+      {upcomingLiveEvents.length > 0 && (
+        <>
+          <PageHeader title="Events" seoDesc={seoDesc}>
+            Upcoming Events
+          </PageHeader>
+          <SimpleGrid minChildWidth="300px" spacing="12" mt="5">
+            {upcomingLiveEvents.map((event) => {
+              {
+                return <EventCard key={event.id} event={event} />
+              }
+            })}
+          </SimpleGrid>
+        </>
+      )}
+
+      {upcomingStreams.length > 0 && (
+        <>
+          <PageHeader title="Events" seoDesc={seoDesc}>
+            Upcoming Streams
+          </PageHeader>
+          <SimpleGrid minChildWidth="300px" spacing="12" mt="5">
+            {upcomingStreams.map((event) => {
+              {
+                return <EventCard key={event.id} event={event} />
+              }
+            })}
+          </SimpleGrid>
+        </>
+      )}
     </>
   )
 }
 
 export async function getStaticProps() {
-  const events = fetchEvents()
+  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
 
   return {
     props: {
-      events,
+      upcomingLiveEvents,
+      upcomingStreams,
     },
   }
 }
