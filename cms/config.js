@@ -10,6 +10,19 @@ const devConfig = {
   media_folder: 'public/media',
 }
 
+const previewConfig = {
+  editorial_workflow: false,
+  cms_manual_init: true,
+  backend: {
+    name: 'github',
+    repo: 'shawntax/dirtysite',
+    branch: 'streams-and-past-events',
+    base_url: 'https://dirtysite.vercel.app',
+    auth_endpoint: 'api/auth',
+  },
+  media_folder: 'public/media',
+}
+
 const prodConfig = {
   editorial_workflow: false,
   cms_manual_init: true,
@@ -227,9 +240,30 @@ const collections = [
     ],
   },
 ]
-const config =
-  process.env.NODE_ENV === 'development'
-    ? { ...devConfig, collections }
-    : { ...prodConfig, collections }
+
+// const config =
+//   process.env.NODE_ENV === 'development'
+//     ? { ...devConfig, collections }
+//     : { ...prodConfig, collections }
+
+const NODE_ENV = process?.env?.NODE_ENV
+const VERCEL_ENV = process?.env?.VERCEL_ENV
+const NEXT_VERCEL_ENV = process?.env?.NEXT_PUBLIC_VERCEL_ENV
+
+console.log(
+  `NODE_ENV: ${NODE_ENV}, VERCEL_ENV: ${VERCEL_ENV}, NEXT_VERCEL_ENV: ${NEXT_VERCEL_ENV}`
+)
+
+let config
+if (VERCEL_ENV === 'development' || NODE_ENV === 'development') {
+  console.log('dev config')
+  config = { ...devConfig, collections }
+} else if (VERCEL_ENV === 'preview') {
+  console.log('preview config')
+  config = { ...previewConfig, collections }
+} else {
+  console.log('prod config')
+  config = { ...prodConfig, collections }
+}
 
 export default config
