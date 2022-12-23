@@ -247,15 +247,12 @@ const collections = [
 //     : { ...prodConfig, collections }
 
 const NODE_ENV = process?.env?.NODE_ENV
-const VERCEL_ENV = process?.env?.VERCEL_ENV
-const NEXT_VERCEL_ENV = process?.env?.NEXT_PUBLIC_VERCEL_ENV
+const VERCEL_ENV = process?.env?.NEXT_PUBLIC_VERCEL_ENV
 
-console.log(
-  `NODE_ENV: ${NODE_ENV}, VERCEL_ENV: ${VERCEL_ENV}, NEXT_VERCEL_ENV: ${NEXT_VERCEL_ENV}`
-)
+console.log(`NODE_ENV: ${NODE_ENV}, VERCEL_ENV: ${VERCEL_ENV}`)
 
 let config
-if (VERCEL_ENV === 'development' || NODE_ENV === 'development') {
+if (NODE_ENV === 'development') {
   console.log('dev config')
   config = { ...devConfig, collections }
 } else if (VERCEL_ENV === 'preview') {
