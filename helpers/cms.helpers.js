@@ -22,7 +22,45 @@ export function fetchEvents() {
     require.context('../content/events', false, /^(.\/).*(.json)$/)
   )
 
-  const upcomingEvents = events
+  const upcomingLiveEvents = events
+    .map((event) => {
+      event.photoFileName = event.photoUrl?.split('/').pop() ?? null
+      event.slug = slugify(
+        `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
+        { lower: true }
+      )
+      return event
+    })
+    .filter(({ format }) => {
+      return format === 'Live'
+    })
+    .filter(({ eventDate }) => {
+      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+    })
+    .sort((a, b) => {
+      return dayjs(a.eventDate) - dayjs(b.eventDate)
+    })
+
+  const upcomingStreams = events
+    .map((event) => {
+      event.photoFileName = event.photoUrl?.split('/').pop() ?? null
+      event.slug = slugify(
+        `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
+        { lower: true }
+      )
+      return event
+    })
+    .filter(({ format }) => {
+      return format === 'Stream'
+    })
+    .filter(({ eventDate }) => {
+      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+    })
+    .sort((a, b) => {
+      return dayjs(a.eventDate) - dayjs(b.eventDate)
+    })
+
+  const pastEvents = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
       event.slug = slugify(
@@ -32,11 +70,11 @@ export function fetchEvents() {
       return event
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+      return dayjs().isAfter(dayjs(eventDate), 'day')
     })
     .sort((a, b) => {
-      return dayjs(a.eventDate) - dayjs(b.eventDate)
+      return dayjs(b.eventDate) - dayjs(a.eventDate)
     })
 
-  return upcomingEvents
+  return { upcomingLiveEvents, upcomingStreams, pastEvents }
 }

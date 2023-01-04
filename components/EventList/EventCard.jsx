@@ -7,9 +7,9 @@ import dayjs from 'dayjs'
 const EventCard = ({ event }) => {
   const { slug, photoFileName } = event
   return (
-    <Center>
+    <Flex justify={{ base: 'center', sm: 'start' }}>
       <Flex
-        justify={{ base: 'center' }}
+        justify="center"
         p={{ base: '2', md: '4' }}
         maxW="400px"
         minW="400px"
@@ -65,7 +65,7 @@ const EventCard = ({ event }) => {
           </NCLink>
         </Box>
       </Flex>
-    </Center>
+    </Flex>
   )
 }
 

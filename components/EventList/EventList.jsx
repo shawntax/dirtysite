@@ -1,10 +1,10 @@
 import { Heading, VStack, StackDivider } from '@chakra-ui/react'
 import EventListItem from './EventListItem'
 
-const EventList = ({ events }) => {
+const EventList = ({ title, events }) => {
   return (
     <>
-      <Heading py="4">Upcoming Events</Heading>
+      <Heading py="4">{title || 'Upcoming Events'}</Heading>
       <VStack
         p="8"
         w="full"

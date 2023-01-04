@@ -39,6 +39,7 @@
     "react-hook-form": "^7.39.4",
     "react-icons": "^4.6.0",
     "react-markdown": "^8.0.4",
+    "react-tiny-virtual-list": "^2.2.0",
     "remark-gfm": "^3.0.1",
     "safe-await": "^2.0.0",
     "slugify": "^1.6.5"
