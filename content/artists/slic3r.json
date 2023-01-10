@@ -1,0 +1,23 @@
+{
+  "id": "nvdSA6BsV",
+  "name": "Slic3r",
+  "photoUrl": "/public/media/slic3r-website.png",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "slic3r"
+    },
+    {
+      "type": "twitter",
+      "handle": "realslic3r"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "slic3r"
+    },
+    {
+      "type": "twitch",
+      "handle": "realslic3r"
+    }
+  ]
+}
