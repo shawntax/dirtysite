@@ -1,19 +1,27 @@
 {
-  "name": "Amstar",
+  "name": "Amadrama",
   "photoUrl": "/public/media/amstar.jpg",
   "id": "8ZVkfAIp2",
   "socials": [
     {
       "type": "instagram",
-      "handle": "amstar.wav"
+      "handle": "amadramamusic"
     },
     {
       "type": "facebook",
-      "handle": "amstarmusic"
+      "handle": "amadramamusic"
     },
     {
       "type": "soundcloud",
-      "handle": "amstarmusic"
+      "handle": "amadramamusic"
+    },
+    {
+      "type": "tiktok",
+      "handle": "amadramamusic"
+    },
+    {
+      "type": "twitter",
+      "handle": "AMADRAMAMUSIC"
     }
   ]
 }
