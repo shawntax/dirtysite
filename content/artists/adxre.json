@@ -14,6 +14,18 @@
     {
       "type": "soundcloud",
       "handle": "adxre"
+    },
+    {
+      "type": "twitter",
+      "handle": "adxremusic"
+    },
+    {
+      "type": "tiktok",
+      "handle": "adxremusic"
+    },
+    {
+      "type": "spotify",
+      "handle": "6jZc4yPzOnV0Xxdea3XhHN"
     }
   ]
 }
