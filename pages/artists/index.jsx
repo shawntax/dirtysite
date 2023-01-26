@@ -13,7 +13,7 @@ export default function Artists({ artists }) {
       <PageHeader title="Artists" seoDesc={seoDesc}>
         Artists
       </PageHeader>
-      <SimpleGrid minChildWidth="200px" spacing="5" mt="5">
+      <SimpleGrid minChildWidth="260px" spacing="8" mt="5">
         {artists.map((artist) => {
           return <ArtistCard key={artist.id} artist={artist} />
         })}
