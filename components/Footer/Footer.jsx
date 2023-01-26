@@ -27,7 +27,7 @@ const Footer = () => {
       </Stack>
       <Center>
         <Text pt={16} pb={4} color="white" mx="auto">
-          © 2022 Dirty Not Sorry
+          © 2023 Dirty Not Sorry
         </Text>
       </Center>
     </Flex>
