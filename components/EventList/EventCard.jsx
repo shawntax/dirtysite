@@ -20,7 +20,7 @@ const EventCard = ({ event }) => {
             _hover={{ textDecoration: 'none' }}
           >
             <AspectRatio ratio={1 / 1}>
-              <Photo fileName={photoFileName} layout="fill" objectFit="cover" />
+              <Photo fileName={photoFileName} fill={true} />
             </AspectRatio>
             <Flex direction="row" justify="space-between" mt="2">
               <Text

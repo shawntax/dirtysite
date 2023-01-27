@@ -18,35 +18,12 @@ export default function About() {
         <Photo
           fileName="group-acraze.jpg"
           alt="group"
-          height="100%"
-          width="100%"
-          layout="responsive"
-          objectFit="cover"
+          height={500}
+          width={500}
         />
-        <Photo
-          fileName="group.jpg"
-          alt="group"
-          height="100%"
-          width="100%"
-          layout="responsive"
-          objectFit="cover"
-        />
-        <Photo
-          fileName="group-2.jpg"
-          alt="group"
-          height="100%"
-          width="100%"
-          layout="responsive"
-          objectFit="cover"
-        />
-        <Photo
-          fileName="group-4.jpg"
-          alt="group"
-          height="100%"
-          width="100%"
-          layout="responsive"
-          objectFit="cover"
-        />
+        <Photo fileName="group.jpg" alt="group" height={500} width={500} />
+        <Photo fileName="group-2.jpg" alt="group" height={500} width={500} />
+        <Photo fileName="group-4.jpg" alt="group" height={500} width={500} />
       </SimpleGrid>
     </>
   )

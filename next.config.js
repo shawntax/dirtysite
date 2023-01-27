@@ -1,9 +1,12 @@
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: false,
-  images: {
-    loader: 'custom',
-    unoptimized: true,
+  swcMinify: true,
+  // images: {
+  //   loader: 'custom',
+  //   unoptimized: true,
+  // },
+  compiler: {
+    emotion: true,
   },
   webpack: (config) => {
     config.module.rules.push({

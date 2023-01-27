@@ -13,7 +13,7 @@ import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
-import remarkGfm from 'remark-gfm'
+// import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Event({ event }) {
@@ -61,7 +61,6 @@ export default function Event({ event }) {
               p={{ base: '4', lg: 0 }}
             >
               <ReactMarkdown
-                remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
                 components={ChakraUIRenderer()}
                 children={event.description}
                 skipHtml
@@ -79,8 +78,7 @@ export default function Event({ event }) {
         <AspectRatio ratio={1 / 1}>
           <Photo
             fileName={event.photoFileName}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
             border="1px"
             bordercolor="gray.800"
           />

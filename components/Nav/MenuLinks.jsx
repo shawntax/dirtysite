@@ -1,30 +1,27 @@
-import NextLink from 'next/link'
-import { Stack, Link, Text } from '@chakra-ui/react'
+import { Stack, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import NCLink from '@components/NCLink'
 
 const MenuItem = ({ children, to = '/', ...rest }) => {
   const router = useRouter()
   return (
-    <NextLink href={to} passHref>
-      <Link
+    <NCLink to={to}>
+      <Text
+        display="block"
+        casing="uppercase"
         _hover={{
           textDecoration: 'none',
           fontWeight: 'bold',
         }}
+        textDecoration={
+          router.asPath.includes(to) ? 'underline #FFF' : 'initial'
+        }
+        fontWeight={router.asPath.includes(to) ? 'bold' : 'normal'}
+        {...rest}
       >
-        <Text
-          display="block"
-          casing="uppercase"
-          textDecoration={
-            router.asPath.includes(to) ? 'underline #FFF' : 'initial'
-          }
-          fontWeight={router.asPath.includes(to) ? 'bold' : 'normal'}
-          {...rest}
-        >
-          {children}
-        </Text>
-      </Link>
-    </NextLink>
+        {children}
+      </Text>
+    </NCLink>
   )
 }
 

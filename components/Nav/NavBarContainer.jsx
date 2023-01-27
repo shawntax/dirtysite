@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Flex } from '@chakra-ui/react'
-import { motion, useViewportScroll, useAnimation } from 'framer-motion'
+import { motion, useScroll, useAnimation } from 'framer-motion'
 
 const NavBarContainer = ({ children, ...props }) => {
   const { isHomePage } = props
@@ -19,7 +19,7 @@ const NavBarContainer = ({ children, ...props }) => {
     },
   }
 
-  const { scrollYProgress } = useViewportScroll()
+  const { scrollYProgress } = useScroll()
   const control = useAnimation()
 
   useEffect(() => {
