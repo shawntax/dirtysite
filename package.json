@@ -6,7 +6,7 @@
     "npm": ">= 8"
   },
   "scripts": {
-    "cms-proxy-server": "npx netlify-cms-proxy-server",
+    "cms-proxy-server": "npx @staticcms/proxy-server",
     "next:dev": "next dev",
     "v:dev": "vercel dev",
     "dev": "run-p cms-proxy-server  v:dev",
@@ -25,6 +25,7 @@
     "@fontsource/darker-grotesque": "^4.5.7",
     "@fontsource/oswald": "^4.5.5",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
+    "@staticcms/core": "^1.2.4",
     "axios": "^0.27.2",
     "chakra-ui-markdown-renderer": "^4.1.0",
     "dayjs": "^1.11.2",
@@ -37,7 +38,6 @@
     "react-hook-form": "^7.39.4",
     "react-icons": "^4.6.0",
     "react-markdown": "^8.0.4",
-    "remark-gfm": "^3.0.1",
     "safe-await": "^2.0.0",
     "slugify": "^1.6.5"
   },

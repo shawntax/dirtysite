@@ -3,9 +3,9 @@ const devConfig = {
   editorial_workflow: false,
   cms_manual_init: true,
   backend: {
-    name: 'github',
-    repo: 'shawntax/dirtysite',
-    branch: 'source',
+    name: 'proxy',
+    proxy_url: 'http://localhost:8081/api/v1',
+    branch: process?.env?.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ?? 'main',
   },
   media_folder: 'public/media',
 }
@@ -137,7 +137,9 @@ const collections = [
     editor: {
       preview: true,
     },
-    sortable_fields: ['eventDate', 'format'],
+    sortable_fields: {
+      fields: ['eventDate', 'format'],
+    },
     format: 'json',
     fields: [
       { label: 'ID', name: 'id', widget: 'ncw-id' },

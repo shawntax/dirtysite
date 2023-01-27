@@ -1,20 +1,15 @@
 import dynamic from 'next/dynamic'
-import config from '@cms/config'
-import { Widget as IdWidget } from '@ncwidgets/id'
+import { useMemo } from 'react'
 
-const CMS = dynamic(
-  () =>
-    import('netlify-cms-app').then((cms) => {
-      cms.registerWidget(IdWidget)
-      cms.init({ config })
-    }),
-  { ssr: false, loading: () => <p>Loading...</p> }
-)
+const Admin = () => {
+  const CMSPage = dynamic(() => import('@components/CMSPage'), {
+    ssr: false,
+    loading: () => <p>Loading...</p>,
+  })
 
-const AdminPage = () => {
-  return <CMS />
+  return useMemo(() => <CMSPage key="admin-cms-page" />, [])
 }
 
-AdminPage.pageName = 'AdminPage'
+Admin.pageName = 'AdminPage'
 
-export default AdminPage
+export default Admin
