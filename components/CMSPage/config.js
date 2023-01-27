@@ -8,6 +8,7 @@ const devConfig = {
     branch: process?.env?.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ?? 'main',
   },
   media_folder: 'public/media',
+  public_folder: '/media',
 }
 
 const previewConfig = {
