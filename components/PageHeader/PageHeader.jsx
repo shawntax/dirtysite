@@ -12,7 +12,7 @@ const PageHeader = ({ children, ...props }) => {
   return (
     <>
       <Head>
-        <title>{title} | Dirty Not Sorry</title>
+        <title>{`${title} | Dirty Not Sorry`}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={seoDesc} key="sitedesc" />
