@@ -5,7 +5,7 @@ const devConfig = {
   backend: {
     name: 'proxy',
     proxy_url: 'http://localhost:8081/api/v1',
-    branch: process?.env?.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ?? 'main',
+    branch: 'main',
   },
   media_folder: 'public/media',
   public_folder: '/media',
@@ -140,10 +140,14 @@ const collections = [
     },
     sortable_fields: {
       fields: ['eventDate', 'format'],
+      default: {
+        field: 'eventDate',
+        direction: 'Descending',
+      },
     },
     format: 'json',
     fields: [
-      { label: 'ID', name: 'id', widget: 'ncw-id' },
+      { label: 'ID', name: 'id', widget: 'id-widget' },
       {
         label: 'Format',
         name: 'format',
@@ -208,7 +212,7 @@ const collections = [
     },
     format: 'json',
     fields: [
-      { label: 'ID', name: 'id', widget: 'ncw-id' },
+      { label: 'ID', name: 'id', widget: 'id-widget' },
       { label: 'DJ Name', name: 'name', widget: 'string' },
       {
         label: 'Socials',

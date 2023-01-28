@@ -1,6 +1,7 @@
 import { Stack, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import NCLink from '@components/NCLink'
+import { RxExternalLink } from 'react-icons/rx'
 
 const MenuItem = ({ children, to = '/', ...rest }) => {
   const router = useRouter()
@@ -39,7 +40,10 @@ const MenuLinks = ({ isOpen }) => {
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/artists">Artists</MenuItem>
       <MenuItem to="/events">Events</MenuItem>
-      <MenuItem to="https://shop.dirtynotsorry.com">Shop</MenuItem>
+      <MenuItem to="https://shop.dirtynotsorry.com">
+        Shop
+        <RxExternalLink style={{ display: 'inline', height: '18px' }} />
+      </MenuItem>
     </Stack>
   )
 }
