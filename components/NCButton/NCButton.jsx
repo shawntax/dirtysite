@@ -5,7 +5,7 @@ const NCButton = ({ children, ...props }) => {
     <Button
       variant="solid"
       size={props.size ?? 'lg'}
-      px="8"
+      px="4"
       borderRadius="full"
       bgColor="white"
       color="black"
