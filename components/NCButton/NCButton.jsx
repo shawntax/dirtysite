@@ -1,28 +1,25 @@
-import { Button, Text } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 
 const NCButton = ({ children, ...props }) => {
   return (
     <Button
+      variant="solid"
       size={props.size ?? 'lg'}
       px="8"
       borderRadius="full"
-      bgColor="white"
       color="black"
       w="44"
-      {...props}
+      fontSize={props.fontSize ?? 'xl'}
+      casing="uppercase"
+      fontWeight="bold"
       _hover={{
         bgColor: 'black',
         color: 'white',
         border: '2px solid white',
       }}
+      {...props}
     >
-      <Text
-        fontSize={props.fontSize ?? 'xl'}
-        casing="uppercase"
-        fontWeight="bold"
-      >
-        {children}
-      </Text>
+      {children}
     </Button>
   )
 }
