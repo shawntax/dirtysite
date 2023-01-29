@@ -1,40 +1,16 @@
 import PropTypes from 'prop-types'
 import Image from 'next/image'
 
-const shimmer = (w, h) => `
-<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="g">
-      <stop stop-color="#333" offset="20%" />
-      <stop stop-color="#222" offset="50%" />
-      <stop stop-color="#333" offset="70%" />
-    </linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="#333" />
-  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-</svg>`
-
-const toBase64 = (str) =>
-  typeof window === 'undefined'
-    ? Buffer.from(str).toString('base64')
-    : window.btoa(str)
-
 const Photo = ({ fileName, ...props }) => {
-  // opt-out of image optimization, no-op
-  // const customLoader = ({ src }) => {
-  //   return src
-  // }
-
+  const blurURL =
+    'data:image/webp;base64,UklGRkoBAABXRUJQVlA4ID4BAABwDQCdASqqAHEAPpFEm0s7NakhpNJ7G2ASCWlu4AAfcHR25/zVS9/7gBmd5fjruUWFoe10M6yIgYw4ZQew3gdjouLwsxo2TqyHATpE95NCEG9CdSYiqVF78FVcJb9VbbqxBgus8jyJDiBgSKK6naV3lMy94AD+8EBC3HaD4uK2mUi0pidsQJQEDTzHFPhSO3k+wO9Y/PMXbtQ8fGu+HOJyHu7X+Ixo5UUYpu2pn2FVUI060+WGABWV5OMUEmlUSnyxRT0j/+ehffiVh1OM78apcUwH9QIsHs/SZ5x+jyVPLUzc9kinTKk4yhEZ5b6C2eFlsdAjleRYyYZKSedN2sV5OEpMkC0f2nuBjDaAJZfxbY1uSTAbxz0+S5fTjmfeYQfmDcT9U9ey3v6fBTSNYI7CLrC0heMOqWcazBsVAAA='
   return (
     <Image
-      // loader={customLoader}
-      // unoptimized={true}
       src={`/media/${fileName}`}
       alt={fileName}
       fill={props.fill ?? false}
       placeholder="blur"
-      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+      blurDataURL={blurURL}
       {...props}
     />
   )

@@ -7,6 +7,7 @@ const NCButton = ({ children, ...props }) => {
       size={props.size ?? 'lg'}
       px="8"
       borderRadius="full"
+      bgColor="white"
       color="black"
       w="44"
       fontSize={props.fontSize ?? 'xl'}
