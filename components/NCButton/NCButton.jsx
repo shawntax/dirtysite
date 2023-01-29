@@ -13,11 +13,11 @@ const NCButton = ({ children, ...props }) => {
       fontSize={props.fontSize ?? 'xl'}
       casing="uppercase"
       fontWeight="bold"
-      _hover={{
-        bgColor: 'black',
-        color: 'white',
-        border: '2px solid white',
-      }}
+      // _hover={{
+      //   bgColor: 'black',
+      //   color: 'white',
+      //   border: '2px solid white',
+      // }}
       {...props}
     >
       {children}
