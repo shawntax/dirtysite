@@ -1,5 +1,4 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from '@chakra-ui/react'
 import theme from '@theme/index'
 import { FB_PIXEL_ID } from '@helpers/pixel.helpers'
 
@@ -27,7 +26,6 @@ export default class MyDocument extends NextDocument {
         </Head>
 
         <body>
-          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>
