@@ -4,8 +4,6 @@ const devConfig = {
   cms_manual_init: true,
   backend: {
     name: 'proxy',
-    proxy_url: 'http://localhost:8081/api/v1',
-    branch: 'main',
   },
   media_folder: 'public/media',
   public_folder: '/media',
@@ -22,6 +20,7 @@ const previewConfig = {
     auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
+  public_folder: '/media',
 }
 
 const prodConfig = {
@@ -35,6 +34,7 @@ const prodConfig = {
     auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
+  public_folder: '/media',
 }
 
 const SOCIALS = [

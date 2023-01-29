@@ -1,8 +1,21 @@
 import { nanoid } from 'nanoid/non-secure'
-import { useCallback } from 'react'
 
-const IdControl = ({ label, field, value, onChange }) => {
-  return <input type="text" value={value ?? nanoid(10)} id="IdInput" disabled />
+const IdControl = ({ value, onChange }) => {
+  if (!value) {
+    value = nanoid(10)
+    onChange(value)
+  }
+  return (
+    <div style={{ display: 'flex', padding: '10px' }}>
+      <input
+        type="text"
+        key="uuid-input"
+        name="uuid-input"
+        value={value}
+        disabled
+      />
+    </div>
+  )
 }
 
 const IdPreview = ({ value }) => {
