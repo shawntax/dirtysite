@@ -3,11 +3,10 @@ const devConfig = {
   editorial_workflow: false,
   cms_manual_init: true,
   backend: {
-    name: 'github',
-    repo: 'shawntax/dirtysite',
-    branch: 'source',
+    name: 'proxy',
   },
   media_folder: 'public/media',
+  public_folder: '/media',
 }
 
 const previewConfig = {
@@ -21,6 +20,7 @@ const previewConfig = {
     auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
+  public_folder: '/media',
 }
 
 const prodConfig = {
@@ -34,6 +34,7 @@ const prodConfig = {
     auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
+  public_folder: '/media',
 }
 
 const SOCIALS = [
@@ -137,10 +138,16 @@ const collections = [
     editor: {
       preview: true,
     },
-    sortable_fields: ['eventDate', 'format'],
+    sortable_fields: {
+      fields: ['eventDate', 'format'],
+      default: {
+        field: 'eventDate',
+        direction: 'Descending',
+      },
+    },
     format: 'json',
     fields: [
-      { label: 'ID', name: 'id', widget: 'ncw-id' },
+      { label: 'ID', name: 'id', widget: 'id-widget' },
       {
         label: 'Format',
         name: 'format',
@@ -205,7 +212,7 @@ const collections = [
     },
     format: 'json',
     fields: [
-      { label: 'ID', name: 'id', widget: 'ncw-id' },
+      { label: 'ID', name: 'id', widget: 'id-widget' },
       { label: 'DJ Name', name: 'name', widget: 'string' },
       {
         label: 'Socials',

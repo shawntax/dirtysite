@@ -1,30 +1,28 @@
-import NextLink from 'next/link'
-import { Stack, Link, Text } from '@chakra-ui/react'
+import { Stack, Text } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import NCLink from '@components/NCLink'
+import { RxExternalLink } from 'react-icons/rx'
 
 const MenuItem = ({ children, to = '/', ...rest }) => {
   const router = useRouter()
   return (
-    <NextLink href={to} passHref>
-      <Link
+    <NCLink to={to}>
+      <Text
+        display="block"
+        casing="uppercase"
         _hover={{
           textDecoration: 'none',
           fontWeight: 'bold',
         }}
+        textDecoration={
+          router.asPath.includes(to) ? 'underline #FFF' : 'initial'
+        }
+        fontWeight={router.asPath.includes(to) ? 'bold' : 'normal'}
+        {...rest}
       >
-        <Text
-          display="block"
-          casing="uppercase"
-          textDecoration={
-            router.asPath.includes(to) ? 'underline #FFF' : 'initial'
-          }
-          fontWeight={router.asPath.includes(to) ? 'bold' : 'normal'}
-          {...rest}
-        >
-          {children}
-        </Text>
-      </Link>
-    </NextLink>
+        {children}
+      </Text>
+    </NCLink>
   )
 }
 
@@ -42,7 +40,10 @@ const MenuLinks = ({ isOpen }) => {
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/artists">Artists</MenuItem>
       <MenuItem to="/events">Events</MenuItem>
-      <MenuItem to="https://shop.dirtynotsorry.com">Shop</MenuItem>
+      <MenuItem to="https://shop.dirtynotsorry.com">
+        Shop
+        <RxExternalLink style={{ display: 'inline', height: '18px' }} />
+      </MenuItem>
     </Stack>
   )
 }

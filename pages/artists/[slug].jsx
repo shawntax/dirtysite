@@ -60,13 +60,7 @@ function Artist({ artist }) {
         borderColor="gray.800"
       >
         <AspectRatio ratio={1 / 1}>
-          <Photo
-            h="full"
-            w="full"
-            layout="fill"
-            objectFit="cover"
-            fileName={artist.photoFileName}
-          />
+          <Photo fill={true} fileName={artist.photoFileName} />
         </AspectRatio>
       </Box>
       <Flex direction="column" my={{ base: '4', lg: 'none' }}>
