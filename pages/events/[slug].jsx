@@ -13,7 +13,6 @@ import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
-// import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Event({ event }) {
@@ -55,7 +54,7 @@ export default function Event({ event }) {
         {event.description && (
           <>
             <Divider orientation="horizontal" my="4" />
-            <Text
+            <Box
               maxW={'container.md'}
               fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
               p={{ base: '4', lg: 0 }}
@@ -65,7 +64,7 @@ export default function Event({ event }) {
                 children={event.description}
                 skipHtml
               />
-            </Text>
+            </Box>
           </>
         )}
       </Flex>
