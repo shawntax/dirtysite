@@ -1,5 +1,4 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import theme from '@theme/index'
 import { FB_PIXEL_ID } from '@helpers/pixel.helpers'
 
 export default class MyDocument extends NextDocument {

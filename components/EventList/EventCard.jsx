@@ -1,6 +1,5 @@
 import { Flex, Box, Text, AspectRatio, Center } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
-import NCButton from '@components/NCButton'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
 

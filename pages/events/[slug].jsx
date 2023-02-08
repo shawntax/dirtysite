@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
-import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
