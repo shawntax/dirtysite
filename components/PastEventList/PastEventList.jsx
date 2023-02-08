@@ -1,7 +1,7 @@
 import { chakra, Container, Heading, Flex, Text } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
-import VirtualList from 'react-tiny-virtual-list'
+import { Virtuoso } from 'react-virtuoso'
 
 const EventListItem = ({ event }) => {
   return (
@@ -48,13 +48,10 @@ const PastEventList = ({ events }) => {
         borderStyle="dotted"
         p={8}
       >
-        <VirtualList
-          width="100%"
-          height={600}
-          itemCount={events.length}
-          itemSize={50}
-          overscanCount={2}
-          renderItem={({ index }) => (
+        <Virtuoso
+          style={{ height: '600px' }}
+          totalCount={events.length}
+          itemContent={(index) => (
             <EventListItem key={events[index].id} event={events[index]} />
           )}
         />
