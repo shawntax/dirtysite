@@ -42,16 +42,13 @@ export default function Event({ event }) {
 
         {!isPast && (
           <NCLink
+            variant="button"
             to={`https://${event.ticketLink}`}
             target="_blank"
             rel="noopener"
             py="2"
-            textDecoration="none"
-            _hover={{
-              textDecoration: 'none',
-            }}
           >
-            <NCButton>{event.linkText}</NCButton>
+            {event.linkText}
           </NCLink>
         )}
         {event.description && (

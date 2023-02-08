@@ -1,6 +1,5 @@
 import { chakra, Flex, Text } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
-import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 
 const EventListItem = ({ event }) => {
@@ -29,13 +28,13 @@ const EventListItem = ({ event }) => {
         </Text>
       </Flex>
       <NCLink
+        variant="button"
         to={`https://${event.ticketLink}`}
         target="_blank"
         rel="noopener"
         marginInlineStart={{ base: 'none', md: 'auto' }}
-        _hover={{ textDecoration: 'none' }}
       >
-        <NCButton>{event.linkText}</NCButton>
+        {event.linkText}
       </NCLink>
     </Flex>
   )

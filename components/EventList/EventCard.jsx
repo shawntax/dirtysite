@@ -51,18 +51,17 @@ const EventCard = ({ event }) => {
               {event.format}
             </Text>
           </Flex>
-          <NCLink
-            to={`https://${event.ticketLink}`}
-            _hover={{ textDecoration: 'none' }}
-            target="_blank"
-            rel="noopener"
-          >
-            <Center>
-              <NCButton width="full" mt="2">
-                {event.linkText}
-              </NCButton>
-            </Center>
-          </NCLink>
+          <Center>
+            <NCLink
+              variant="button"
+              w="full"
+              to={`https://${event.ticketLink}`}
+              target="_blank"
+              rel="noopener"
+            >
+              {event.linkText}
+            </NCLink>
+          </Center>
         </Box>
       </Flex>
     </Flex>
