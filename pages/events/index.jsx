@@ -1,7 +1,7 @@
 import { Heading, SimpleGrid } from '@chakra-ui/react'
 import EventCard from '@components/EventList/EventCard'
 import PageHeader from '@components/PageHeader'
-// import PastEventList from '@components/PastEventList'
+import PastEventList from '@components/PastEventList'
 import { getLayout } from '@components/SiteLayout'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { attributes } from '@content/pages/artists.md'
@@ -9,7 +9,7 @@ import { attributes } from '@content/pages/artists.md'
 export default function Events({
   upcomingLiveEvents,
   upcomingStreams,
-  // pastEvents,
+  pastEvents,
 }) {
   const { seoDesc } = attributes
   return (
@@ -44,9 +44,9 @@ export default function Events({
         </>
       )}
 
-      {/* {pastEvents.length > 0 && (
+      {pastEvents.length > 0 && (
         <PastEventList title="Past Events" events={pastEvents} />
-      )} */}
+      )}
     </>
   )
 }

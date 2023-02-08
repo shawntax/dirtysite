@@ -3,9 +3,10 @@ import { Button } from '@chakra-ui/react'
 const NCButton = ({ children, ...props }) => {
   return (
     <Button
+      as="div"
       variant="solid"
       size={props.size ?? 'lg'}
-      px="8"
+      px="4"
       borderRadius="full"
       bgColor="white"
       color="black"
@@ -17,6 +18,7 @@ const NCButton = ({ children, ...props }) => {
         bgColor: 'black',
         color: 'white',
         border: '2px solid white',
+        cursor: 'pointer',
       }}
       {...props}
     >

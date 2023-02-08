@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
-import NCButton from '@components/NCButton'
 import dayjs from 'dayjs'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
@@ -42,13 +41,13 @@ export default function Event({ event }) {
 
         {!isPast && (
           <NCLink
+            variant="button"
             to={`https://${event.ticketLink}`}
             target="_blank"
             rel="noopener"
             py="2"
-            _hover={{ textDecoration: 'none' }}
           >
-            <NCButton>{event.linkText}</NCButton>
+            {event.linkText}
           </NCLink>
         )}
         {event.description && (
