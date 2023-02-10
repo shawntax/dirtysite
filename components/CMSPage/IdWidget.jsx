@@ -18,14 +18,10 @@ const IdControl = ({ value, onChange }) => {
   )
 }
 
-const IdPreview = ({ value }) => {
-  return <span>{value}</span>
-}
-
 const Widget = {
   name: 'id-widget',
   controlComponent: IdControl,
-  previewComponent: IdPreview,
+  previewComponent: null,
 }
 
 export default Widget
