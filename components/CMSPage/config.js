@@ -77,14 +77,29 @@ const collections = [
         file: 'content/pages/about.md',
         fields: [
           {
+            label: 'SEO Description',
+            name: 'seoDesc',
+            widget: 'text',
+          },
+          {
             label: 'About',
             name: 'body',
             widget: 'markdown',
           },
           {
-            label: 'SEO Description',
-            name: 'seoDesc',
-            widget: 'text',
+            label: 'Mission Statement',
+            name: 'missionStatement',
+            widget: 'markdown',
+          },
+          {
+            label: 'Values',
+            name: 'values',
+            widget: 'markdown',
+          },
+          {
+            label: 'Identity',
+            name: 'identity',
+            widget: 'markdown',
           },
         ],
       },
@@ -218,7 +233,6 @@ const collections = [
         label: 'Socials',
         name: 'socials',
         widget: 'list',
-        description: 'test',
         collapsed: true,
         minimize_collapsed: true,
         types: SOCIALS.map((site) => {
@@ -233,6 +247,12 @@ const collections = [
                 name: 'handle',
                 widget: 'string',
               },
+              {
+                name: 'hidden',
+                label: 'hidden',
+                widget: 'hidden',
+                required: false,
+              }, // need this extra field object to render the typed list properly because of an open bug
             ],
           }
         }),
