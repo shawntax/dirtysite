@@ -16,7 +16,7 @@ export default function About() {
           <AboutContent />
         </Box>
       )}
-      {/* the length of any empty markdown input is 3 for some reason lol */}
+      {/* the length of any empty markdown input is \n\n\n */}
       {identity.length > 3 && (
         <Box>
           <Heading as="h1" textTransform="capitalize" w="fit" py="4">
