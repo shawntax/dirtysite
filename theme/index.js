@@ -9,6 +9,11 @@ const styles = {
       bg: 'black',
       scrollBehavior: 'smooth',
     },
+    a: {
+      // textDecorationLine: 'underline',
+      // textDecorationStyle: 'wavy',
+      // textDecorationColor: 'gray.400',
+    },
   },
 }
 
