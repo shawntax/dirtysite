@@ -1,6 +1,5 @@
 const devConfig = {
   local_backend: true,
-  editorial_workflow: false,
   cms_manual_init: true,
   backend: {
     name: 'proxy',
