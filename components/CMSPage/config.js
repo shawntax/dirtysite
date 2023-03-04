@@ -205,6 +205,11 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
+        media_library: {
+          config: {
+            max_file_size: 5000000, // 5mb
+          },
+        },
       },
       {
         label: 'Description',
@@ -262,6 +267,11 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
+        media_library: {
+          config: {
+            max_file_size: 5000000, // 5mb
+          },
+        },
       },
     ],
   },
