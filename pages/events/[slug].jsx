@@ -29,7 +29,7 @@ export default function Event({ event }) {
           textDecorationStyle="dotted"
           textDecorationColor="gray.400"
         >
-          {children.toString().toLowerCase()}
+          {children?.toString().toLowerCase()}
           <RxExternalLink style={{ display: 'inline', height: '13px' }} />
         </NCLink>
       )
