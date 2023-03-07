@@ -1,7 +1,9 @@
 import slugify from 'slugify'
 import dayjs from 'dayjs'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
+import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
 dayjs.extend(isSameOrBefore)
+dayjs.extend(isSameOrAfter)
 
 const importAll = (r) => r.keys().map(r)
 
@@ -34,6 +36,9 @@ export function fetchEvents() {
     .filter(({ format }) => {
       return format === 'Live'
     })
+    .filter(({ publishDate }) => {
+      return dayjs().isSameOrAfter(dayjs(publishDate), 'day')
+    })
     .filter(({ eventDate }) => {
       return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
     })
@@ -52,6 +57,9 @@ export function fetchEvents() {
     })
     .filter(({ format }) => {
       return format === 'Stream'
+    })
+    .filter(({ publishDate }) => {
+      return dayjs().isSameOrAfter(dayjs(publishDate), 'day')
     })
     .filter(({ eventDate }) => {
       return dayjs().isSameOrBefore(dayjs(eventDate), 'day')

@@ -1,4 +1,4 @@
-import { chakra, Container, Heading, Flex, Text } from '@chakra-ui/react'
+import { chakra, Box, Container, Heading, Flex, Text } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
 import { Virtuoso } from 'react-virtuoso'
@@ -39,7 +39,7 @@ const EventListItem = ({ event }) => {
 
 const PastEventList = ({ events }) => {
   return (
-    <>
+    <Box mt="20">
       <Heading py="4">Past Events</Heading>
       <Container
         maxW="container.xl"
@@ -56,7 +56,7 @@ const PastEventList = ({ events }) => {
           )}
         />
       </Container>
-    </>
+    </Box>
   )
 }
 

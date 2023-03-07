@@ -1,5 +1,5 @@
-import NextLink from 'next/link'
-import { Link } from '@chakra-ui/react'
+'use client'
+import { Link } from '@chakra-ui/next-js'
 
 const NCLink = ({ children, variant = 'link', to = '/', target, ...props }) => {
   if (variant === 'button') {
@@ -21,6 +21,7 @@ const NCLink = ({ children, variant = 'link', to = '/', target, ...props }) => {
         casing="uppercase"
         fontWeight="bold"
         border="2px solid white"
+        textDecoration="none"
         _hover={{
           textDecoration: 'none',
           bgColor: 'black',
@@ -35,7 +36,7 @@ const NCLink = ({ children, variant = 'link', to = '/', target, ...props }) => {
     )
   } else {
     return (
-      <Link as={NextLink} href={to} target={target} {...props}>
+      <Link href={to} target={target} {...props}>
         {children}
       </Link>
     )

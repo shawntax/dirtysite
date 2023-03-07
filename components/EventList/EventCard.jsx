@@ -50,7 +50,7 @@ const EventCard = ({ event }) => {
               {event.format}
             </Text>
           </Flex>
-          <Center>
+          <Center my="2">
             <NCLink
               variant="button"
               w="full"

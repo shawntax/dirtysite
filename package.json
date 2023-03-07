@@ -19,13 +19,14 @@
     "qnm": "qnm"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.0.1",
     "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/darker-grotesque": "^4.5.7",
     "@fontsource/oswald": "^4.5.5",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
-    "@staticcms/core": "^1.2.8",
+    "@staticcms/core": "^1.2.12",
     "axios": "^0.27.2",
     "chakra-ui-markdown-renderer": "^4.1.0",
     "dayjs": "^1.11.2",
@@ -60,7 +61,7 @@
     "prettier": "^2.5.1",
     "qnm": "^2.10.1",
     "serve": "^14.0.1",
-    "vercel": "^28.5.1"
+    "vercel": "^28.16.12"
   },
   "browserslist": [
     "> 1%",

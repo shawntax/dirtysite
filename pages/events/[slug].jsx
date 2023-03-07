@@ -11,11 +11,30 @@ import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
 import ReactMarkdown from 'react-markdown'
+import { RxExternalLink } from 'react-icons/rx'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
+
+  const descriptionTheme = {
+    a: ({ href, children }) => {
+      return (
+        <NCLink
+          href={href}
+          target="_blank"
+          rel="noopener"
+          textDecoration="underline"
+          textDecorationStyle="dotted"
+          textDecorationColor="gray.400"
+        >
+          {children?.toString().toLowerCase()}
+          <RxExternalLink style={{ display: 'inline', height: '13px' }} />
+        </NCLink>
+      )
+    },
+  }
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -59,7 +78,7 @@ export default function Event({ event }) {
               p={{ base: '4', lg: 0 }}
             >
               <ReactMarkdown
-                components={ChakraUIRenderer()}
+                components={ChakraUIRenderer(descriptionTheme)}
                 children={event.description}
                 skipHtml
               />

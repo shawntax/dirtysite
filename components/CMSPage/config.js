@@ -1,6 +1,5 @@
 const devConfig = {
   local_backend: true,
-  editorial_workflow: false,
   cms_manual_init: true,
   backend: {
     name: 'proxy',
@@ -147,8 +146,7 @@ const collections = [
     folder: 'content/events',
     create: true,
     slug: '{{title}}-{{fields.id}}',
-    summary:
-      "{{title | upper}} - {{fields.eventDate | date('MM/DD')}} ({{fields.format}})",
+    summary: `{{title | upper}} - {{fields.eventDate | date('MM/DD')}} ({{fields.format}})`,
     identifier_field: 'title',
     editor: {
       preview: true,
@@ -206,6 +204,11 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
+        media_library: {
+          config: {
+            max_file_size: 5000000, // 5mb
+          },
+        },
       },
       {
         label: 'Description',
@@ -263,6 +266,11 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
+        media_library: {
+          config: {
+            max_file_size: 5000000, // 5mb
+          },
+        },
       },
     ],
   },
