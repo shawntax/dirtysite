@@ -1,5 +1,6 @@
 import slugify from 'slugify'
 import dayjs from 'dayjs'
+import normalizeUrl from 'normalize-url'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
 dayjs.extend(isSameOrBefore)
@@ -31,6 +32,12 @@ export function fetchEvents() {
         `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
         { lower: true }
       )
+      event.ticketLink = normalizeUrl(event.ticketLink, {
+        defaultProtocol: 'https',
+        normalizeProtocol: true,
+        forceHttps: true,
+        stripProtocol: true,
+      })
       return event
     })
     .filter(({ format }) => {
