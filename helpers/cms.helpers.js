@@ -44,7 +44,7 @@ export function fetchEvents() {
       return format === 'Live'
     })
     .filter(({ publishDate }) => {
-      return dayjs().isSameOrAfter(dayjs(publishDate), 'day')
+      return dayjs().isSameOrAfter(dayjs(publishDate), 'minute')
     })
     .filter(({ eventDate }) => {
       return dayjs().isSameOrBefore(dayjs(eventDate), 'day')

@@ -172,12 +172,13 @@ const collections = [
         label: 'Publish Date',
         name: 'publishDate',
         widget: 'datetime',
-        time_format: false,
+        time_format: 'LLLL d yyyy -- h:mm bbb',
       },
       {
         label: 'Event Date',
         name: 'eventDate',
         widget: 'datetime',
+        date_format: 'LLLL d yyyy',
         time_format: false,
       },
       {
