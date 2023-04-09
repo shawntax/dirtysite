@@ -1,6 +1,5 @@
 const devConfig = {
   local_backend: true,
-  cms_manual_init: true,
   backend: {
     name: 'proxy',
   },
@@ -10,7 +9,6 @@ const devConfig = {
 
 const previewConfig = {
   editorial_workflow: false,
-  cms_manual_init: true,
   backend: {
     name: 'github',
     repo: 'shawntax/dirtysite',
@@ -24,7 +22,6 @@ const previewConfig = {
 
 const prodConfig = {
   editorial_workflow: false,
-  cms_manual_init: true,
   backend: {
     name: 'github',
     repo: 'shawntax/dirtysite',
