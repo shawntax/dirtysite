@@ -8,7 +8,6 @@ const devConfig = {
 }
 
 const previewConfig = {
-  editorial_workflow: false,
   backend: {
     name: 'github',
     repo: 'shawntax/dirtysite',
@@ -21,7 +20,6 @@ const previewConfig = {
 }
 
 const prodConfig = {
-  editorial_workflow: false,
   backend: {
     name: 'github',
     repo: 'shawntax/dirtysite',
