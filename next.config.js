@@ -1,9 +1,6 @@
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
-  compiler: {
-    emotion: true,
-  },
   experimental: {
     esmExternals: false,
   },
