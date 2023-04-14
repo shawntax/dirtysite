@@ -184,7 +184,7 @@ const collections = [
       },
       { label: 'Venue', name: 'venue', widget: 'string' },
       {
-        label: "Ticket Link (Don't include https:// or www)",
+        label: 'Ticket Link',
         name: 'ticketLink',
         widget: 'string',
       },
