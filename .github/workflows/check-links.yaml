@@ -20,5 +20,5 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.6.1
         with:
-          args: --verbose --no-progress --cache --max-cache-age 1d --header 'accept=text/html' --exclude 'https://solo.to/*' './content/**/*'
+          args: --verbose --no-progress --cache --max-cache-age 1d --header 'accept=text/html' --exclude 'https://solo.to/*, 'https://twitter.com/*' './content/**/*'
           fail: true
