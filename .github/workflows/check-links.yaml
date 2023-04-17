@@ -20,5 +20,5 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.6.1
         with:
-          args: --verbose --no-progress --cache --max-cache-age 1d --headers 'accept=text/html' './content/**/*'
+          args: --verbose --no-progress --cache --max-cache-age 1d --header 'accept=text/html' './content/**/*'
           fail: true
