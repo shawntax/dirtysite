@@ -8,6 +8,7 @@ import {
   SiInstagram,
   SiSpotify,
   SiSoundcloud,
+  SiDiscord,
 } from 'react-icons/si'
 
 const SocialLinks = ({ isOpen }) => {
@@ -30,6 +31,12 @@ const SocialLinks = ({ isOpen }) => {
           _hover={{ transform: 'scale(1.2)' }}
         >
           <SiTwitch size="30px" />
+        </NCLink>
+        <NCLink
+          to="https://discord.gg/WtgYU9RHXQ"
+          _hover={{ transform: 'scale(1.2)' }}
+        >
+          <SiDiscord size="30px" />
         </NCLink>
         <NCLink
           to="https://open.spotify.com/playlist/5ZdBfVoT7Oh8eZ5MioyQrS"
