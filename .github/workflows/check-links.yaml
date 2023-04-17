@@ -15,10 +15,10 @@ jobs:
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
-          restore-reys: cache-lychee-
+          restore-keys: cache-lychee-
 
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.6.1
         with:
-          args: --verbose --no-progress './content/**/*'
+          args: --verbose --no-progress --cache --max-cache-age 1d './content/**/*'
           fail: true
