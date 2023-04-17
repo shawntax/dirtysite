@@ -4,6 +4,10 @@ const devConfig = {
     name: 'proxy',
   },
   media_folder: 'public/media',
+  media_library: {
+    max_file_size: 5000000, // 5mb
+    folder_support: false,
+  },
   public_folder: '/media',
 }
 
@@ -16,6 +20,10 @@ const previewConfig = {
     auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
+  media_library: {
+    max_file_size: 5000000, // 5mb
+    folder_support: false,
+  },
   public_folder: '/media',
 }
 
@@ -28,6 +36,10 @@ const prodConfig = {
     auth_endpoint: 'api/auth',
   },
   media_folder: 'public/media',
+  media_library: {
+    max_file_size: 5000000, // 5mb
+    folder_support: false,
+  },
   public_folder: '/media',
 }
 
