@@ -6,7 +6,7 @@
     "npm": ">= 8"
   },
   "scripts": {
-    "cms-proxy-server": "npx @staticcms/proxy-server",
+    "cms-proxy-server": "npx @staticcms/proxy-server@3",
     "next:dev": "next dev",
     "v:dev": "vercel dev",
     "dev": "run-p cms-proxy-server  v:dev",
@@ -27,7 +27,7 @@
     "@fontsource/darker-grotesque": "^4.5.7",
     "@fontsource/oswald": "^4.5.5",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
-    "@staticcms/core": "1.2.14",
+    "@staticcms/core": "2.0.0-beta.6",
     "axios": "^0.27.2",
     "chakra-ui-markdown-renderer": "^4.1.0",
     "dayjs": "^1.11.2",

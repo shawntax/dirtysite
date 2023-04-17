@@ -201,9 +201,7 @@ const collections = [
         choose_url: false,
         required: true,
         media_library: {
-          config: {
-            max_file_size: 5000000, // 5mb
-          },
+          max_file_size: 5000000, // 5mb
         },
       },
       {

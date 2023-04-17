@@ -4,6 +4,8 @@ import { default as IdWidget } from './IdWidget'
 
 import config from './config'
 
+import '@staticcms/core/dist/main.css'
+
 const CMSPage = () => {
   useEffect(() => {
     CMS.init({ config })
