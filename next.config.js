@@ -4,6 +4,10 @@ const nextConfig = {
   experimental: {
     esmExternals: false,
   },
+  compiler: {
+    styledComponents: true,
+    emotion: true,
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
