@@ -1,8 +1,8 @@
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    esmExternals: false,
+    esmExternals: true,
   },
   webpack: (config) => {
     config.module.rules.push({
