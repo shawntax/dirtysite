@@ -188,7 +188,7 @@ const collections = [
         name: 'eventDate',
         widget: 'datetime',
         date_format: 'LLLL d, yyyy',
-        time_format: 'h:mm bbb',
+        time_format: false,
         format: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
       },
       {
