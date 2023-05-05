@@ -51,13 +51,8 @@ export default function Events({
   )
 }
 
-export async function getServerSideProps({ req, res }) {
+export async function getStaticProps() {
   const { upcomingLiveEvents, upcomingStreams, pastEvents } = fetchEvents()
-
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=3540, stale-while-revalidate=60'
-  )
 
   return {
     props: {
