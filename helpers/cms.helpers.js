@@ -84,6 +84,8 @@ export function fetchEvents() {
       )
       return event
     })
+    .filter(({ format }) => format !== 'Stream')
+    .filter(({ title }) => !title.toLowerCase().includes('residency'))
     .filter(({ eventDate }) => {
       return dayjs().isAfter(dayjs(eventDate), 'day')
     })

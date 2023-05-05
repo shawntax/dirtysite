@@ -22,8 +22,13 @@ export default function Artists({ artists }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ req, res }) {
   const artists = fetchArtists()
+
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=3540, stale-while-revalidate=60'
+  )
 
   return {
     props: {
