@@ -248,12 +248,6 @@ const collections = [
                 name: 'handle',
                 widget: 'string',
               },
-              {
-                name: 'hidden',
-                label: 'hidden',
-                widget: 'hidden',
-                required: false,
-              }, // need this extra field object to render the typed list properly because of an open bug
             ],
           }
         }),
