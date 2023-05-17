@@ -167,7 +167,8 @@ const collections = [
         label: 'Publish Date',
         name: 'publishDate',
         widget: 'datetime',
-        time_format: 'LLLL d yyyy -- h:mm bbb',
+        date_format: 'LLLL d yyyy',
+        time_format: '~ h:mm bb',
       },
       {
         label: 'Event Date',
@@ -175,6 +176,7 @@ const collections = [
         widget: 'datetime',
         date_format: 'LLLL d yyyy',
         time_format: false,
+        format: 'yyyy-MM-dd',
       },
       {
         label: 'Event Location',
