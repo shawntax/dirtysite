@@ -1,5 +1,6 @@
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Container, SimpleGrid, Heading } from '@chakra-ui/react'
 import { getLayout } from '@components/HomeLayout'
+import EventCard from '@components/EventList/EventCard'
 import PageHeader from '@components/PageHeader'
 import Hero from '@components/Hero'
 import EventList from '@components/EventList'
@@ -29,19 +30,53 @@ export default function Home({ upcomingLiveEvents, upcomingStreams }) {
           <AboutContent />
         </Box>
 
-        {upcomingLiveEvents.length > 0 && (
+        {/* {upcomingLiveEvents.length > 0 && (
           <EventList title="Upcoming Events" events={upcomingLiveEvents} />
         )}
         {upcomingStreams.length > 0 && (
           <EventList title="Upcoming Streams" events={upcomingStreams} />
-        )}
+        )} */}
+        <Container maxW="container.lg">
+          {upcomingLiveEvents.length > 0 && (
+            <>
+              <Heading as="h1" textTransform="capitalize" w="fit" py="4">
+                Upcoming Events
+              </Heading>
+              <SimpleGrid minChildWidth="250px" spacing="10" mt="5">
+                {upcomingLiveEvents.map((event) => {
+                  {
+                    return <EventCard key={event.id} event={event} />
+                  }
+                })}
+              </SimpleGrid>
+            </>
+          )}
+
+          {upcomingStreams.length > 0 && (
+            <>
+              <Heading as="h1" textTransform="capitalize" w="fit" py="4">
+                Upcoming Streams
+              </Heading>
+              <SimpleGrid minChildWidth="250px" spacing="10" mt="5">
+                {upcomingStreams.map((event) => {
+                  {
+                    return <EventCard key={event.id} event={event} />
+                  }
+                })}
+              </SimpleGrid>
+            </>
+          )}
+        </Container>
       </Container>
     </>
   )
 }
 
 export async function getStaticProps() {
-  const { upcomingLiveEvents, upcomingStreams } = fetchEvents()
+  const { upcomingLiveEvents: events, upcomingStreams: streams } = fetchEvents()
+
+  const upcomingLiveEvents = events.slice(0, 6)
+  const upcomingStreams = streams.slice(0, 3)
 
   return {
     props: {
