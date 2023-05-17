@@ -6,13 +6,22 @@ const IdControl = ({ value, onChange }) => {
     onChange(value)
   }
   return (
-    <div style={{ display: 'flex', padding: '10px' }}>
+    <div
+      style={{
+        display: 'flex',
+        padding: '10px',
+      }}
+    >
       <input
         type="text"
         key="uuid-input"
         name="uuid-input"
         value={value}
-        disabled
+        disabled={true}
+        style={{
+          backgroundColor: 'transparent',
+          fontFamily: 'monospace',
+        }}
       />
     </div>
   )
