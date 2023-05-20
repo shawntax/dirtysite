@@ -6,9 +6,6 @@ const PageHeader = ({ children, ...props }) => {
   const { title, seoDesc } = props
   const { pathname } = useRouter()
 
-  // const ogImage =
-  //   'https://res.cloudinary.com/dgkrvtqpg/image/upload/w_1200,h_630,f_auto,q_auto/v1666543549/og'
-
   return (
     <>
       <Head>

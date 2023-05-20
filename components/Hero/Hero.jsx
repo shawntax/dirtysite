@@ -6,15 +6,6 @@ import { BiChevronDown } from 'react-icons/bi'
 function Hero() {
   const videoRef = useRef()
 
-  // const posterUrl =
-  //   'https://res.cloudinary.com/dgkrvtqpg/video/upload/so_0.0/v1665981858/background-video-bpjm31.jpg'
-
-  // const videoMp4Url =
-  //   'https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.mp4'
-
-  // const videoWebmUrl =
-  //   'https://res.cloudinary.com/dgkrvtqpg/video/upload/f_auto,q_auto/v1665981858/background-video-bpjm31.webm'
-
   useEffect(() => {
     const promise = videoRef.current.play()
 
