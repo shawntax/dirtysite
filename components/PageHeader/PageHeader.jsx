@@ -27,7 +27,7 @@ const PageHeader = ({ children, ...props }) => {
           content={`https://dirtynotsorry.com${pathname}`}
           key="ogurl"
         />
-        <meta property="og:image" content="/brand/og.avif" key="ogimage" />
+        <meta property="og:image" content="/brand/og.png" key="ogimage" />
         <meta
           property="og:site_name"
           content={'Dirty Not Sorry'}
