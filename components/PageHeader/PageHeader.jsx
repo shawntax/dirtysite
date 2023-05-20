@@ -6,8 +6,8 @@ const PageHeader = ({ children, ...props }) => {
   const { title, seoDesc } = props
   const { pathname } = useRouter()
 
-  const ogImage =
-    'https://res.cloudinary.com/dgkrvtqpg/image/upload/w_1200,h_630,f_auto,q_auto/v1666543549/og'
+  // const ogImage =
+  //   'https://res.cloudinary.com/dgkrvtqpg/image/upload/w_1200,h_630,f_auto,q_auto/v1666543549/og'
 
   return (
     <>
@@ -27,7 +27,7 @@ const PageHeader = ({ children, ...props }) => {
           content={`https://dirtynotsorry.com${pathname}`}
           key="ogurl"
         />
-        <meta property="og:image" content={ogImage} key="ogimage" />
+        <meta property="og:image" content="/brand/og.avif" key="ogimage" />
         <meta
           property="og:site_name"
           content={'Dirty Not Sorry'}
