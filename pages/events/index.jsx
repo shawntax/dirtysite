@@ -66,7 +66,7 @@ export async function getStaticProps() {
       upcomingStreams,
       pastEvents,
     },
-    revalidate: 10,
+    revalidate: 60 * 60,
   }
 }
 
