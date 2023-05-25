@@ -31,7 +31,13 @@ export default function Events({
 
       {upcomingStreams.length > 0 && (
         <>
-          <Heading as="h1" textTransform="capitalize" w="fit" py="4">
+          <Heading
+            as="h1"
+            id="streams"
+            textTransform="capitalize"
+            w="fit"
+            py="4"
+          >
             Upcoming Streams
           </Heading>
           <SimpleGrid minChildWidth="300px" spacing="12" mt="5">

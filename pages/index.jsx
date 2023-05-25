@@ -5,6 +5,7 @@ import PageHeader from '@components/PageHeader'
 import Hero from '@components/Hero'
 import { attributes } from '@content/pages/home.md'
 import { react as AboutContent } from '@content/pages/about.md'
+import NCLink from '@components/NCLink'
 import { fetchEvents } from '@helpers/cms.helpers'
 
 export default function Home({ upcomingLiveEvents, upcomingStreams }) {
@@ -31,13 +32,23 @@ export default function Home({ upcomingLiveEvents, upcomingStreams }) {
           <AboutContent />
         </Box>
       </Container>
-      <Container maxW="container.xl" py="2">
+      <Container maxW="container.xl" py="2" px="2">
         {upcomingLiveEvents.length > 0 && (
           <>
-            <Heading as="h1" textTransform="capitalize" w="fit" py="12">
-              Upcoming Events
+            <Heading
+              as="h1"
+              textTransform="capitalize"
+              w="fit"
+              py="12"
+              px={{ base: 2, sm: '10' }}
+            >
+              <NCLink to="/events">Upcoming Events</NCLink>
             </Heading>
-            <SimpleGrid minChildWidth="300px" spacing="10">
+            <SimpleGrid
+              minChildWidth="300px"
+              spacing="10"
+              px={{ base: 2, sm: 20, xl: 4 }}
+            >
               {upcomingLiveEvents.map((event) => {
                 {
                   return <EventCard key={event.id} event={event} />
@@ -48,10 +59,20 @@ export default function Home({ upcomingLiveEvents, upcomingStreams }) {
         )}
         {upcomingStreams.length > 0 && (
           <>
-            <Heading as="h1" textTransform="capitalize" w="fit" py="12">
-              Upcoming Streams
+            <Heading
+              as="h1"
+              textTransform="capitalize"
+              w="fit"
+              py="12"
+              px={{ base: 2, sm: 10 }}
+            >
+              <NCLink to="/events#streams">Upcoming Streams</NCLink>
             </Heading>
-            <SimpleGrid minChildWidth="250px" spacing="10">
+            <SimpleGrid
+              minChildWidth="250px"
+              spacing="10"
+              px={{ base: 2, sm: 20, xl: 4 }}
+            >
               {upcomingStreams.map((event) => {
                 {
                   return <EventCard key={event.id} event={event} />
