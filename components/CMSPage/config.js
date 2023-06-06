@@ -5,6 +5,9 @@ const devConfig = {
   },
   media_folder: 'public/media',
   public_folder: '/media',
+  media_library: {
+    max_file_size: 5000000, // 5mb
+  },
 }
 
 const previewConfig = {
@@ -17,6 +20,9 @@ const previewConfig = {
   },
   media_folder: 'public/media',
   public_folder: '/media',
+  media_library: {
+    max_file_size: 5000000, // 5mb
+  },
 }
 
 const prodConfig = {
@@ -29,6 +35,9 @@ const prodConfig = {
   },
   media_folder: 'public/media',
   public_folder: '/media',
+  media_library: {
+    max_file_size: 5000000, // 5mb
+  },
 }
 
 const SOCIALS = [
@@ -202,11 +211,6 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
-        media_library: {
-          config: {
-            max_file_size: 5000000, // 5mb
-          },
-        },
       },
       {
         label: 'Description',
@@ -258,11 +262,6 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
-        media_library: {
-          config: {
-            max_file_size: 5000000, // 5mb
-          },
-        },
       },
     ],
   },
