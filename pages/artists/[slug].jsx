@@ -108,7 +108,7 @@ function Artist({ artist }) {
           </VStack>
         </Flex>
       </Flex>
-      {artist.bio && (
+      {artist.bio?.length > 3 && (
         <>
           <Divider py="2" />
           <Box fontSize="2xl" pt="2">
