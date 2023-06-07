@@ -22,6 +22,9 @@ import {
   SiSpotify,
   SiTwitch,
 } from 'react-icons/si'
+import { RxExternalLink } from 'react-icons/rx'
+import ReactMarkdown from 'react-markdown'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
 const SOCIALS = [
   {
@@ -54,6 +57,23 @@ const SOCIALS = [
   },
 ]
 
+const bioTheme = {
+  a: ({ href, children }) => {
+    return (
+      <NCLink
+        href={href}
+        target="_blank"
+        rel="noopener"
+        textDecoration="underline"
+        textDecorationStyle="dotted"
+        textDecorationColor="gray.400"
+      >
+        {children?.toString().toLowerCase()}
+        <RxExternalLink style={{ display: 'inline', height: '13px' }} />
+      </NCLink>
+    )
+  },
+}
 function Artist({ artist }) {
   return (
     <Container maxW="container.lg">
@@ -91,9 +111,13 @@ function Artist({ artist }) {
       {artist.bio && (
         <>
           <Divider py="2" />
-          <Text fontSize="2xl" pt="2">
-            {artist.bio}
-          </Text>
+          <Box fontSize="2xl" pt="2">
+            <ReactMarkdown
+              components={ChakraUIRenderer(bioTheme)}
+              children={artist.bio}
+              skipHtml
+            />
+          </Box>
         </>
       )}
     </Container>

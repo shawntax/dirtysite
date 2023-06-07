@@ -257,7 +257,7 @@ const collections = [
         }),
       },
       {
-        widget: 'text',
+        widget: 'markdown',
         name: 'bio',
         label: 'Bio',
         required: false,
