@@ -1,5 +1,14 @@
 import { getLayout } from '@components/SiteLayout'
-import { Flex, Box, Heading, VStack, Text, AspectRatio } from '@chakra-ui/react'
+import {
+  Flex,
+  Box,
+  Heading,
+  VStack,
+  Text,
+  AspectRatio,
+  Divider,
+  Container,
+} from '@chakra-ui/react'
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import { fetchArtists } from '@helpers/cms.helpers'
@@ -47,41 +56,47 @@ const SOCIALS = [
 
 function Artist({ artist }) {
   return (
-    <Flex
-      direction={{ base: 'column', lg: 'row' }}
-      justify="center"
-      maxW="container.lg"
-    >
-      <Box
-        w={{ base: 'full', md: '60', lg: '96' }}
-        h="auto"
-        mx={{ base: 'auto', lg: '8' }}
-        border="1px"
-        borderColor="gray.800"
-      >
-        <AspectRatio ratio={1 / 1}>
-          <Photo fill={true} fileName={artist.photoFileName} />
-        </AspectRatio>
-      </Box>
-      <Flex direction="column" my={{ base: '4', lg: 'none' }}>
-        <Heading>{artist.name}</Heading>
-        <VStack fontSize="2xl" align="start" spacing="0" mt="4">
-          {artist.socials.map((social, index) => {
-            const { type, urlPrefix, icon } = SOCIALS.find(
-              (s) => s.type === social.type
-            )
-            return (
-              <NCLink key={index} to={`${urlPrefix}${social.handle}`}>
-                <Flex align="center" spacing="2">
-                  {icon}
-                  <Text pl="2">{type.toUpperCase()}</Text>
-                </Flex>
-              </NCLink>
-            )
-          })}
-        </VStack>
+    <Container maxW="container.lg">
+      <Flex direction={{ base: 'column', lg: 'row' }} justify="center">
+        <Box
+          w={{ base: 'full', md: '60', lg: '96' }}
+          h="auto"
+          mx={{ base: 'auto', lg: '8' }}
+          border="1px"
+          borderColor="gray.800"
+        >
+          <AspectRatio ratio={1 / 1}>
+            <Photo fill={true} fileName={artist.photoFileName} />
+          </AspectRatio>
+        </Box>
+        <Flex direction="column" my={{ base: '4', lg: 'none' }}>
+          <Heading>{artist.name}</Heading>
+          <VStack fontSize="2xl" align="start" spacing="0" mt="4">
+            {artist.socials.map((social, index) => {
+              const { type, urlPrefix, icon } = SOCIALS.find(
+                (s) => s.type === social.type
+              )
+              return (
+                <NCLink key={index} to={`${urlPrefix}${social.handle}`}>
+                  <Flex align="center" spacing="2">
+                    {icon}
+                    <Text pl="2">{type.toUpperCase()}</Text>
+                  </Flex>
+                </NCLink>
+              )
+            })}
+          </VStack>
+        </Flex>
       </Flex>
-    </Flex>
+      {artist.bio && (
+        <>
+          <Divider py="2" />
+          <Text fontSize="2xl" pt="2">
+            {artist.bio}
+          </Text>
+        </>
+      )}
+    </Container>
   )
 }
 
