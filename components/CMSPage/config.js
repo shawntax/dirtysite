@@ -257,6 +257,12 @@ const collections = [
         }),
       },
       {
+        widget: 'markdown',
+        name: 'bio',
+        label: 'Bio',
+        required: false,
+      },
+      {
         label: 'DJ Photo',
         name: 'photoUrl',
         widget: 'image',
