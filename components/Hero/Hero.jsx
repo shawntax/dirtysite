@@ -50,8 +50,8 @@ function Hero() {
           }}
           poster="/media/video-poster.jpg"
         >
-          <source src="/media/background-video.mp4" type="video/mp4" />
           <source src="/media/background-video.webm" type="video/webm" />
+          <source src="/media/background-video.mp4" type="video/mp4" />
         </video>
       </Box>
 
