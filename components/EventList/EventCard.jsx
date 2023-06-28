@@ -2,9 +2,12 @@ import { Flex, Box, Text, AspectRatio, Center } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
-
+import { useBreakpointValue } from '@chakra-ui/react'
 const EventCard = ({ event }) => {
-  const { slug, photoFileName } = event
+  const { slug, photoFileName, ticketLink, mobileTicketLink } = event
+
+  const normalizedTicketLink = `https://${ticketLink}`
+
   return (
     <Flex justify={{ base: 'center', sm: 'start' }}>
       <Flex
@@ -54,11 +57,27 @@ const EventCard = ({ event }) => {
             <NCLink
               variant="button"
               w="full"
-              to={`https://${event.ticketLink}`}
+              to={useBreakpointValue(
+                {
+                  base: mobileTicketLink ?? normalizedTicketLink,
+                  md: normalizedTicketLink,
+                },
+                {
+                  fallback: ticketLink,
+                }
+              )}
               target="_blank"
               rel="noopener"
             >
-              {event.linkText}
+              {useBreakpointValue(
+                {
+                  base: mobileTicketLink ? 'TEXT US' : event.linkText,
+                  md: event.linkText,
+                },
+                {
+                  fallback: event.linkText,
+                }
+              )}
             </NCLink>
           </Center>
         </Box>

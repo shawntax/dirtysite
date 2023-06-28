@@ -14,6 +14,7 @@ import ReactMarkdown from 'react-markdown'
 import { RxExternalLink } from 'react-icons/rx'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import { fetchEvents } from '@helpers/cms.helpers'
+import { useBreakpointValue } from '@chakra-ui/react'
 
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
@@ -35,6 +36,27 @@ export default function Event({ event }) {
       )
     },
   }
+
+  const to = useBreakpointValue(
+    {
+      base: event.mobileTicketLink ?? `https://${event.ticketLink}`,
+      md: `https://${event.ticketLink}`,
+    },
+    {
+      fallback: `https://${event.ticketLink}`,
+    }
+  )
+
+  const linkText = useBreakpointValue(
+    {
+      base: event.mobileTicketLink ? 'TEXT US' : event.linkText,
+      md: event.linkText,
+    },
+    {
+      fallback: event.linkText,
+    }
+  )
+
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -51,22 +73,27 @@ export default function Event({ event }) {
             ? dayjs(event.eventDate).format('MMMM DD, YYYY')
             : dayjs(event.eventDate).format('dddd, MMMM DD')}
         </Text>
-        <Heading as="h1" fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+        <Heading
+          as="h1"
+          fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+          my="2"
+        >
           {event.title}
         </Heading>
-        <Text as="h2" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}>
+        <Text as="h2" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} my="2">
           {event.venue}
         </Text>
 
         {!isPast && (
           <NCLink
             variant="button"
-            to={`https://${event.ticketLink}`}
+            to={to}
             target="_blank"
             rel="noopener"
             py="2"
+            my="2"
           >
-            {event.linkText}
+            {linkText}
           </NCLink>
         )}
         {event.description && (
