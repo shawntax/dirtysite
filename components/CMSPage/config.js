@@ -200,6 +200,12 @@ const collections = [
         widget: 'string',
       },
       {
+        label: 'Mobile Ticket Link',
+        name: 'mobileTicketLink',
+        widget: 'string',
+        required: false,
+      },
+      {
         label: 'Ticket Link Text',
         name: 'linkText',
         widget: 'select',
