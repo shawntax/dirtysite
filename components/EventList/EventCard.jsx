@@ -8,15 +8,6 @@ const EventCard = ({ event }) => {
 
   const normalizedTicketLink = `https://${ticketLink}`
 
-  const to = useBreakpointValue(
-    {
-      base: mobileTicketLink ?? normalizedTicketLink,
-      md: normalizedTicketLink,
-    },
-    {
-      fallback: ticketLink,
-    }
-  )
   return (
     <Flex justify={{ base: 'center', sm: 'start' }}>
       <Flex
@@ -66,7 +57,15 @@ const EventCard = ({ event }) => {
             <NCLink
               variant="button"
               w="full"
-              to={to}
+              to={useBreakpointValue(
+                {
+                  base: mobileTicketLink ?? normalizedTicketLink,
+                  md: normalizedTicketLink,
+                },
+                {
+                  fallback: ticketLink,
+                }
+              )}
               target="_blank"
               rel="noopener"
             >

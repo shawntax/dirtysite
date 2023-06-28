@@ -5,7 +5,7 @@
   "eventLocation": "San Francisco, CA",
   "venue": "1015",
   "ticketLink": "https://example.org",
-  "mobileTicketLink": "https://google.com",
+  "mobileTicketLink": "https://my.community.com/dirtynotsorry?t=TEST",
   "linkText": "TICKETS",
   "photoUrl": "/media/default-photo.jpg",
   "description": "test\n",
