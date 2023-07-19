@@ -3,6 +3,8 @@ import { Box, Image, Flex, Link } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { BiChevronDown } from 'react-icons/bi'
 
+const R2_URL = 'https://pub-1bbe80e53d5f48258ba0b6492c380b75.r2.dev'
+
 function Hero() {
   const videoRef = useRef()
 
@@ -48,10 +50,10 @@ function Hero() {
             width: '100%',
             height: '100%',
           }}
-          poster="/media/video-poster.jpg"
+          // poster=""
         >
-          <source src="/media/background-video.webm" type="video/webm" />
-          <source src="/media/background-video.mp4" type="video/mp4" />
+          <source src={`${R2_URL}/habstrakt.webm`} type="video/webm" />
+          <source src={`${R2_URL}/habstrakt.mp4`} type="video/mp4" />
         </video>
       </Box>
 
