@@ -50,7 +50,7 @@ function Hero() {
             width: '100%',
             height: '100%',
           }}
-          // poster=""
+          poster="media/hb_poster.jpg"
         >
           <source src={`${R2_URL}/habstrakt.webm`} type="video/webm" />
           <source src={`${R2_URL}/habstrakt.mp4`} type="video/mp4" />
