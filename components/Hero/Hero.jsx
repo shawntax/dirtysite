@@ -5,6 +5,46 @@ import { BiChevronDown } from 'react-icons/bi'
 
 const R2_URL = 'https://pub-1bbe80e53d5f48258ba0b6492c380b75.r2.dev'
 
+function mobileVideo(videoRef) {
+  return (
+    <video
+      ref={videoRef}
+      playsInline
+      muted
+      loop
+      style={{
+        objectFit: 'cover',
+        width: '100%',
+        height: '100%',
+      }}
+      poster="media/hb_poster.jpg"
+    >
+      <source src={`${R2_URL}/habstrakt_vert.webm`} type="video/webm" />
+      <source src={`${R2_URL}/habstrakt_vert.mp4`} type="video/mp4" />
+    </video>
+  )
+}
+
+function desktopVideo(videoRef) {
+  return (
+    <video
+      ref={videoRef}
+      playsInline
+      muted
+      loop
+      style={{
+        objectFit: 'cover',
+        width: '100%',
+        height: '100%',
+      }}
+      poster="media/hb_poster.jpg"
+    >
+      <source src={`${R2_URL}/habstrakt.webm`} type="video/webm" />
+      <source src={`${R2_URL}/habstrakt.mp4`} type="video/mp4" />
+    </video>
+  )
+}
+
 function Hero() {
   const videoRef = useRef()
 
@@ -40,23 +80,8 @@ function Hero() {
         w="100%"
         h="100%"
       >
-        <video
-          ref={videoRef}
-          playsInline
-          muted
-          loop
-          style={{
-            objectFit: 'cover',
-            width: '100%',
-            height: '100%',
-          }}
-          poster="media/hb_poster.jpg"
-        >
-          <source src={`${R2_URL}/habstrakt.webm`} type="video/webm" />
-          <source src={`${R2_URL}/habstrakt.mp4`} type="video/mp4" />
-        </video>
+        {desktopVideo(videoRef)}
       </Box>
-
       <Box pos="relative" top={{ base: '30%', md: '40%' }}>
         <Image
           src="brand/logo-vert.svg"
