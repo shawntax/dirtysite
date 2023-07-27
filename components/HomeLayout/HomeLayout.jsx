@@ -1,16 +1,10 @@
-import { useEffect } from 'react'
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
-import * as fbq from '@helpers/pixel.helpers'
 import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
 
 const HomeLayout = ({ children }) => {
-  useEffect(() => {
-    fbq.pageView()
-  }, [])
-
   return (
     <>
       <ChakraProvider theme={theme}>

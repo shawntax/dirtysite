@@ -1,26 +1,12 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
-import * as fbq from '@helpers/pixel.helpers'
 import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
 
 const SiteLayout = ({ children }) => {
-  const router = useRouter()
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      fbq.pageView()
-    }
-
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
-
   return (
     <>
       <ChakraProvider theme={theme}>
