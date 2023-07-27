@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
 import theme from '@theme/index'
 import Favicon from '@components/Favicon'
