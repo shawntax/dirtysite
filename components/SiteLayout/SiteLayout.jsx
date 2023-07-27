@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
-import FBPixelBase from '@components/FBPixelBase'
 import * as fbq from '@helpers/pixel.helpers'
 import theme from '@theme/index'
 import Favicon from '@components/Favicon'
@@ -24,7 +23,6 @@ const SiteLayout = ({ children }) => {
 
   return (
     <>
-      <FBPixelBase />
       <ChakraProvider theme={theme}>
         <Favicon />
         <Flex direction="column" align="center">

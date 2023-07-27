@@ -3,29 +3,9 @@ import { Box, Image, Flex, Link } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { BiChevronDown } from 'react-icons/bi'
 
-const R2_URL = 'https://pub-1bbe80e53d5f48258ba0b6492c380b75.r2.dev'
+const R2_URL = 'https://cdn.dirtynotsorry.com'
 
-function mobileVideo(videoRef) {
-  return (
-    <video
-      ref={videoRef}
-      playsInline
-      muted
-      loop
-      style={{
-        objectFit: 'cover',
-        width: '100%',
-        height: '100%',
-      }}
-      poster="media/hb_poster.jpg"
-    >
-      <source src={`${R2_URL}/habstrakt_vert.webm`} type="video/webm" />
-      <source src={`${R2_URL}/habstrakt_vert.mp4`} type="video/mp4" />
-    </video>
-  )
-}
-
-function desktopVideo(videoRef) {
+function backgroundVideo(videoRef) {
   return (
     <video
       ref={videoRef}
@@ -80,7 +60,7 @@ function Hero() {
         w="100%"
         h="100%"
       >
-        {desktopVideo(videoRef)}
+        {backgroundVideo(videoRef)}
       </Box>
       <Box pos="relative" top={{ base: '30%', md: '40%' }}>
         <Image
