@@ -13,6 +13,7 @@ import dayjs from 'dayjs'
 import ReactMarkdown from 'react-markdown'
 import { RxExternalLink } from 'react-icons/rx'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
 
@@ -106,6 +107,7 @@ export default function Event({ event }) {
             >
               <ReactMarkdown
                 components={ChakraUIRenderer(descriptionTheme)}
+                remarkPlugins={[remarkGfm]}
                 children={event.description}
                 skipHtml
               />
