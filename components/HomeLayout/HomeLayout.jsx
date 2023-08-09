@@ -3,10 +3,12 @@ import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
+import UmamiScript from '@components/UmamiScript'
 
 const HomeLayout = ({ children }) => {
   return (
     <>
+      {process.env.NEXT_PUBLIC_UMAMI_SITE_ID && <UmamiScript />}
       <ChakraProvider theme={theme}>
         <Favicon />
         <Flex
