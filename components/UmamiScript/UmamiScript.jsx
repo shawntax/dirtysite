@@ -8,6 +8,7 @@ const UmamiScript = () => {
       strategy="afterInteractive"
       src="https://analytics.umami.is/script.js"
       data-website-id={UMAMI_SITE_ID}
+      data-domains="dirtynotsorry.com"
     />
   )
 }

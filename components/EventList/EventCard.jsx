@@ -3,8 +3,10 @@ import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
 import { useBreakpointValue } from '@chakra-ui/react'
+import { trackEventClick } from '@helpers/umami.helpers'
+
 const EventCard = ({ event }) => {
-  const { slug, photoFileName, ticketLink, mobileTicketLink } = event
+  const { id, title, slug, photoFileName, ticketLink, mobileTicketLink } = event
 
   const normalizedTicketLink = `https://${ticketLink}`
 
@@ -30,7 +32,7 @@ const EventCard = ({ event }) => {
                 noOfLines={1}
                 maxW={72}
               >
-                {event.title}
+                {title}
               </Text>
               <Text textColor="gray.400" fontSize={{ base: '2xl', xl: '3xl' }}>
                 {dayjs(event.eventDate).format('M/D')}
@@ -66,6 +68,7 @@ const EventCard = ({ event }) => {
                   fallback: ticketLink,
                 }
               )}
+              onClick={trackEventClick({ id, title, ticketLink })}
               target="_blank"
               rel="noopener"
             >
