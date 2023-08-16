@@ -244,7 +244,8 @@ const collections = [
         label: 'Socials',
         name: 'socials',
         widget: 'list',
-        collapsed: true,
+        required: false,
+        collapsed: false,
         minimize_collapsed: true,
         types: SOCIALS.map((site) => {
           return {
@@ -254,10 +255,18 @@ const collections = [
             summary: '{{fields.handle}}',
             fields: [
               {
-                label: "Handle (don't include @)",
-                name: 'handle',
                 widget: 'string',
+                name: 'handle',
+                label: site,
+                default: "enter handle (don't include @)",
+                required: true,
               },
+              {
+                name: 'hidden',
+                label: 'hidden',
+                widget: 'hidden',
+                required: false,
+              }, // need this extra field object to render the typed list properly because of an open bug
             ],
           }
         }),
