@@ -16,7 +16,6 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
-
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
 
@@ -93,6 +92,10 @@ export default function Event({ event }) {
             rel="noopener"
             py="2"
             my="2"
+            data-umami-event="ticket-link"
+            data-umami-event-id={event.id}
+            data-umami-event-title={event.title}
+            data-umami-event-link={event.ticketLink}
           >
             {linkText}
           </NCLink>

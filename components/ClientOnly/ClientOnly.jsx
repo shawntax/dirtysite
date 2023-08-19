@@ -12,6 +12,8 @@ const ClientOnly = ({ children, ...delegated }) => {
     return null
   }
 
+  console.log('mounted!')
+
   return <div {...delegated}>{children}</div>
 }
 
