@@ -1,12 +1,20 @@
 import { Link } from '@chakra-ui/next-js'
 
-const NCLink = ({ children, variant = 'link', to = '/', target, ...props }) => {
+const NCLink = ({
+  children,
+  variant = 'link',
+  to = '/',
+  target,
+  onClick,
+  ...props
+}) => {
   if (variant === 'button') {
     return (
       <Link
         as="a"
         href={to}
         target={target}
+        onClick={onClick}
         display="flex"
         justifyContent="center"
         size={props.size ?? 'lg'}
@@ -35,7 +43,7 @@ const NCLink = ({ children, variant = 'link', to = '/', target, ...props }) => {
     )
   } else {
     return (
-      <Link href={to} target={target} {...props}>
+      <Link href={to} target={target} onClick={onClick} {...props}>
         {children}
       </Link>
     )
