@@ -1,31 +1,6 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    esmExternals: true,
-  },
-  async headers() {
-    return [
-      {
-        source: '/media/background-video.webm',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'max-age=31536000',
-          },
-        ],
-      },
-      {
-        source: '/media/background-video.mp4',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'max-age=31536000',
-          },
-        ],
-      },
-    ]
-  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
