@@ -39,7 +39,7 @@ export default function Event({ event }) {
 
   const to = useBreakpointValue(
     {
-      base: event.mobileTicketLink ?? `https://${event.ticketLink}`,
+      base: event.mobileTicketLink || `https://${event.ticketLink}`,
       md: `https://${event.ticketLink}`,
     },
     {

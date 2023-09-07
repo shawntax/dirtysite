@@ -60,7 +60,7 @@ const EventCard = ({ event }) => {
               w="full"
               to={useBreakpointValue(
                 {
-                  base: mobileTicketLink ?? normalizedTicketLink,
+                  base: mobileTicketLink || normalizedTicketLink,
                   md: normalizedTicketLink,
                 },
                 {
