@@ -69,9 +69,7 @@ const EventCard = ({ event }) => {
               )}
               target="_blank"
               rel="noopener"
-              data-umami-event="ticket-link"
-              data-umami-event-id={id}
-              data-umami-event-title={title}
+              data-umami-event={title}
               data-umami-event-link={ticketLink}
             >
               {useBreakpointValue(

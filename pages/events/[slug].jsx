@@ -92,9 +92,7 @@ export default function Event({ event }) {
             rel="noopener"
             py="2"
             my="2"
-            data-umami-event="ticket-link"
-            data-umami-event-id={event.id}
-            data-umami-event-title={event.title}
+            data-umami-event={event.title}
             data-umami-event-link={event.ticketLink}
           >
             {linkText}
