@@ -9,6 +9,14 @@
     {
       "type": "soundcloud",
       "handle": "eyezickmusic"
+    },
+    {
+      "type": "twitter",
+      "handle": "djeyezick"
+    },
+    {
+      "type": "tiktok",
+      "handle": "djeyezick"
     }
   ],
   "photoUrl": "/public/media/untitled-design-1-.png"
