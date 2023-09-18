@@ -4,7 +4,19 @@
   "socials": [
     {
       "type": "instagram",
-      "handle": "lucashan1"
+      "handle": "itslucomusic"
+    },
+    {
+      "type": "twitter",
+      "handle": "lucashan12"
+    },
+    {
+      "type": "tiktok",
+      "handle": "itslucomusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "itslucomusic"
     }
   ],
   "photoUrl": "/public/media/img_4328.jpeg"
