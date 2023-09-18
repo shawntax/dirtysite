@@ -5,19 +5,23 @@
   "socials": [
     {
       "type": "instagram",
-      "handle": "sowr.mp3"
+      "handle": "sowr_dj"
     },
     {
       "type": "twitch",
-      "handle": "sowrsounds"
+      "handle": "sowr_dj"
     },
     {
       "type": "twitter",
-      "handle": "sowr20"
+      "handle": "sowr_dj"
     },
     {
       "type": "soundcloud",
-      "handle": "sowrsound"
+      "handle": "sowr_dj"
+    },
+    {
+      "type": "tiktok",
+      "handle": "sowr_dj"
     }
   ]
 }
