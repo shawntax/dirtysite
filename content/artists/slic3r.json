@@ -18,6 +18,10 @@
     {
       "type": "twitch",
       "handle": "realslic3r"
+    },
+    {
+      "type": "tiktok",
+      "handle": "slic3r"
     }
   ]
 }
