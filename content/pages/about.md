@@ -3,85 +3,42 @@ seoDesc: About Dirty Not Sorry
 missionStatement: |
   **To connect people through music.**
 values: >
-  **People are Good**
+  **1. Community** – We welcome new people and practice radical inclusion. We
+  accept and respect diversity in all of its forms, including but not limited to
+  age, sex, gender, sexual orientation, religion, nationality, and genres of
+  music. 
 
 
-  People are generally good inside and mean well - assume good intent - give people the benefit of the doubt.
+  **2. Empathy** – We approach others in a spirit of goodwill, by assuming that they have good intentions and by giving them the benefit of the doubt. 
 
 
-  **Fairness**
+  **3. Equality** – We believe in fairness and substantive human equality. 
 
 
-  You get out what you put in - hard work is rewarded - Not picking favorites, equality – we strive for everyone tohave an equal chance and equal opportunity.
+  **4. Communication** – We believe in transparency and in communicating as much as possible, even when it’s difficult.
 
 
-  **Communication**
+  **5. Solidarity** – We maintain a circle of trust in which everyone is safe. We are here for each other, and we practice mutual aid to the greatest extent that we can. We do our work in a spirit of cooperation and collaboration.
 
 
-  Transparency - Communicating as much as possible about as much as possible.
+  **6. Make Mom Proud** – We act in ways that would make our parents, or whoever we respect most in life, proud of us if they were watching. We carry ourselves in a way that sets a good example for others. 
 
 
-  **Excellence**
+  **7. Excellence** – We aim high and we always aim to improve. We put in the time to continuously refine our skills to be everything that we can be.
 
 
-  Being the best we can be. Taking the time to improve our skills. Constantly improving. Doing what we need to do to be at our best.
-
-
-  **Make Mom Proud**
-
-
-  Act as if your Mom is watching you. Be a good person with integrity and honor. Hold yourself in a way that you and other members can be proud of. Set a good example for others.
-
-
-  **Being "Not Sorry"**
-
-
-  Being yourself and being authentic - Not apologizing for who you are - Having the courage to take risks.
-
-
-  **Cooperation not competition**
-
-
-  We are helping each other, not working against each other. We are not working on opposing goals, we are working toward a common goal, which is our joint success and the success of DNS.
-
-
-  **Modesty**
-
-
-  We always stay humble and understand how much more we have to learn, and how much more we can do to grow.
-
-
-  **Gratitude**
-
-
-  We are so grateful to everyone who has helped us a long the way, and are so thankful for every opportunity we have.
+  **8. Not Being Sorry** – As we put our values into practice, we never apologize for being authentic to who we are or doing what we do.
 identity: >
   **Promotion Company**
 
 
-  We promote events and music in the form live events, live streams, online music, via social media, email, text and more.
-
-
-
-
-
-
-
-
+  We produce and promote live events both in person and online
 
 
   **Artist Collective**
 
 
-  We are a group of skilled and experienced DJs producers who help each other, and play live events/live-streams together.
-
-
-
-
-
-
-
-
+  We are a crew of skilled DJs and producers that collaborate with and support each other
 
 
   **“The Dirty Side of the Sonic Spectrum”**
@@ -93,6 +50,6 @@ identity: >
   **We’re “Not Sorry”**
 
 
-  We express ourselves freely - Even if it expands outside of the realm of “Dirty” or bass forward House music.
+  We express ourselves freely – We’re “Not Sorry” if we expand outside the realm of “Dirty” House Music.
 ---
 Dirty Not Sorry is an unkempt and unapologetic promotion company and artist collective. Dispensing the dirty side of the sonic spectrum to San Francisco, the Bay Area, and beyond.
