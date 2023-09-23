@@ -54,7 +54,7 @@ export function fetchEvents() {
       return dayjs().isSameOrAfter(dayjs(publishDate), 'minute')
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+      return dayjs().isSameOrBefore(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
@@ -63,9 +63,6 @@ export function fetchEvents() {
   const upcomingStreams = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
-      console.log(
-        `upcoming:${dayjs().isSameOrBefore(dayjs(event.eventDate), 'day')}`
-      )
       event.slug = slugify(
         `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
         { lower: true }
@@ -79,7 +76,7 @@ export function fetchEvents() {
       return dayjs().isSameOrAfter(dayjs(publishDate), 'day')
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+      return dayjs().isSameOrBefore(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
@@ -88,7 +85,6 @@ export function fetchEvents() {
   const pastEvents = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
-      console.log(`past: ${dayjs().isAfter(dayjs(event.eventDate), 'day')}`)
       event.slug = slugify(
         `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
         { lower: true }
@@ -98,7 +94,7 @@ export function fetchEvents() {
     .filter(({ format }) => format !== 'Stream')
     .filter(({ title }) => !title.toLowerCase().includes('residency'))
     .filter(({ eventDate }) => {
-      return dayjs().isAfter(dayjs(eventDate), 'day')
+      return dayjs().isAfter(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(b.eventDate) - dayjs(a.eventDate)
