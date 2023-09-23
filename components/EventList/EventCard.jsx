@@ -34,7 +34,9 @@ const EventCard = ({ event }) => {
                 {title}
               </Text>
               <Text textColor="gray.400" fontSize={{ base: '2xl', xl: '3xl' }}>
-                {dayjs(event.eventDate).format('M/D')}
+                {event.id === 's_hUxFDDGm'
+                  ? dayjs(event.eventDate).subtract(1, 'day').format('M/D')
+                  : dayjs(event.eventDate).format('M/D')}
               </Text>
             </Flex>
           </NCLink>
