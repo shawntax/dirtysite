@@ -11,6 +11,8 @@ export default function Events({
   upcomingStreams,
   pastEvents,
 }) {
+  console.log(upcomingLiveEvents)
+  console.log(pastEvents)
   const { seoDesc } = attributes
   return (
     <>

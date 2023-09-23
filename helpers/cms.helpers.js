@@ -3,8 +3,13 @@ import dayjs from 'dayjs'
 import normalizeUrl from 'normalize-url'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+
 dayjs.extend(isSameOrBefore)
 dayjs.extend(isSameOrAfter)
+dayjs.extend(utc)
+dayjs.extend(timezone)
 
 const importAll = (r) => r.keys().map(r)
 
@@ -24,6 +29,8 @@ export function fetchEvents() {
   const events = importAll(
     require.context('../content/events', false, /^(.\/).*(.json)$/)
   )
+
+  console.log(`timezone guess: ${dayjs.tz.guess()}`)
 
   const upcomingLiveEvents = events
     .map((event) => {
@@ -56,6 +63,9 @@ export function fetchEvents() {
   const upcomingStreams = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
+      console.log(
+        `upcoming:${dayjs().isSameOrBefore(dayjs(event.eventDate), 'day')}`
+      )
       event.slug = slugify(
         `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
         { lower: true }
@@ -78,6 +88,7 @@ export function fetchEvents() {
   const pastEvents = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
+      console.log(`past: ${dayjs().isAfter(dayjs(event.eventDate), 'day')}`)
       event.slug = slugify(
         `${event.title}-${dayjs(event.eventDate).format('MM-DD')}`,
         { lower: true }
