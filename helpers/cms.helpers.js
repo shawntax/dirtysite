@@ -30,8 +30,6 @@ export function fetchEvents() {
     require.context('../content/events', false, /^(.\/).*(.json)$/)
   )
 
-  console.log(`timezone guess: ${dayjs.tz.guess()}`)
-
   const upcomingLiveEvents = events
     .map((event) => {
       event.photoFileName = event.photoUrl?.split('/').pop() ?? null
@@ -51,10 +49,12 @@ export function fetchEvents() {
       return format === 'Live'
     })
     .filter(({ publishDate }) => {
-      return dayjs().isSameOrAfter(dayjs(publishDate), 'minute')
+      return dayjs()
+        .utc(true)
+        .isSameOrAfter(dayjs(publishDate).utc(true), 'minute')
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate).utc(true), 'day')
+      return dayjs().utc(true).isSameOrBefore(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
@@ -73,10 +73,12 @@ export function fetchEvents() {
       return format === 'Stream'
     })
     .filter(({ publishDate }) => {
-      return dayjs().isSameOrAfter(dayjs(publishDate), 'day')
+      return dayjs()
+        .utc(true)
+        .isSameOrAfter(dayjs(publishDate).utc(true), 'day')
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate).utc(true), 'day')
+      return dayjs().utc(true).isSameOrBefore(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
@@ -94,7 +96,7 @@ export function fetchEvents() {
     .filter(({ format }) => format !== 'Stream')
     .filter(({ title }) => !title.toLowerCase().includes('residency'))
     .filter(({ eventDate }) => {
-      return dayjs().isAfter(dayjs(eventDate).utc(true), 'day')
+      return dayjs().utc(true).isAfter(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(b.eventDate) - dayjs(a.eventDate)
