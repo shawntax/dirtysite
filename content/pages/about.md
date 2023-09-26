@@ -52,4 +52,4 @@ identity: >
 
   We express ourselves freely – We’re “Not Sorry” if we expand outside the realm of “Dirty” House Music.
 ---
-Dirty Not Sorry is an unkempt and unapologetic promotion company and artist collective. Dispensing the dirty side of the sonic spectrum to San Francisco, the Bay Area, and beyond.
+Dirty Not Sorry is an unkempt and unapologetic promotion company and artist collective dispensing the dirty side of the sonic spectrum to San Francisco, the Bay Area, and beyond.
