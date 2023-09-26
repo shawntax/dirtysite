@@ -49,12 +49,10 @@ export function fetchEvents() {
       return format === 'Live'
     })
     .filter(({ publishDate }) => {
-      return dayjs()
-        .utc(true)
-        .isSameOrAfter(dayjs(publishDate).utc(true), 'minute')
+      return dayjs().utc().isSameOrAfter(dayjs(publishDate).utc(), 'minute')
     })
     .filter(({ eventDate }) => {
-      return dayjs().utc().isSameOrBefore(dayjs(eventDate).utc(), 'day')
+      return dayjs().utcOffset(-7).isSameOrBefore(dayjs(eventDate).utc(), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
@@ -73,7 +71,7 @@ export function fetchEvents() {
       return format === 'Stream'
     })
     .filter(({ publishDate }) => {
-      return dayjs().utc(true).isSameOrAfter(dayjs(publishDate).utc(), 'day')
+      return dayjs().utc().isSameOrAfter(dayjs(publishDate).utc(), 'day')
     })
     .filter(({ eventDate }) => {
       return dayjs().utc().isSameOrBefore(dayjs(eventDate).utc(true), 'day')
