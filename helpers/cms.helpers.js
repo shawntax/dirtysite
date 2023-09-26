@@ -49,7 +49,9 @@ export function fetchEvents() {
       return format === 'Live'
     })
     .filter(({ publishDate }) => {
-      return dayjs().utc().isSameOrAfter(dayjs(publishDate).utc(), 'minute')
+      return dayjs()
+        .utcOffset(-10)
+        .isSameOrAfter(dayjs(publishDate).utc(), 'minute')
     })
     .filter(({ eventDate }) => {
       return dayjs()
@@ -73,10 +75,14 @@ export function fetchEvents() {
       return format === 'Stream'
     })
     .filter(({ publishDate }) => {
-      return dayjs().utc().isSameOrAfter(dayjs(publishDate).utc(), 'day')
+      return dayjs()
+        .utcOffset(-10)
+        .isSameOrAfter(dayjs(publishDate).utc(), 'day')
     })
     .filter(({ eventDate }) => {
-      return dayjs().utc().isSameOrBefore(dayjs(eventDate).utc(true), 'day')
+      return dayjs()
+        .utcOffset(-10)
+        .isSameOrBefore(dayjs(eventDate).utc(true), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
@@ -94,7 +100,7 @@ export function fetchEvents() {
     .filter(({ format }) => format !== 'Stream')
     .filter(({ title }) => !title.toLowerCase().includes('residency'))
     .filter(({ eventDate }) => {
-      return dayjs().utc().isAfter(dayjs(eventDate).utc(), 'day')
+      return dayjs().utcOffset(-10).isAfter(dayjs(eventDate).utc(), 'day')
     })
     .sort((a, b) => {
       return dayjs(b.eventDate) - dayjs(a.eventDate)
