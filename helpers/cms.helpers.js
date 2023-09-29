@@ -57,7 +57,7 @@ export function fetchEvents() {
     })
     .filter(({ eventDate }) => {
       return dayjs()
-        .utcOffset(-1)
+        .utcOffset(-7)
         .isSameOrBefore(dayjs(eventDate).utc(), 'day')
     })
     .sort((a, b) => {
