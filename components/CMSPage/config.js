@@ -186,6 +186,7 @@ const collections = [
         date_format: 'LLLL d yyyy',
         time_format: false,
         format: 'yyyy-MM-dd',
+        picker_utc: true,
       },
       {
         label: 'Event Location',
