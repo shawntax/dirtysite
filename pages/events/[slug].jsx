@@ -71,8 +71,6 @@ export default function Event({ event }) {
         >
           {isPast
             ? dayjs(event.eventDate).format('MMMM DD, YYYY')
-            : event.id === '7sre7ht4mo'
-            ? dayjs(event.eventDate).subtract(1, 'day').format('dddd, MMMM DD')
             : dayjs(event.eventDate).format('dddd, MMMM DD')}
         </Text>
         <Heading
