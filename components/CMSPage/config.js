@@ -185,8 +185,7 @@ const collections = [
         widget: 'datetime',
         date_format: 'LLLL d yyyy',
         time_format: false,
-        format: "yyyy-MM-dd'T'HH:mm:ssxxx",
-        picker_utc: true,
+        format: "yyyy-MM-dd'T'HH:mm:ssXXX",
       },
       {
         label: 'Event Location',

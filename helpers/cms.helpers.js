@@ -54,7 +54,7 @@ export function fetchEvents() {
       return dayjs().isSameOrAfter(dayjs(publishDate), 'minute')
     })
     .filter(({ eventDate }) => {
-      return dayjs().utc().isSameOrBefore(dayjs(eventDate).utc(), 'day')
+      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
