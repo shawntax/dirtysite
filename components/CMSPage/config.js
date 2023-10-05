@@ -185,7 +185,7 @@ const collections = [
         widget: 'datetime',
         date_format: 'LLLL d yyyy',
         time_format: false,
-        format: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+        format: "yyyy-MM-dd'T'HH:mm:ssxxx",
         picker_utc: true,
       },
       {
