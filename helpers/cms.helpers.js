@@ -25,6 +25,8 @@ export function fetchArtists() {
   return result
 }
 
+/* We're using a -10 UTC offset to match the Vercel build server in Washington DC */
+
 export function fetchEvents() {
   const events = importAll(
     require.context('../content/events', false, /^(.\/).*(.json)$/)
@@ -52,7 +54,7 @@ export function fetchEvents() {
       return dayjs().isSameOrAfter(dayjs(publishDate), 'minute')
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+      return dayjs().utc().isSameOrBefore(dayjs(eventDate).utc(), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
