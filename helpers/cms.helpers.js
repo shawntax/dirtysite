@@ -4,12 +4,12 @@ import normalizeUrl from 'normalize-url'
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter'
 import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
+// import timezone from 'dayjs/plugin/timezone'
 
 dayjs.extend(isSameOrBefore)
 dayjs.extend(isSameOrAfter)
 dayjs.extend(utc)
-dayjs.extend(timezone)
+// dayjs.extend(timezone)
 
 const importAll = (r) => r.keys().map(r)
 
@@ -24,8 +24,6 @@ export function fetchArtists() {
   })
   return result
 }
-
-/* We're using a -10 UTC offset to match the Vercel build server in Washington DC */
 
 export function fetchEvents() {
   const events = importAll(
@@ -76,7 +74,7 @@ export function fetchEvents() {
       return dayjs().isSameOrAfter(dayjs(publishDate), 'day')
     })
     .filter(({ eventDate }) => {
-      return dayjs().isSameOrBefore(dayjs(eventDate), 'day')
+      return dayjs().utcOffset(-7).isSameOrBefore(dayjs(eventDate), 'day')
     })
     .sort((a, b) => {
       return dayjs(a.eventDate) - dayjs(b.eventDate)
