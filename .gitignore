@@ -37,3 +37,4 @@ api/.env*
 .netlify
 
 .vscode
+.env*.local

@@ -1,14 +1,32 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { ChakraProvider, Flex, Container } from '@chakra-ui/react'
 import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
+import * as fbq from '@helpers/pixel.helpers'
 import UmamiScript from '@components/UmamiScript'
+import FBPixelBase from '@components/FBPixelBase'
 
 const SiteLayout = ({ children }) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      fbq.trackPageView()
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       {process.env.NEXT_PUBLIC_UMAMI_SITE_ID && <UmamiScript />}
+      {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && <FBPixelBase />}
       <ChakraProvider theme={theme}>
         <Favicon />
         <Flex direction="column" align="center">
