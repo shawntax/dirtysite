@@ -9,6 +9,7 @@ import {
   SiSpotify,
   SiSoundcloud,
   SiDiscord,
+  SiTiktok,
 } from 'react-icons/si'
 
 const SocialLinks = ({ isOpen }) => {
@@ -69,6 +70,12 @@ const SocialLinks = ({ isOpen }) => {
           _hover={{ transform: 'scale(1.2)' }}
         >
           <SiTwitter size="30px" />
+        </NCLink>
+        <NCLink
+          to="https://tiktok.com/@dirtynotsorry"
+          _hover={{ transform: 'scale(1.2)' }}
+        >
+          <SiTiktok size="30px" />
         </NCLink>
       </Stack>
     </Stack>
