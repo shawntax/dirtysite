@@ -4,13 +4,13 @@ import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
-import * as fbq from '@helpers/pixel.helpers'
+import { trackPageView } from '@helpers/pixel.helpers'
 import FBPixelBase from '@components/FBPixelBase'
 import UmamiScript from '@components/UmamiScript'
 
 const HomeLayout = ({ children }) => {
   useEffect(() => {
-    fbq.trackPageView()
+    trackPageView()
   }, [])
 
   return (
