@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-import safeAwait from 'safe-await'
+import { until } from '@open-draft/until'
 import NCButton from '@components/NCButton'
 import {
   Box,
@@ -33,12 +33,12 @@ export default function MarketingForm() {
     if (process.env.NODE_ENV === 'development') {
       URL = `http://localhost:3000/api/newsletter-signup`
     } else if (process.env.VERCEL_ENV === 'preview') {
-      URL = `${process.env.VERCEL_URL}/api/newsletter-signup`
+      URL = `https://${process.env.VERCEL_URL}/api/newsletter-signup`
     } else {
-      URL = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/newsletter-signup`
+      URL = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/newsletter-signup`
     }
 
-    const [error, res] = await safeAwait(axios(URL, options))
+    const { error, data: res } = await until(() => axios(URL, options))
 
     if (error) {
       const {

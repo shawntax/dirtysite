@@ -3,7 +3,7 @@ import { Button } from '@chakra-ui/react'
 const NCButton = ({ children, ...props }) => {
   return (
     <Button
-      as="div"
+      as="button"
       variant="solid"
       size={props.size ?? 'lg'}
       px="4"

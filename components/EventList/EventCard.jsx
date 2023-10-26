@@ -3,7 +3,7 @@ import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
 import { useBreakpointValue } from '@chakra-ui/react'
-import trackViewContent from '@helpers/pixel.helpers'
+import { trackViewContent } from '@helpers/pixel.helpers'
 
 const EventCard = ({ event }) => {
   const { id, title, slug, photoFileName, ticketLink, mobileTicketLink } = event

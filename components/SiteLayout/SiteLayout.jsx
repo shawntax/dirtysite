@@ -5,7 +5,7 @@ import theme from '@theme/index'
 import Favicon from '@components/Favicon'
 import Nav from '@components/Nav'
 import Footer from '@components/Footer'
-import * as fbq from '@helpers/pixel.helpers'
+import { trackPageView } from '@helpers/pixel.helpers'
 import UmamiScript from '@components/UmamiScript'
 import FBPixelBase from '@components/FBPixelBase'
 
@@ -14,7 +14,7 @@ const SiteLayout = ({ children }) => {
 
   useEffect(() => {
     const handleRouteChange = () => {
-      fbq.trackPageView()
+      trackPageView()
     }
 
     router.events.on('routeChangeComplete', handleRouteChange)
