@@ -21,7 +21,7 @@ const oauthConfig = Object.freeze({
   }),
 })
 
-export async function callback(req, res) {
+export default async function callback(req, res) {
   try {
     const code = req.query.code
     const { host } = req.headers
