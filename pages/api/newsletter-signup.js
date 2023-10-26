@@ -1,5 +1,5 @@
 const axios = require('axios')
-const safeAwait = require('safe-await')
+import { until } from '@open-draft/until'
 const { checkEmail } = require('email-validator-node')
 
 export default async function handler(req, res) {
@@ -14,7 +14,13 @@ export default async function handler(req, res) {
     return res.status(200).end('thanks, bot!')
   }
 
-  const { isValid, message } = await checkEmail(email)
+  const { error: emailError, data: emailData } = await until(() =>
+    checkEmail(email)
+  )
+
+  const { isValid, message } = emailData
+
+  console.log(isValid, message)
 
   if (!isValid) {
     return res.status(400).json({ message: 'Invalid email' })
@@ -27,7 +33,7 @@ export default async function handler(req, res) {
     },
   })
 
-  const [error, data] = await safeAwait(
+  const { error, data } = await until(() =>
     client.post('customers.json', {
       customer: {
         email,
@@ -58,6 +64,8 @@ export default async function handler(req, res) {
     }
     return res.status(500).json({ message: 'Something went wrong' })
   }
+
+  console.log(data.data)
 
   return res.status(200).json({ message: { name, email } })
 }

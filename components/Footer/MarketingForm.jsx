@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
-import safeAwait from 'safe-await'
+import { until } from '@open-draft/until'
 import NCButton from '@components/NCButton'
 import {
   Box,
@@ -38,7 +38,7 @@ export default function MarketingForm() {
       URL = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/newsletter-signup`
     }
 
-    const [error, res] = await safeAwait(axios(URL, options))
+    const { error, data: res } = await until(() => axios(URL, options))
 
     if (error) {
       const {
