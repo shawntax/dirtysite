@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   }
 
   if (username !== '') {
-    return res.status(200).end('thanks, bot!')
+    return res.status(410).end('thanks, bot!')
   }
 
   const { error: emailError, data: emailData } = await until(() =>
