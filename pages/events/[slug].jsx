@@ -83,6 +83,7 @@ export default function Event({ event }) {
             rel="noopener"
             py="2"
             my="2"
+            w={{ base: 'full', sm: '3xs' }}
             data-umami-event={event.title}
             data-umami-event-link={event.ticketLink}
             onClick={trackViewContent}
