@@ -209,7 +209,7 @@ const collections = [
         label: 'Ticket Link Text',
         name: 'linkText',
         widget: 'select',
-        options: ['TICKETS', 'GUESTLIST', 'RSVP'],
+        options: ['TICKETS', 'RSVP', 'FREE GUESTLIST'],
       },
       {
         label: 'Featured Image',
