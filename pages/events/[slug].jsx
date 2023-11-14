@@ -48,16 +48,6 @@ export default function Event({ event }) {
     }
   )
 
-  const linkText = useBreakpointValue(
-    {
-      base: event.mobileTicketLink ? 'TEXT US' : event.linkText,
-      md: event.linkText,
-    },
-    {
-      fallback: event.linkText,
-    }
-  )
-
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -93,11 +83,12 @@ export default function Event({ event }) {
             rel="noopener"
             py="2"
             my="2"
+            w={{ base: 'full', sm: '3xs' }}
             data-umami-event={event.title}
             data-umami-event-link={event.ticketLink}
             onClick={trackViewContent}
           >
-            {linkText}
+            {event.linkText}
           </NCLink>
         )}
         {event.description && (

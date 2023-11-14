@@ -6,7 +6,7 @@ import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
 
 const EventCard = ({ event }) => {
-  const { id, title, slug, photoFileName, ticketLink, mobileTicketLink } = event
+  const { title, slug, photoFileName, ticketLink, mobileTicketLink } = event
 
   const normalizedTicketLink = `https://${ticketLink}`
 
@@ -74,15 +74,7 @@ const EventCard = ({ event }) => {
               data-umami-event-link={ticketLink}
               onClick={trackViewContent}
             >
-              {useBreakpointValue(
-                {
-                  base: mobileTicketLink ? 'TEXT US' : event.linkText,
-                  md: event.linkText,
-                },
-                {
-                  fallback: event.linkText,
-                }
-              )}
+              {event.linkText}
             </NCLink>
           </Center>
         </Box>
