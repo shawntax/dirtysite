@@ -146,6 +146,7 @@ const collections = [
   },
   {
     name: 'events',
+    icon: 'calendar',
     label: 'Events',
     folder: 'content/events',
     create: true,
@@ -228,6 +229,7 @@ const collections = [
   },
   {
     name: 'artists',
+    icon: 'user',
     label: 'Artists',
     folder: 'content/artists',
     identifier_field: 'name',
@@ -283,6 +285,44 @@ const collections = [
         widget: 'image',
         choose_url: false,
         required: true,
+      },
+    ],
+  },
+  {
+    name: 'posts',
+    label: 'Posts',
+    folder: 'content/posts',
+    create: true,
+    editor: {
+      preview: true,
+    },
+    format: 'json',
+    fields: [
+      { label: 'ID', name: 'id', widget: 'id-widget' },
+      {
+        label: 'Title',
+        name: 'title',
+        widget: 'string',
+      },
+      {
+        label: 'Publish Date',
+        name: 'publishDate',
+        widget: 'datetime',
+        date_format: 'LLLL d yyyy',
+        time_format: '~ h:mm bb',
+      },
+      {
+        label: 'Post Date',
+        name: 'postDate',
+        widget: 'datetime',
+        date_format: 'LLLL d yyyy',
+        time_format: false,
+        format: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      },
+      {
+        label: 'Body',
+        name: 'body',
+        widget: 'markdown',
       },
     ],
   },
