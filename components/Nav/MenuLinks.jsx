@@ -40,6 +40,7 @@ const MenuLinks = ({ isOpen }) => {
       <MenuItem to="/about">About</MenuItem>
       <MenuItem to="/artists">Artists</MenuItem>
       <MenuItem to="/events">Events</MenuItem>
+      <MenuItem to="/news">News</MenuItem>
       <MenuItem to="https://shop.dirtynotsorry.com">
         Shop
         <RxExternalLink style={{ display: 'inline', height: '18px' }} />

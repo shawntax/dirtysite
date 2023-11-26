@@ -98,3 +98,19 @@ export function fetchEvents() {
 
   return { upcomingLiveEvents, upcomingStreams, pastEvents }
 }
+
+export function fetchPosts() {
+  const allPosts = importAll(
+    require.context('../content/posts', false, /^(.\/).*(.json)$/)
+  )
+
+  const publishedPosts = allPosts
+    .filter(({ publishDate }) => {
+      return dayjs().utcOffset(-7).isSameOrAfter(dayjs(publishDate), 'day')
+    })
+    .sort((a, b) => {
+      return dayjs(b.postDate) - dayjs(a.postDate)
+    })
+
+  return publishedPosts
+}

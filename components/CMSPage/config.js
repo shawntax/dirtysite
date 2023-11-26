@@ -142,6 +142,24 @@ const collections = [
           },
         ],
       },
+      {
+        label: 'News Index (SEO)',
+        name: 'news-index',
+        file: 'content/pages/news.md',
+        fields: [
+          {
+            label: 'News',
+            name: 'body',
+            widget: 'markdown',
+            required: false,
+          },
+          {
+            label: 'SEO Description',
+            name: 'seoDesc',
+            widget: 'text',
+          },
+        ],
+      },
     ],
   },
   {
