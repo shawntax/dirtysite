@@ -105,6 +105,13 @@ export function fetchPosts() {
   )
 
   const publishedPosts = allPosts
+    .map((post) => {
+      post.slug = slugify(
+        `${post.title}-${dayjs(post.postDate).format('MM-DD')}`,
+        { lower: true }
+      )
+      return post
+    })
     .filter(({ publishDate }) => {
       return dayjs().utcOffset(-7).isSameOrAfter(dayjs(publishDate), 'day')
     })

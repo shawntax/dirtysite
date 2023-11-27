@@ -315,6 +315,7 @@ const collections = [
       preview: true,
     },
     format: 'json',
+    // slug: '{{slug}}',
     fields: [
       { label: 'ID', name: 'id', widget: 'id-widget' },
       {
