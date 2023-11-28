@@ -1,6 +1,6 @@
 import { getLayout } from '@components/SiteLayout'
-import { VStack, Box, Flex } from '@chakra-ui/react'
-import NCLink from '@components/NCLink'
+import { SimpleGrid } from '@chakra-ui/react'
+import PostCard from '@components/PostCard'
 import PageHeader from '@components/PageHeader'
 import { fetchPosts } from '@helpers/cms.helpers'
 import { attributes } from '@content/pages/news.md'
@@ -10,23 +10,20 @@ export default function Artists({ posts }) {
 
   return (
     <>
-      <PageHeader title="News" seoDesc={seoDesc}>
-        News
-      </PageHeader>
-      <VStack>
-        {posts.map((post) => {
-          return (
-            <Box key={post.id}>
-              <NCLink
-                to={`/news/${encodeURIComponent(post.slug)}`}
-                _hover={{ textDecoration: 'none' }}
-              >
-                {post.title}
-              </NCLink>
-            </Box>
-          )
-        })}
-      </VStack>
+      {posts.length > 0 && (
+        <>
+          <PageHeader title="News" seoDesc={seoDesc}>
+            News
+          </PageHeader>
+          <SimpleGrid minChildWidth="300px" spacing="12" mt="5">
+            {posts.map((post) => {
+              {
+                return <PostCard key={post.id} post={post} />
+              }
+            })}
+          </SimpleGrid>
+        </>
+      )}
     </>
   )
 }

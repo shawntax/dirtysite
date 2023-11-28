@@ -315,13 +315,17 @@ const collections = [
       preview: true,
     },
     format: 'json',
-    // slug: '{{slug}}',
     fields: [
       { label: 'ID', name: 'id', widget: 'id-widget' },
       {
         label: 'Title',
         name: 'title',
         widget: 'string',
+      },
+      {
+        label: 'Subtitle',
+        name: 'subtitle',
+        widget: 'markdown',
       },
       {
         label: 'Publish Date',

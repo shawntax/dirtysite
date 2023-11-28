@@ -17,7 +17,6 @@ const NCLink = ({
         onClick={onClick}
         display="flex"
         justifyContent="center"
-        size={props.size ?? 'lg'}
         px="4"
         py="2"
         borderRadius="full"
