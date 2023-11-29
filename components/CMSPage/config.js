@@ -321,6 +321,7 @@ const collections = [
         label: 'Title',
         name: 'title',
         widget: 'string',
+        required: true,
       },
       {
         label: 'Subtitle',
@@ -333,6 +334,8 @@ const collections = [
         widget: 'datetime',
         date_format: 'LLLL d yyyy',
         time_format: '~ h:mm bb',
+        format: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+        required: true,
       },
       {
         label: 'Post Date',
@@ -341,6 +344,7 @@ const collections = [
         date_format: 'LLLL d yyyy',
         time_format: false,
         format: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+        required: true,
       },
       {
         label: 'Body',

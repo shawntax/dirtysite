@@ -6,20 +6,20 @@ const PostCard = ({ post }) => {
   const { id, title, subtitle, postDate } = post
 
   return (
-    <Flex
-      key={id}
-      direction="column"
-      w="full"
-      maxW="md"
-      border="1px"
-      borderColor="gray.800"
-      shadow="sm"
-      p={{ base: '4', sm: '8' }}
-      role="group"
+    <NCLink
+      to={`/news/${encodeURIComponent(post.slug)}`}
+      _hover={{ textDecoration: 'none' }}
     >
-      <NCLink
-        to={`/news/${encodeURIComponent(post.slug)}`}
-        _hover={{ textDecoration: 'none' }}
+      <Flex
+        key={id}
+        direction="column"
+        w="full"
+        h={{ base: 'auto', sm: '2xs' }}
+        p={{ base: '4', sm: '8' }}
+        border="1px"
+        borderColor="gray.800"
+        shadow="sm"
+        role="group"
       >
         <Text fontSize="xl" textColor="gray.400" pb="2">
           {dayjs(postDate).format('MMMM D, YYYY')}
@@ -28,15 +28,19 @@ const PostCard = ({ post }) => {
           as="h1"
           fontSize="3xl"
           fontWeight="bold"
+          lineHeight="none"
+          mb="4"
           _groupHover={{ textDecoration: 'underline' }}
         >
           {title}
         </Text>
-        <Text fontSize="xl" lineHeight="none">
-          {subtitle}
-        </Text>
-      </NCLink>
-    </Flex>
+        {subtitle && (
+          <Text fontSize="xl" lineHeight="none">
+            {subtitle}
+          </Text>
+        )}
+      </Flex>
+    </NCLink>
   )
 }
 

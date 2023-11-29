@@ -1,5 +1,5 @@
 import { getLayout } from '@components/SiteLayout'
-import { SimpleGrid } from '@chakra-ui/react'
+import { Grid } from '@chakra-ui/react'
 import PostCard from '@components/PostCard'
 import PageHeader from '@components/PageHeader'
 import { fetchPosts } from '@helpers/cms.helpers'
@@ -15,13 +15,18 @@ export default function Artists({ posts }) {
           <PageHeader title="News" seoDesc={seoDesc}>
             News
           </PageHeader>
-          <SimpleGrid minChildWidth="300px" spacing="12" mt="5">
+          <Grid
+            templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+            // gridAutoRows="minmax(300px, auto);"
+            gap="10"
+            pt="6"
+          >
             {posts.map((post) => {
               {
                 return <PostCard key={post.id} post={post} />
               }
             })}
-          </SimpleGrid>
+          </Grid>
         </>
       )}
     </>
@@ -30,7 +35,6 @@ export default function Artists({ posts }) {
 
 export async function getStaticProps() {
   const posts = fetchPosts()
-
   return {
     props: {
       posts,
