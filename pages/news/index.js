@@ -17,7 +17,6 @@ export default function Artists({ posts }) {
           </PageHeader>
           <Grid
             templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
-            // gridAutoRows="minmax(300px, auto);"
             gap="10"
             pt="6"
           >
