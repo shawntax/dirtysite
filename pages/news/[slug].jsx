@@ -1,38 +1,57 @@
 import { getLayout } from '@components/SiteLayout'
-// import {
-//   Flex,
-//   Box,
-//   Heading,
-//   VStack,
-//   Text,
-//   AspectRatio,
-//   Divider,
-//   Container,
-// } from '@chakra-ui/react'
+import { Container, Flex, Heading, Text } from '@chakra-ui/react'
 import { fetchPosts } from '@helpers/cms.helpers'
-// import ReactMarkdown from 'react-markdown'
-// import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import NCLink from '@components/NCLink'
+import dayjs from 'dayjs'
+import { RxExternalLink } from 'react-icons/rx'
+import remarkGfm from 'remark-gfm'
+import ReactMarkdown from 'react-markdown'
+import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 
-// const postTheme = {
-//   a: ({ href, children }) => {
-//     return (
-//       <NCLink
-//         href={href}
-//         target="_blank"
-//         rel="noopener"
-//         textDecoration="underline"
-//         textDecorationStyle="dotted"
-//         textDecorationColor="gray.400"
-//       >
-//         {children?.toString().toLowerCase()}
-//         <RxExternalLink style={{ display: 'inline', height: '13px' }} />
-//       </NCLink>
-//     )
-//   },
-// }
+const postTheme = {
+  a: ({ href, children }) => {
+    return (
+      <NCLink
+        href={href}
+        target="_blank"
+        rel="noopener"
+        textDecoration="underline"
+        textDecorationStyle="dotted"
+        textDecorationColor="gray.400"
+      >
+        {children?.toString().toLowerCase()}
+        <RxExternalLink style={{ display: 'inline', height: '13px' }} />
+      </NCLink>
+    )
+  },
+}
 
 function Post({ post }) {
-  return null
+  const { title, postDate, body } = post
+  return (
+    <Container maxW="container.md">
+      <Flex direction="column" px={{ base: 0, lg: '10' }}>
+        <Text
+          as="h2"
+          fontSize={{ base: '2xl', sm: '3xl' }}
+          textColor="gray.400"
+        >
+          {dayjs(postDate).format('dddd, MMMM DD YYYY')}
+        </Text>
+        <Heading as="h1" fontSize={{ base: '3xl', sm: '4xl' }} my="2" pb="4">
+          {title}
+        </Heading>
+        <Text as="article" fontSize="2xl">
+          <ReactMarkdown
+            components={ChakraUIRenderer(postTheme)}
+            remarkPlugins={[remarkGfm]}
+            children={body}
+            skipHtml
+          />
+        </Text>
+      </Flex>
+    </Container>
+  )
 }
 
 export async function getStaticProps(context) {

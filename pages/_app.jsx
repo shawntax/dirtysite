@@ -11,7 +11,6 @@ function App({ Component, pageProps }) {
   } else {
     const getLayout =
       Component.getLayout || ((page) => <SiteLayout children={page} />)
-
     return getLayout(<Component {...pageProps} />)
   }
 }
