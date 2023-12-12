@@ -1,7 +1,9 @@
 import { getLayout } from '@components/SiteLayout'
-import { Container, Flex, Heading, Text } from '@chakra-ui/react'
+import { Container, Flex, Heading, Text, AspectRatio } from '@chakra-ui/react'
 import { fetchPosts } from '@helpers/cms.helpers'
 import NCLink from '@components/NCLink'
+import Photo from '@components/Photo'
+import Image from 'next/image'
 import dayjs from 'dayjs'
 import { RxExternalLink } from 'react-icons/rx'
 import remarkGfm from 'remark-gfm'
@@ -27,20 +29,33 @@ const postTheme = {
 }
 
 function Post({ post }) {
-  const { title, postDate, body } = post
+  const { title, postDate, body, photoFileName } = post
   return (
     <Container maxW="container.md">
       <Flex direction="column" px={{ base: 0, lg: '10' }}>
-        <Text
-          as="h2"
-          fontSize={{ base: '2xl', sm: '3xl' }}
-          textColor="gray.400"
-        >
-          {dayjs(postDate).format('dddd, MMMM DD YYYY')}
-        </Text>
-        <Heading as="h1" fontSize={{ base: '3xl', sm: '4xl' }} my="2" pb="4">
-          {title}
-        </Heading>
+        <Flex direction="column">
+          <Text
+            as="h2"
+            fontSize={{ base: '2xl', sm: '3xl' }}
+            textColor="gray.400"
+          >
+            {dayjs(postDate).format('dddd, MMMM DD YYYY')}
+          </Text>
+          <Heading as="h1" fontSize={{ base: '3xl', sm: '4xl' }} my="2" pb="4">
+            {title}
+          </Heading>
+        </Flex>
+        <AspectRatio ratio={4 / 3}>
+          {photoFileName ? (
+            <Photo fileName={photoFileName} fill={true} />
+          ) : (
+            <Image
+              src="https://placehold.co/600x400/png"
+              fill={true}
+              alt="hero"
+            />
+          )}
+        </AspectRatio>
         <Text as="article" fontSize="2xl">
           <ReactMarkdown
             components={ChakraUIRenderer(postTheme)}

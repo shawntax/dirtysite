@@ -351,6 +351,13 @@ const collections = [
         name: 'body',
         widget: 'markdown',
       },
+      {
+        label: 'Hero Image',
+        name: 'photoUrl',
+        widget: 'image',
+        choose_url: true,
+        required: false,
+      },
     ],
   },
 ]

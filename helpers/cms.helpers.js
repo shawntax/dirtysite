@@ -110,6 +110,7 @@ export function fetchPosts() {
         `${post.title}-${dayjs(post.postDate).format('MM-DD')}`,
         { lower: true }
       )
+      post.photoFileName = post.photoUrl?.split('/').pop() ?? null
       return post
     })
     .filter(({ publishDate }) => {
