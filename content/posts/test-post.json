@@ -6,5 +6,8 @@
   "title": "This is a Post",
   "subtitle": "This is a subtitle of the post\n",
   "heroImage": "/media/371328485_594403489571701_3993111328100575434_n.jpg",
-  "photoUrl": "/media/img_4328.jpeg"
+  "photoUrl": "/media/img_4328.jpeg",
+  "callToAction": " do this thang up in here, y'all gunna make me lose my mind, up in here, etc.",
+  "callToActionButtonText": "sign up",
+  "callToActionLink": "http://example.org"
 }

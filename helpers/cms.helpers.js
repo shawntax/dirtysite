@@ -111,6 +111,14 @@ export function fetchPosts() {
         { lower: true }
       )
       post.photoFileName = post.photoUrl?.split('/').pop() ?? null
+      post.callToActionLink = post.callToActionLink
+        ? normalizeUrl(post.callToActionLink, {
+            defaultProtocol: 'https',
+            normalizeProtocol: true,
+            forceHttps: true,
+            stripProtocol: true,
+          })
+        : null
       return post
     })
     .filter(({ publishDate }) => {

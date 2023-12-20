@@ -29,7 +29,15 @@ const postTheme = {
 }
 
 function Post({ post }) {
-  const { title, postDate, body, photoFileName } = post
+  const {
+    title,
+    postDate,
+    body,
+    photoFileName,
+    callToAction,
+    callToActionLink,
+    callToActionButtonText,
+  } = post
   return (
     <Container maxW="container.md">
       <Flex direction="column" px={{ base: 0, lg: '10' }}>
@@ -45,7 +53,7 @@ function Post({ post }) {
             {title}
           </Heading>
         </Flex>
-        <AspectRatio ratio={4 / 3}>
+        <AspectRatio ratio={4 / 3} my={6}>
           {photoFileName ? (
             <Photo fileName={photoFileName} fill={true} />
           ) : (
@@ -56,7 +64,33 @@ function Post({ post }) {
             />
           )}
         </AspectRatio>
-        <Text as="article" fontSize="2xl">
+        {callToActionButtonText && (
+          <Flex
+            direction={{ base: 'column', sm: 'row' }}
+            justify="space-between"
+            align="center"
+            border="1px"
+            borderStyle="dotted"
+            borderColor="gray.200"
+            p={4}
+            my={4}
+          >
+            {callToAction && (
+              <Text fontSize="2xl" maxW={{ base: 'none', sm: 'sm' }}>
+                {callToAction}
+              </Text>
+            )}
+
+            <NCLink
+              variant="button"
+              to={`https://${callToActionLink}`}
+              mt={{ base: 4, sm: 'none' }}
+            >
+              {callToActionButtonText.toUpperCase()}
+            </NCLink>
+          </Flex>
+        )}
+        <Text as="article" fontSize="2xl" mt={4}>
           <ReactMarkdown
             components={ChakraUIRenderer(postTheme)}
             remarkPlugins={[remarkGfm]}
