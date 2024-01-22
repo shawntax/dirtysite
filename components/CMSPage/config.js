@@ -2,6 +2,8 @@ const devConfig = {
   local_backend: true,
   backend: {
     name: 'proxy',
+    proxy_url: 'http://localhost:8081/api/v1',
+    branch: 'main',
   },
   media_folder: 'public/media',
   public_folder: '/media',
@@ -369,7 +371,10 @@ const collections = [
         widget: 'string',
         name: 'callToActionButtonText',
         label: 'Call To Action Button Text',
-        pattern: ['.{3,14}', 'Must be between 3 and 14 characters'],
+        pattern: [
+          '^[a-zA-Z ]{3,10}$',
+          'button text must be between 3 and 10 characters',
+        ],
         required: false,
       },
       {
