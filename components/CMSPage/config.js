@@ -198,7 +198,7 @@ const collections = [
         name: 'publishDate',
         widget: 'datetime',
         date_format: 'LLLL d yyyy',
-        time_format: '~ h:mm bb',
+        time_format: ' h:mm a',
       },
       {
         label: 'Event Date',
@@ -335,7 +335,7 @@ const collections = [
         name: 'publishDate',
         widget: 'datetime',
         date_format: 'LLLL d yyyy',
-        time_format: '~ h:mm bb',
+        time_format: ' h:mm a',
         format: "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
         required: true,
       },

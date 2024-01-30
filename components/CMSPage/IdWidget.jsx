@@ -14,7 +14,7 @@ const IdControl = ({ value, onChange }) => {
     >
       <input
         type="text"
-        key="uuid-input"
+        key={nanoid(10)}
         name="uuid-input"
         value={value}
         disabled={true}
