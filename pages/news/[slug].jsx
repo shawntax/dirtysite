@@ -47,23 +47,17 @@ function Post({ post }) {
             fontSize={{ base: '2xl', sm: '3xl' }}
             textColor="gray.400"
           >
-            {dayjs(postDate).format('dddd, MMMM DD YYYY')}
+            {dayjs(postDate).format('MMMM DD, YYYY')}
           </Text>
           <Heading as="h1" fontSize={{ base: '3xl', sm: '4xl' }} my="2" pb="4">
             {title}
           </Heading>
         </Flex>
-        <AspectRatio ratio={1 / 1} my={6}>
-          {photoFileName ? (
-            <Photo fileName={photoFileName} fill={true} />
-          ) : (
-            <Image
-              src="https://placehold.co/600x400/png"
-              fill={true}
-              alt="hero"
-            />
-          )}
-        </AspectRatio>
+        {photoFileName && (
+          <AspectRatio ratio={1 / 1} my={6}>
+            <Photo fileName={photoFileName} fill={true} alt="postHeroImage" />
+          </AspectRatio>
+        )}
         {callToActionButtonText && (
           <Flex
             direction={{ base: 'column', sm: 'row' }}

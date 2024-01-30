@@ -16,23 +16,16 @@ const PostCard = ({ post }) => {
         key={id}
         direction="column"
         w="full"
-        // h={{ base: 'auto', sm: '2xs' }}
         border="1px"
         borderColor="gray.800"
         shadow="sm"
         role="group"
       >
-        <AspectRatio ratio={1 / 1}>
-          {photoFileName ? (
-            <Photo fileName={photoFileName} fill={true} />
-          ) : (
-            <Image
-              src="https://placehold.co/600x400/png"
-              fill={true}
-              alt="hero"
-            />
-          )}
-        </AspectRatio>
+        {photoFileName && (
+          <AspectRatio ratio={1 / 1}>
+            <Photo fileName={photoFileName} fill={true} alt="postHeroImage" />
+          </AspectRatio>
+        )}
         <Box p={{ base: '2', sm: '4' }}>
           <Text fontSize="xl" textColor="gray.400" pb="2">
             {dayjs(postDate).format('MMMM D, YYYY')}
