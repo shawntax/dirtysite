@@ -22,7 +22,7 @@ const PostCard = ({ post }) => {
         shadow="sm"
         role="group"
       >
-        <AspectRatio ratio={4 / 3}>
+        <AspectRatio ratio={1 / 1}>
           {photoFileName ? (
             <Photo fileName={photoFileName} fill={true} />
           ) : (

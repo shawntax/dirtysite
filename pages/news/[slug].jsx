@@ -53,7 +53,7 @@ function Post({ post }) {
             {title}
           </Heading>
         </Flex>
-        <AspectRatio ratio={4 / 3} my={6}>
+        <AspectRatio ratio={1 / 1} my={6}>
           {photoFileName ? (
             <Photo fileName={photoFileName} fill={true} />
           ) : (
