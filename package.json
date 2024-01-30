@@ -27,7 +27,7 @@
     "@fontsource/darker-grotesque": "^4.5.7",
     "@fontsource/oswald": "^4.5.5",
     "@open-draft/until": "^2.1.0",
-    "@staticcms/core": "4.0.1",
+    "@staticcms/core": "4.1.0",
     "axios": "^1.5.1",
     "chakra-ui-markdown-renderer": "^4.1.0",
     "date-fns-tz": "^2.0.0",
