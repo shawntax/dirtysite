@@ -3,12 +3,12 @@ import { Container, Flex, Heading, Text, AspectRatio } from '@chakra-ui/react'
 import { fetchPosts } from '@helpers/cms.helpers'
 import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
-import Image from 'next/image'
 import dayjs from 'dayjs'
 import { RxExternalLink } from 'react-icons/rx'
 import remarkGfm from 'remark-gfm'
 import ReactMarkdown from 'react-markdown'
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import { trackViewContent } from '@helpers/pixel.helpers'
 
 const postTheme = {
   a: ({ href, children }) => {
@@ -68,6 +68,9 @@ function Post({ post }) {
             borderColor="gray.200"
             p={4}
             my={4}
+            data-umami-event={title}
+            data-umami-event-link={callToActionLink}
+            onClick={trackViewContent}
           >
             {callToAction && (
               <Text fontSize="2xl" maxW={{ base: 'none', sm: 'sm' }}>
