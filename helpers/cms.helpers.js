@@ -98,3 +98,35 @@ export function fetchEvents() {
 
   return { upcomingLiveEvents, upcomingStreams, pastEvents }
 }
+
+export function fetchPosts() {
+  const allPosts = importAll(
+    require.context('../content/posts', false, /^(.\/).*(.json)$/)
+  )
+
+  const publishedPosts = allPosts
+    .map((post) => {
+      post.slug = slugify(
+        `${post.title}-${dayjs(post.postDate).format('MM-DD')}`,
+        { lower: true }
+      )
+      post.photoFileName = post.photoUrl?.split('/').pop() ?? null
+      post.callToActionLink = post.callToActionLink
+        ? normalizeUrl(post.callToActionLink, {
+            defaultProtocol: 'https',
+            normalizeProtocol: true,
+            forceHttps: true,
+            stripProtocol: true,
+          })
+        : null
+      return post
+    })
+    .filter(({ publishDate }) => {
+      return dayjs().utcOffset(-7).isSameOrAfter(dayjs(publishDate), 'day')
+    })
+    .sort((a, b) => {
+      return dayjs(b.postDate) - dayjs(a.postDate)
+    })
+
+  return publishedPosts
+}
