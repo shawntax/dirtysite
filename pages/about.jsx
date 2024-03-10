@@ -10,8 +10,7 @@ import {
 import PageHeader from '@components/PageHeader'
 import Photo from '@components/Photo'
 import { attributes, react as AboutContent } from '@content/pages/about.md'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'react-markdown'
 
 const aboutTheme = {
   p: ({ children }) => {
@@ -42,11 +41,7 @@ export default function About() {
             <Heading as="h1" textTransform="capitalize" w="fit" py="4">
               Mission Statement
             </Heading>
-            <ReactMarkdown
-              components={ChakraUIRenderer(aboutTheme)}
-              children={missionStatement}
-              skipHtml
-            />
+            <Markdown components={aboutTheme} children={missionStatement} />
           </Box>
         )}
 
@@ -55,11 +50,7 @@ export default function About() {
             <Heading as="h1" textTransform="capitalize" w="fit" py="4">
               Identity
             </Heading>
-            <ReactMarkdown
-              components={ChakraUIRenderer(aboutTheme)}
-              children={identity}
-              skipHtml
-            />
+            <Markdown components={aboutTheme} children={identity} skipHtml />
           </Box>
         )}
 
@@ -68,11 +59,7 @@ export default function About() {
             <Heading as="h1" textTransform="capitalize" w="fit" py="4">
               values
             </Heading>
-            <ReactMarkdown
-              components={ChakraUIRenderer(aboutTheme)}
-              children={values}
-              skipHtml
-            />
+            <Markdown components={aboutTheme} children={values} skipHtml />
           </Box>
         )}
         <SimpleGrid columns={{ base: 1, lg: 2 }} mt="4" spacing="8">

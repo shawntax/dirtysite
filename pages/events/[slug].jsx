@@ -10,9 +10,8 @@ import {
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
-import ReactMarkdown from 'react-markdown'
+import Markdown from 'react-markdown'
 import { RxExternalLink } from 'react-icons/rx'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
 import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
@@ -99,11 +98,10 @@ export default function Event({ event }) {
               fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
               p={{ base: '4', lg: 0 }}
             >
-              <ReactMarkdown
-                components={ChakraUIRenderer(descriptionTheme)}
+              <Markdown
+                components={descriptionTheme}
                 remarkPlugins={[remarkGfm]}
                 children={event.description}
-                skipHtml
               />
             </Box>
           </>
