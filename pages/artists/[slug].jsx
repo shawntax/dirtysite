@@ -23,8 +23,7 @@ import {
   SiTwitch,
 } from 'react-icons/si'
 import { RxExternalLink } from 'react-icons/rx'
-import ReactMarkdown from 'react-markdown'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import Markdown from 'react-markdown'
 
 const SOCIALS = [
   {
@@ -112,11 +111,7 @@ function Artist({ artist }) {
         <>
           <Divider py="2" />
           <Box fontSize="2xl" pt="2">
-            <ReactMarkdown
-              components={ChakraUIRenderer(bioTheme)}
-              children={artist.bio}
-              skipHtml
-            />
+            <Markdown components={bioTheme} children={artist.bio} skipHtml />
           </Box>
         </>
       )}

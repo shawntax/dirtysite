@@ -6,8 +6,7 @@ import Photo from '@components/Photo'
 import dayjs from 'dayjs'
 import { RxExternalLink } from 'react-icons/rx'
 import remarkGfm from 'remark-gfm'
-import ReactMarkdown from 'react-markdown'
-import ChakraUIRenderer from 'chakra-ui-markdown-renderer'
+import Markdown from 'react-markdown'
 import { trackViewContent } from '@helpers/pixel.helpers'
 
 const postTheme = {
@@ -88,11 +87,10 @@ function Post({ post }) {
           </Flex>
         )}
         <Text as="article" fontSize="2xl" mt={4}>
-          <ReactMarkdown
-            components={ChakraUIRenderer(postTheme)}
+          <Markdown
+            components={postTheme}
             remarkPlugins={[remarkGfm]}
             children={body}
-            skipHtml
           />
         </Text>
       </Flex>

@@ -8,7 +8,7 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Restore lychee cache
         uses: actions/cache@v3
@@ -18,7 +18,7 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.6.1
+        uses: lycheeverse/lychee-action@v1.9.3
         with:
-          args: --verbose --no-progress --cache --max-cache-age 1d --header 'accept=text/html' --exclude 'https://solo.to/*' --exclude 'https://twitter*' './content/**/*'
+          args: --verbose --no-progress --cache --max-cache-age 1d --header 'accept=text/html' './content/**/*'
           fail: true
