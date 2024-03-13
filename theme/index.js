@@ -20,6 +20,7 @@ const styles = {
 const fonts = {
   heading: 'Oswald, sans-serif',
   body: 'Darker Grotesque, sans-serif',
+  monospace: 'Spline Sans Mono Variable, monospace',
 }
 
 const config = {

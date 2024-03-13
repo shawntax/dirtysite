@@ -24,6 +24,7 @@
     "@chakra-ui/react": "2.8.1",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
+    "@fontsource-variable/spline-sans-mono": "^5.0.20",
     "@fontsource/darker-grotesque": "^5.0.0",
     "@fontsource/oswald": "^5.0.0",
     "@open-draft/until": "^2.1.0",

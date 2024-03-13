@@ -1,0 +1,15 @@
+{
+  "isPromoCodeEnabled": true,
+  "id": "aZH9xyZYkP",
+  "publishDate": "2024-03-12T21:39:28",
+  "eventDate": "2024-03-15T21:39:28.000-07:00",
+  "format": "Live",
+  "title": "TEST EVENT",
+  "eventLocation": "San Francisco, CA",
+  "venue": "club",
+  "ticketLink": "https://example.com",
+  "linkText": "TICKETS",
+  "promoCode": "10% OFF",
+  "photoUrl": "/media/12.23.23sq.jpeg",
+  "description": "ay\n"
+}
