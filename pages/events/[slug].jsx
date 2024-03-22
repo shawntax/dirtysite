@@ -1,9 +1,11 @@
 import { getLayout } from '@components/SiteLayout'
 import {
   Flex,
+  Spacer,
   Box,
   Heading,
   Text,
+  Button,
   Divider,
   AspectRatio,
 } from '@chakra-ui/react'
@@ -16,6 +18,8 @@ import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
+import { MdOutlineCopyAll } from 'react-icons/md'
+import { useCopyToClipboard } from '@uidotdev/usehooks'
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
 
@@ -47,6 +51,9 @@ export default function Event({ event }) {
     }
   )
 
+  const [copiedText, copyToClipboard] = useCopyToClipboard()
+  const hasCopiedText = Boolean(copiedText)
+
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -75,20 +82,43 @@ export default function Event({ event }) {
         </Text>
 
         {!isPast && (
-          <NCLink
-            variant="button"
-            to={to}
-            target="_blank"
-            rel="noopener"
-            py="2"
-            my="2"
-            w={{ base: 'full', sm: '3xs' }}
-            data-umami-event={event.title}
-            data-umami-event-link={event.ticketLink}
-            onClick={trackViewContent}
+          <Flex
+            w="full"
+            direction={{ base: 'column', md: 'row' }}
+            alignItems="center"
+            justifyContent="space-between"
           >
-            {event.linkText}
-          </NCLink>
+            <NCLink
+              variant="button"
+              to={to}
+              target="_blank"
+              rel="noopener"
+              py="2"
+              my="2"
+              w={{ base: 'full', sm: '3xs' }}
+              data-umami-event={event.title}
+              data-umami-event-link={event.ticketLink}
+              onClick={trackViewContent}
+            >
+              {event.linkText}
+            </NCLink>
+            <Flex direction="row" alignSelf="safe center" mx="4">
+              <Text fontSize="2xl">PROMO CODE: </Text>
+              <Button
+                bg="none"
+                _hover={{ bg: 'none' }}
+                px="1"
+                py="0"
+                fontSize="xl"
+                disabled={hasCopiedText}
+                onClick={() => copyToClipboard(event.promoCode)}
+              >
+                <code>{event.promoCode}</code>
+                <MdOutlineCopyAll />
+              </Button>
+            </Flex>
+            <Spacer />
+          </Flex>
         )}
         {event.description && (
           <>

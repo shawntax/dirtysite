@@ -39,7 +39,7 @@ const EventCard = ({ event }) => {
                 px="2"
                 py="1"
                 borderBottomRightRadius="md"
-                bgGradient="linear(to-r, gray.400, purple.700)"
+                bgGradient="linear(to-r, gray.500, blackAlpha.900)"
                 color="gray.100"
               >
                 <Text
@@ -48,7 +48,7 @@ const EventCard = ({ event }) => {
                   fontWeight="700"
                   textTransform="uppercase"
                 >
-                  {promoCode}
+                  10% OFF
                 </Text>
               </Box>
             )}
