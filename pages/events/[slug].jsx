@@ -121,6 +121,7 @@ export default function Event({ event }) {
                 px="1"
                 py="0"
                 fontSize="2xl"
+                color="inherit"
                 disabled={clipboard.copied}
                 onClick={() => clipboard.copy(event.promoCode)}
               >
@@ -167,6 +168,27 @@ export default function Event({ event }) {
         mx={{ base: 'auto', lg: '8' }}
         order={-1}
       >
+        {event.isPromoCodeEnabled && (
+          <Box
+            position="absolute"
+            zIndex={10}
+            width="fit-content"
+            px="2"
+            py="1"
+            borderBottomRightRadius="md"
+            bgGradient="linear(to-r, gray.500, blackAlpha.900)"
+            color="gray.100"
+          >
+            <Text
+              fontSize="lg"
+              fontFamily="monospace"
+              fontWeight="700"
+              textTransform="uppercase"
+            >
+              {event.promoLabel}
+            </Text>
+          </Box>
+        )}
         <AspectRatio ratio={1 / 1}>
           <Photo
             fileName={event.photoFileName}
