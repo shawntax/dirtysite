@@ -13,7 +13,7 @@ const EventCard = ({ event }) => {
     ticketLink,
     mobileTicketLink,
     isPromoCodeEnabled,
-    promoCode,
+    promoLabel,
   } = event
 
   const normalizedTicketLink = `https://${ticketLink}`
@@ -48,7 +48,7 @@ const EventCard = ({ event }) => {
                   fontWeight="700"
                   textTransform="uppercase"
                 >
-                  10% OFF
+                  {promoLabel}
                 </Text>
               </Box>
             )}

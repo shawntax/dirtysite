@@ -19,7 +19,8 @@ import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
 import { MdOutlineCopyAll } from 'react-icons/md'
-import { useCopyToClipboard } from '@uidotdev/usehooks'
+import { useMediaQuery } from '@chakra-ui/react'
+import { useClipboard } from '@mantine/hooks'
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
 
@@ -51,8 +52,12 @@ export default function Event({ event }) {
     }
   )
 
-  const [copiedText, copyToClipboard] = useCopyToClipboard()
-  const hasCopiedText = Boolean(copiedText)
+  const clipboard = useClipboard({ timeout: 1500 })
+
+  const [isMd] = useMediaQuery('(min-width: 768px)', {
+    ssr: true,
+    fallback: false,
+  })
 
   return (
     <Flex
@@ -84,7 +89,7 @@ export default function Event({ event }) {
         {!isPast && (
           <Flex
             w="full"
-            direction={{ base: 'column', md: 'row' }}
+            direction={{ base: 'column', lg: 'row' }}
             alignItems="center"
             justifyContent="space-between"
           >
@@ -102,20 +107,39 @@ export default function Event({ event }) {
             >
               {event.linkText}
             </NCLink>
-            <Flex direction="row" alignSelf="safe center" mx="4">
+            <Flex
+              direction="row"
+              justifyContent="center"
+              alignSelf="center"
+              mx="4"
+              flexWrap="wrap"
+            >
               <Text fontSize="2xl">PROMO CODE: </Text>
               <Button
                 bg="none"
                 _hover={{ bg: 'none' }}
                 px="1"
                 py="0"
-                fontSize="xl"
-                disabled={hasCopiedText}
-                onClick={() => copyToClipboard(event.promoCode)}
+                fontSize="2xl"
+                disabled={clipboard.copied}
+                onClick={() => clipboard.copy(event.promoCode)}
               >
                 <code>{event.promoCode}</code>
                 <MdOutlineCopyAll />
               </Button>
+              {clipboard.copied &&
+                (isMd ? (
+                  <Text fontSize="lg" alignSelf="center" flexBasis="0">
+                    Copied!
+                  </Text>
+                ) : (
+                  <>
+                    <Spacer flexBasis="100%" />
+                    <Text fontSize="lg" flexBasis="1">
+                      Copied!
+                    </Text>
+                  </>
+                ))}
             </Flex>
             <Spacer />
           </Flex>

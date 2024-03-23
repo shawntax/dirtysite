@@ -254,6 +254,17 @@ const collections = [
         },
       },
       {
+        widget: 'string',
+        label: 'Promo Label',
+        name: 'promoLabel',
+        required: false,
+        pattern: ['^.{1,10}$', 'Cannot be more than 10 characters'],
+        condition: {
+          field: 'linkText',
+          value: 'TICKETS',
+        },
+      },
+      {
         label: 'Featured Image',
         name: 'photoUrl',
         widget: 'image',
