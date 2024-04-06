@@ -1,9 +1,11 @@
 import { getLayout } from '@components/SiteLayout'
 import {
   Flex,
+  Spacer,
   Box,
   Heading,
   Text,
+  Button,
   Divider,
   AspectRatio,
 } from '@chakra-ui/react'
@@ -16,6 +18,9 @@ import remarkGfm from 'remark-gfm'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
+import { MdOutlineCopyAll } from 'react-icons/md'
+import { useMediaQuery } from '@chakra-ui/react'
+import { useClipboard } from '@mantine/hooks'
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
 
@@ -47,6 +52,13 @@ export default function Event({ event }) {
     }
   )
 
+  const clipboard = useClipboard({ timeout: 1500 })
+
+  const [isMd] = useMediaQuery('(min-width: 768px)', {
+    ssr: true,
+    fallback: false,
+  })
+
   return (
     <Flex
       direction={{ base: 'column', lg: 'row' }}
@@ -75,20 +87,63 @@ export default function Event({ event }) {
         </Text>
 
         {!isPast && (
-          <NCLink
-            variant="button"
-            to={to}
-            target="_blank"
-            rel="noopener"
-            py="2"
-            my="2"
-            w={{ base: 'full', sm: '3xs' }}
-            data-umami-event={event.title}
-            data-umami-event-link={event.ticketLink}
-            onClick={trackViewContent}
+          <Flex
+            w="full"
+            direction={{ base: 'column', lg: 'row' }}
+            alignItems="center"
+            justifyContent="space-between"
           >
-            {event.linkText}
-          </NCLink>
+            <NCLink
+              variant="button"
+              to={to}
+              target="_blank"
+              rel="noopener"
+              py="2"
+              my="2"
+              w={{ base: 'full', sm: '3xs' }}
+              data-umami-event={event.title}
+              data-umami-event-link={event.ticketLink}
+              onClick={trackViewContent}
+            >
+              {event.linkText}
+            </NCLink>
+            <Flex
+              direction="row"
+              justifyContent="center"
+              alignSelf="center"
+              mx="4"
+              flexWrap="wrap"
+            >
+              <Text fontSize="2xl">PROMO CODE: </Text>
+              <Button
+                bg="none"
+                _hover={{ bg: 'none' }}
+                px="1"
+                py="0"
+                fontSize="2xl"
+                color="inherit"
+                disabled={clipboard.copied}
+                onClick={() => clipboard.copy(event.promoCode)}
+              >
+                <code>{event.promoCode}</code>
+                <MdOutlineCopyAll />
+              </Button>
+              {clipboard.copied &&
+                (isMd ? (
+                  <Text fontSize="lg" alignSelf="center" flexBasis="0">
+                    Copied!
+                  </Text>
+                ) : (
+                  <>
+                    <Spacer flexBasis="100%" />
+                    <Text fontSize="lg" flexBasis="1">
+                      Copied!
+                    </Text>
+                  </>
+                ))}
+            </Flex>
+            <Spacer />
+          </Flex>
         )}
         {event.description && (
           <>
@@ -113,6 +168,27 @@ export default function Event({ event }) {
         mx={{ base: 'auto', lg: '8' }}
         order={-1}
       >
+        {event.isPromoCodeEnabled && (
+          <Box
+            position="absolute"
+            zIndex={10}
+            width="fit-content"
+            px="2"
+            py="1"
+            borderBottomRightRadius="md"
+            bgGradient="linear(to-r, gray.500, blackAlpha.900)"
+            color="gray.100"
+          >
+            <Text
+              fontSize="lg"
+              fontFamily="monospace"
+              fontWeight="700"
+              textTransform="uppercase"
+            >
+              {event.promoLabel}
+            </Text>
+          </Box>
+        )}
         <AspectRatio ratio={1 / 1}>
           <Photo
             fileName={event.photoFileName}

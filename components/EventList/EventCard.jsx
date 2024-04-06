@@ -6,7 +6,15 @@ import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
 
 const EventCard = ({ event }) => {
-  const { title, slug, photoFileName, ticketLink, mobileTicketLink } = event
+  const {
+    title,
+    slug,
+    photoFileName,
+    ticketLink,
+    mobileTicketLink,
+    isPromoCodeEnabled,
+    promoLabel,
+  } = event
 
   const normalizedTicketLink = `https://${ticketLink}`
 
@@ -18,11 +26,32 @@ const EventCard = ({ event }) => {
         maxW="400px"
         minW="400px"
       >
-        <Box role="group" w="full" mx="8">
+        <Box position="relative" role="group" w="full" mx="8">
           <NCLink
             to={`/events/${encodeURIComponent(slug)}`}
             _hover={{ textDecoration: 'none' }}
           >
+            {isPromoCodeEnabled && (
+              <Box
+                position="absolute"
+                zIndex={10}
+                width="fit-content"
+                px="2"
+                py="1"
+                borderBottomRightRadius="md"
+                bgGradient="linear(to-r, gray.500, blackAlpha.900)"
+                color="gray.100"
+              >
+                <Text
+                  fontSize="lg"
+                  fontFamily="monospace"
+                  fontWeight="700"
+                  textTransform="uppercase"
+                >
+                  {promoLabel}
+                </Text>
+              </Box>
+            )}
             <AspectRatio ratio={1 / 1}>
               <Photo fileName={photoFileName} fill={true} />
             </AspectRatio>

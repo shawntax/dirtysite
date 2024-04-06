@@ -233,6 +233,38 @@ const collections = [
         options: ['TICKETS', 'RSVP', 'FREE GUESTLIST'],
       },
       {
+        widget: 'boolean',
+        label: 'Promo Code Enabled',
+        name: 'isPromoCodeEnabled',
+        default: false,
+        condition: {
+          field: 'linkText',
+          value: 'TICKETS',
+        },
+      },
+      {
+        widget: 'string',
+        label: 'Promo Code',
+        name: 'promoCode',
+        required: false,
+        pattern: ['^.{1,10}$', 'Cannot be more than 10 characters'],
+        condition: {
+          field: 'linkText',
+          value: 'TICKETS',
+        },
+      },
+      {
+        widget: 'string',
+        label: 'Promo Label',
+        name: 'promoLabel',
+        required: false,
+        pattern: ['^.{1,10}$', 'Cannot be more than 10 characters'],
+        condition: {
+          field: 'linkText',
+          value: 'TICKETS',
+        },
+      },
+      {
         label: 'Featured Image',
         name: 'photoUrl',
         widget: 'image',
