@@ -237,10 +237,7 @@ const collections = [
         label: 'Promo Code Enabled',
         name: 'isPromoCodeEnabled',
         default: false,
-        condition: {
-          field: 'linkText',
-          value: 'TICKETS',
-        },
+        required: false,
       },
       {
         widget: 'string',
@@ -248,10 +245,6 @@ const collections = [
         name: 'promoCode',
         required: false,
         pattern: ['^.{1,10}$', 'Cannot be more than 10 characters'],
-        condition: {
-          field: 'linkText',
-          value: 'TICKETS',
-        },
       },
       {
         widget: 'string',
@@ -259,10 +252,6 @@ const collections = [
         name: 'promoLabel',
         required: false,
         pattern: ['^.{1,10}$', 'Cannot be more than 10 characters'],
-        condition: {
-          field: 'linkText',
-          value: 'TICKETS',
-        },
       },
       {
         label: 'Featured Image',
