@@ -107,41 +107,43 @@ export default function Event({ event }) {
             >
               {event.linkText}
             </NCLink>
-            <Flex
-              direction="row"
-              justifyContent="center"
-              alignSelf="center"
-              mx="4"
-              flexWrap="wrap"
-            >
-              <Text fontSize="2xl">PROMO CODE: </Text>
-              <Button
-                bg="none"
-                _hover={{ bg: 'none' }}
-                px="1"
-                py="0"
-                fontSize="2xl"
-                color="inherit"
-                disabled={clipboard.copied}
-                onClick={() => clipboard.copy(event.promoCode)}
+            {event.isPromoCodeEnabled && (
+              <Flex
+                direction="row"
+                justifyContent="center"
+                alignSelf="center"
+                mx="4"
+                flexWrap="wrap"
               >
-                <code>{event.promoCode}</code>
-                <MdOutlineCopyAll />
-              </Button>
-              {clipboard.copied &&
-                (isMd ? (
-                  <Text fontSize="lg" alignSelf="center" flexBasis="0">
-                    Copied!
-                  </Text>
-                ) : (
-                  <>
-                    <Spacer flexBasis="100%" />
-                    <Text fontSize="lg" flexBasis="1">
+                <Text fontSize="2xl">PROMO CODE: </Text>
+                <Button
+                  bg="none"
+                  _hover={{ bg: 'none' }}
+                  px="1"
+                  py="0"
+                  fontSize="2xl"
+                  color="inherit"
+                  disabled={clipboard.copied}
+                  onClick={() => clipboard.copy(event.promoCode)}
+                >
+                  <code>{event.promoCode}</code>
+                  <MdOutlineCopyAll />
+                </Button>
+                {clipboard.copied &&
+                  (isMd ? (
+                    <Text fontSize="lg" alignSelf="center" flexBasis="0">
                       Copied!
                     </Text>
-                  </>
-                ))}
-            </Flex>
+                  ) : (
+                    <>
+                      <Spacer flexBasis="100%" />
+                      <Text fontSize="lg" flexBasis="1">
+                        Copied!
+                      </Text>
+                    </>
+                  ))}
+              </Flex>
+            )}
             <Spacer />
           </Flex>
         )}
