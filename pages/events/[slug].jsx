@@ -107,7 +107,7 @@ export default function Event({ event }) {
             >
               {event.linkText}
             </NCLink>
-            {event.isPromoEnabled && (
+            {event.isPromoCodeEnabled && (
               <Flex
                 direction="row"
                 justifyContent="center"
