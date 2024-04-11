@@ -1,5 +1,5 @@
 {
-  "isPromoCodeEnabled": false,
+  "isPromoCodeEnabled": true,
   "id": "5gQ3AGK3D8",
   "publishDate": "2024-04-10T13:27:45",
   "eventDate": "2024-07-12T13:27:45.000-07:00",
@@ -9,5 +9,7 @@
   "venue": "1015 Folsom",
   "ticketLink": "https://wl.seetickets.us/event/jauz-wise/589382?afflky=1015Folsom",
   "linkText": "TICKETS",
-  "photoUrl": "/media/1015-jauz-jul-12-2024-sqaure.png"
+  "photoUrl": "/media/1015-jauz-jul-12-2024-sqaure.png",
+  "promoCode": "DNSFAM",
+  "promoLabel": "10% OFF"
 }
