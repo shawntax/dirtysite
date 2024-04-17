@@ -12,9 +12,7 @@ import {
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
-import Markdown from 'react-markdown'
-import { RxExternalLink } from 'react-icons/rx'
-import remarkGfm from 'remark-gfm'
+import MarkdownRenderer from '@components/MarkdownRenderer'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
@@ -23,24 +21,6 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { useClipboard } from '@mantine/hooks'
 export default function Event({ event }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
-
-  const descriptionTheme = {
-    a: ({ href, children }) => {
-      return (
-        <NCLink
-          href={href}
-          target="_blank"
-          rel="noopener"
-          textDecoration="underline"
-          textDecorationStyle="dotted"
-          textDecorationColor="gray.400"
-        >
-          {children?.toString().toLowerCase()}
-          <RxExternalLink style={{ display: 'inline', height: '13px' }} />
-        </NCLink>
-      )
-    },
-  }
 
   const to = useBreakpointValue(
     {
@@ -155,11 +135,7 @@ export default function Event({ event }) {
               fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
               p={{ base: '4', lg: 0 }}
             >
-              <Markdown
-                components={descriptionTheme}
-                remarkPlugins={[remarkGfm]}
-                children={event.description}
-              />
+              <MarkdownRenderer children={event.description} />
             </Box>
           </>
         )}

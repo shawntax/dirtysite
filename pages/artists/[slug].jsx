@@ -23,7 +23,7 @@ import {
   SiTwitch,
 } from 'react-icons/si'
 import { RxExternalLink } from 'react-icons/rx'
-import Markdown from 'react-markdown'
+import MarkdownRenderer from '@components/MarkdownRenderer'
 
 const SOCIALS = [
   {
@@ -111,7 +111,11 @@ function Artist({ artist }) {
         <>
           <Divider py="2" />
           <Box fontSize="2xl" pt="2">
-            <Markdown components={bioTheme} children={artist.bio} skipHtml />
+            <MarkdownRenderer
+              components={bioTheme}
+              children={artist.bio}
+              skipHtml
+            />
           </Box>
         </>
       )}

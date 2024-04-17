@@ -5,8 +5,7 @@ import NCLink from '@components/NCLink'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
 import { RxExternalLink } from 'react-icons/rx'
-import remarkGfm from 'remark-gfm'
-import Markdown from 'react-markdown'
+import MarkdownRenderer from '@components/MarkdownRenderer'
 import { trackViewContent } from '@helpers/pixel.helpers'
 
 const postTheme = {
@@ -87,11 +86,7 @@ function Post({ post }) {
           </Flex>
         )}
         <Text as="article" fontSize="2xl" mt={4}>
-          <Markdown
-            components={postTheme}
-            remarkPlugins={[remarkGfm]}
-            children={body}
-          />
+          <MarkdownRenderer components={postTheme} children={body} />
         </Text>
       </Flex>
     </Container>
