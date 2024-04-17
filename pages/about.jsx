@@ -10,7 +10,7 @@ import {
 import PageHeader from '@components/PageHeader'
 import Photo from '@components/Photo'
 import { attributes, react as AboutContent } from '@content/pages/about.md'
-import Markdown from 'react-markdown'
+import MarkdownRenderer from '@components/MarkdownRenderer'
 
 const aboutTheme = {
   p: ({ children }) => {
@@ -41,7 +41,10 @@ export default function About() {
             <Heading as="h1" textTransform="capitalize" w="fit" py="4">
               Mission Statement
             </Heading>
-            <Markdown components={aboutTheme} children={missionStatement} />
+            <MarkdownRenderer
+              components={aboutTheme}
+              children={missionStatement}
+            />
           </Box>
         )}
 
@@ -50,7 +53,11 @@ export default function About() {
             <Heading as="h1" textTransform="capitalize" w="fit" py="4">
               Identity
             </Heading>
-            <Markdown components={aboutTheme} children={identity} skipHtml />
+            <MarkdownRenderer
+              components={aboutTheme}
+              children={identity}
+              skipHtml
+            />
           </Box>
         )}
 
@@ -59,7 +66,11 @@ export default function About() {
             <Heading as="h1" textTransform="capitalize" w="fit" py="4">
               values
             </Heading>
-            <Markdown components={aboutTheme} children={values} skipHtml />
+            <MarkdownRenderer
+              components={aboutTheme}
+              children={values}
+              skipHtml
+            />
           </Box>
         )}
         <SimpleGrid columns={{ base: 1, lg: 2 }} mt="4" spacing="8">
