@@ -6,7 +6,9 @@
   "title": "Bijou",
   "eventLocation": "San Francisco, CA",
   "venue": "Pure",
-  "ticketLink": "https://purenightclub408.com/event/bijou-05-03-24/?rn=dns",
-  "linkText": "TICKETS",
-  "photoUrl": "/media/bijou-pure-fri.png"
+  "ticketLink": "https://forms.gle/bgkZVQLJSEdheQUk6",
+  "linkText": "FREE GUESTLIST",
+  "photoUrl": "/media/bijou-pure-fri.png",
+  "isPromoCodeEnabled": false,
+  "mobileTicketLink": "https://my.community.com/dirtynotsorry?t=BIJOU"
 }
