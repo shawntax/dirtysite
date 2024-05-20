@@ -1,5 +1,5 @@
 {
-  "isPromoCodeEnabled": false,
+  "isPromoCodeEnabled": true,
   "id": "-Hcn97EEHO",
   "publishDate": "2024-04-10T13:13:15",
   "eventDate": "2024-05-24T13:13:15.000-07:00",
@@ -9,5 +9,6 @@
   "venue": "1015 Folsom",
   "ticketLink": "https://wl.seetickets.us/event/creeds-alice-longyu-gao/598081?afflky=1015Folsom",
   "linkText": "TICKETS",
-  "photoUrl": "/media/img_0363.jpg"
+  "photoUrl": "/media/img_0363.jpg",
+  "promoCode": "DNSFAM"
 }
