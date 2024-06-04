@@ -1,0 +1,23 @@
+{
+  "id": "Vw9gHRDMMa",
+  "photoUrl": "/media/dj-hk-press-photo-dns-web.png",
+  "name": "DJ HK",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "__djhk"
+    },
+    {
+      "type": "twitch",
+      "handle": "jupiter1887"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "mustang42867"
+    },
+    {
+      "type": "mixcloud",
+      "handle": "djhkbeats"
+    }
+  ]
+}
