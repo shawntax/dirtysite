@@ -171,7 +171,7 @@ const collections = [
     folder: 'content/events',
     create: true,
     slug: '{{title}}-{{fields.id}}',
-    summary: `{{title | upper}} - {{fields.eventDate | date('MM/DD')}} ({{fields.format}})`,
+    summary: `{{title | upper}} - {{eventDate | date('LLLL d')}} ({{format}})`,
     identifier_field: 'title',
     editor: {
       preview: true,
