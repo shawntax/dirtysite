@@ -1,3 +1,3 @@
 ---
-seoDesc: Knives, Jaxx T, Cat Liu, Glaas, Damasek, and more
+seoDesc: Knives, Jaxx T, Cat Liu, Glaas, Damasek, and more.
 ---
