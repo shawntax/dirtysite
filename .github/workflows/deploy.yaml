@@ -2,6 +2,8 @@ name: Hit Endpoint on Commit by Specific Email
 
 on:
   push:
+    branches:
+        - main
 
 jobs:
   hit-endpoint:
