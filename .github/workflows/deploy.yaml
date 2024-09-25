@@ -1,0 +1,23 @@
+name: Hit Endpoint on Commit by Specific Email
+
+on:
+  push:
+
+jobs:
+  hit-endpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Get the email of the commit author
+      - name: Get Commit Author Email
+        id: get-author-email
+        run: |
+          echo "author_email=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_ENV
+
+      # Conditional step to hit the endpoint if the committer email is 'admin@dirtynotsorry.com'
+      - name: Hit Endpoint
+        # I thought the CMS was admin@dirtynotsorry but I see commits made by the email I used below...
+        if: env.author_email == 'dirtynotsorry-cms@users.noreply.github.com' 
+        run: curl -X POST -d {} https://api.vercel.com/v1/integrations/deploy/${TOKEN}
