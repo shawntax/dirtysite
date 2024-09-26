@@ -6,7 +6,7 @@ on:
         - main
 
 jobs:
-  hit-endpoint:
+  deploy-site-if-cms-edit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -19,6 +19,8 @@ jobs:
           echo "author_email=$(git log -1 --pretty=format:'%ae')" >> $GITHUB_ENV
 
       - name: Hit Vercel Deploy Hook
+        env:
+          TOKEN: ${{ secrets.VERCEL_DEPLOY_DAILY}}
         # user email format is {user.id}+{user.login}@users.noreply.github.com
         if: env.author_email == '103856042+dirtynotsorry-cms@users.noreply.github.com'
         run: curl -X POST -d {} https://api.vercel.com/v1/integrations/deploy/${TOKEN}
