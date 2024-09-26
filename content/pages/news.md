@@ -1,3 +1,3 @@
 ---
-seoDesc: The latest posts from Dirty Not Sorry
+seoDesc: The latest posts from Dirty Not Sorry.
 ---
