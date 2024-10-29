@@ -51,6 +51,7 @@ const SOCIALS = [
   'spotify',
   'soundcloud',
   'mixcloud',
+  'youtube'
 ]
 
 const collections = [

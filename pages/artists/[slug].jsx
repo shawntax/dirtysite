@@ -21,6 +21,7 @@ import {
   SiSoundcloud,
   SiSpotify,
   SiTwitch,
+  SiYoutube
 } from 'react-icons/si'
 import { RxExternalLink } from 'react-icons/rx'
 import MarkdownRenderer from '@components/MarkdownRenderer'
@@ -54,6 +55,11 @@ const SOCIALS = [
     urlPrefix: 'https://mixcloud.com/',
     icon: <SiMixcloud />,
   },
+  {
+    type: 'youtube',
+    urlPrefix: 'https://youtube.com/@',
+    icon: <SiYoutube />,
+  }
 ]
 
 const bioTheme = {

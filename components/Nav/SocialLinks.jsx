@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack } from '@chakra-ui/react'
+import { Stack, SimpleGrid } from '@chakra-ui/react'
 import NCLink from '@components/NCLink'
 import {
   SiTwitch,
@@ -10,6 +10,7 @@ import {
   SiSoundcloud,
   SiDiscord,
   SiTiktok,
+  SiYoutube,
 } from 'react-icons/si'
 
 const SocialLinks = ({ isOpen }) => {
@@ -45,14 +46,15 @@ const SocialLinks = ({ isOpen }) => {
         >
           <SiSpotify size="30px" />
         </NCLink>
+      </Stack>
+
+      <Stack spacing="5" direction={{ base: 'column', lg: 'row' }}>
         <NCLink
           to="https://soundcloud.com/dirtynotsorry"
           _hover={{ transform: 'scale(1.2)' }}
         >
           <SiSoundcloud size="30px" />
         </NCLink>
-      </Stack>
-      <Stack spacing="5" direction={{ base: 'column', lg: 'row' }}>
         <NCLink
           to="https://www.facebook.com/dirtynotsorry"
           _hover={{ transform: 'scale(1.2)' }}
@@ -65,6 +67,9 @@ const SocialLinks = ({ isOpen }) => {
         >
           <SiInstagram size="30px" />
         </NCLink>
+      </Stack>
+
+      <Stack spacing="5" direction={{ base: 'column', lg: 'row' }}>
         <NCLink
           to="https://twitter.com/dirtynotsorry"
           _hover={{ transform: 'scale(1.2)' }}
@@ -76,6 +81,12 @@ const SocialLinks = ({ isOpen }) => {
           _hover={{ transform: 'scale(1.2)' }}
         >
           <SiTiktok size="30px" />
+        </NCLink>
+        <NCLink
+          to="https://youtube.com/@dirtynotsorry"
+          _hover={{ transform: 'scale(1.2)' }}
+        >
+          <SiYoutube size="30px" />
         </NCLink>
       </Stack>
     </Stack>
