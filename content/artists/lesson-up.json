@@ -1,0 +1,15 @@
+{
+  "id": "typ5--o-We",
+  "name": "Lesson Up",
+  "photoUrl": "/media/lyssn-up-artist.png",
+  "socials": [
+    {
+      "type": "instagram",
+      "handle": "lyssnupmusic"
+    },
+    {
+      "type": "soundcloud",
+      "handle": "lyssnup"
+    }
+  ]
+}
