@@ -1,5 +1,5 @@
 {
-  "isPromoCodeEnabled": false,
+  "isPromoCodeEnabled": true,
   "id": "GYKqyOu8P3",
   "publishDate": "2024-09-03T17:48:25",
   "eventDate": "2024-11-10T17:48:25.000-08:00",
@@ -10,5 +10,7 @@
   "ticketLink": "https://www.etix.com/ticket/p/79131223/morten-san-francisco-mana-society-at-hibernia-sf",
   "linkText": "TICKETS",
   "photoUrl": "/media/morten_igsquare2.jpeg",
-  "description": "AN ELEVATED NIGHTLIFE EXPERIENCE\n\nDJ MAG TOP 100 Artist MORTEN headlines this Sunday Day To Night party with a (3) HR Extended Set, at the historical Hibernia Bank building, which will be transformed into an audio and visual haven. \n\nJoined by Special Guests: E-RAC3R & GLAAS\n\nHaving spent the summer playing residencies at the globally known Ushuaïa and Hï clubs in Ibiza,  MORTEN has created new magical tracks in collaboration with David Guetta. \n\nPerforming at some of the most prolific festivals in the U.S., which include performances this year at Ultra Music Festival, EDC Las Vegas, and Tomorrowland, MORTEN continues to dominate the international music scene.\n\n21+\n"
+  "description": "AN ELEVATED NIGHTLIFE EXPERIENCE\n\nDJ MAG TOP 100 Artist MORTEN headlines this Sunday Day To Night party with a (3) HR Extended Set, at the historical Hibernia Bank building, which will be transformed into an audio and visual haven. \n\nJoined by Special Guests: E-RAC3R & GLAAS\n\nHaving spent the summer playing residencies at the globally known Ushuaïa and Hï clubs in Ibiza,  MORTEN has created new magical tracks in collaboration with David Guetta. \n\nPerforming at some of the most prolific festivals in the U.S., which include performances this year at Ultra Music Festival, EDC Las Vegas, and Tomorrowland, MORTEN continues to dominate the international music scene.\n\n21+\n",
+  "promoCode": "DNSFAM",
+  "promoLabel": "$5 off"
 }
