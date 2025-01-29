@@ -55,7 +55,6 @@
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
-    "caniuse-lite": "^1.0.30001554",
     "dotenv": "^16.0.1",
     "eslint": "^8.52.0",
     "eslint-config-next": "13.5.6",
