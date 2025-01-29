@@ -69,7 +69,7 @@
     "prettier": "^3.0.3",
     "qnm": "^2.10.3",
     "serve": "^14.2.1",
-    "vercel": "^34.2.6"
+    "vercel": "^39.3.0"
   },
   "browserslist": [
     "> 1%",
