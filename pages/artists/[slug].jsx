@@ -12,6 +12,7 @@ import {
 import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import { fetchArtists } from '@helpers/cms.helpers'
+import PageHeader from '@components/PageHeader'
 import {
   SiInstagram,
   SiFacebook,
@@ -21,7 +22,7 @@ import {
   SiSoundcloud,
   SiSpotify,
   SiTwitch,
-  SiYoutube
+  SiYoutube,
 } from 'react-icons/si'
 import { RxExternalLink } from 'react-icons/rx'
 import MarkdownRenderer from '@components/MarkdownRenderer'
@@ -59,7 +60,7 @@ const SOCIALS = [
     type: 'youtube',
     urlPrefix: 'https://youtube.com/@',
     icon: <SiYoutube />,
-  }
+  },
 ]
 
 const bioTheme = {
@@ -79,9 +80,15 @@ const bioTheme = {
     )
   },
 }
-function Artist({ artist }) {
+function Artist({ artist, slug }) {
   return (
     <Container maxW="container.lg">
+      <PageHeader
+        title={artist.name}
+        urlPath={`/artists/${slug}`}
+        seoDesc={`${artist.name} is Dirty Not Sorry`}
+        imagePath={artist.photoFileName}
+      ></PageHeader>
       <Flex direction={{ base: 'column', lg: 'row' }} justify="center">
         <Box
           w={{ base: 'full', md: '60', lg: '96' }}
@@ -135,7 +142,7 @@ export async function getStaticProps(context) {
   const artist = artists.find((x) => x.slug === slug) || {}
 
   return {
-    props: { artist },
+    props: { artist, slug },
   }
 }
 

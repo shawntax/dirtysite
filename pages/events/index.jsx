@@ -4,7 +4,7 @@ import PageHeader from '@components/PageHeader'
 import PastEventList from '@components/PastEventList'
 import { getLayout } from '@components/SiteLayout'
 import { fetchEvents } from '@helpers/cms.helpers'
-import { attributes } from '@content/pages/artists.md'
+import { attributes } from '@content/pages/events.md'
 
 export default function Events({
   upcomingLiveEvents,

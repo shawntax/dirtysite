@@ -13,13 +13,14 @@ import Photo from '@components/Photo'
 import NCLink from '@components/NCLink'
 import dayjs from 'dayjs'
 import MarkdownRenderer from '@components/MarkdownRenderer'
+import PageHeader from '@components/PageHeader'
 import { fetchEvents } from '@helpers/cms.helpers'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { trackViewContent } from '@helpers/pixel.helpers'
 import { MdOutlineCopyAll } from 'react-icons/md'
 import { useMediaQuery } from '@chakra-ui/react'
 import { useClipboard } from '@mantine/hooks'
-export default function Event({ event }) {
+export default function Event({ event, slug }) {
   const isPast = dayjs().isAfter(event.eventDate, 'day')
 
   const to = useBreakpointValue(
@@ -40,143 +41,150 @@ export default function Event({ event }) {
   })
 
   return (
-    <Flex
-      direction={{ base: 'column', lg: 'row' }}
-      justify="center"
-      px={{ base: 0, lg: '10' }}
-    >
-      <Flex direction="column" align={{ base: 'center', lg: 'start' }}>
-        <Text
-          as="h2"
-          fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
-          textColor="gray.400"
-        >
-          {isPast
-            ? dayjs(event.eventDate).format('MMMM DD, YYYY')
-            : dayjs(event.eventDate).format('dddd, MMMM DD')}
-        </Text>
-        <Heading
-          as="h1"
-          fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
-          my="2"
-        >
-          {event.title}
-        </Heading>
-        <Text as="h2" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} my="2">
-          {event.venue}
-        </Text>
-
-        {!isPast && (
-          <Flex
-            w="full"
-            direction={{ base: 'column', lg: 'row' }}
-            alignItems="center"
-            justifyContent="space-between"
+    <>
+      <PageHeader
+        title={event.title}
+        urlPath={`/events/${slug}`}
+        imagePath={event.photoFileName}
+      ></PageHeader>
+      <Flex
+        direction={{ base: 'column', lg: 'row' }}
+        justify="center"
+        px={{ base: 0, lg: '10' }}
+      >
+        <Flex direction="column" align={{ base: 'center', lg: 'start' }}>
+          <Text
+            as="h2"
+            fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
+            textColor="gray.400"
           >
-            <NCLink
-              variant="button"
-              to={to}
-              target="_blank"
-              rel="noopener"
-              py="2"
-              my="2"
-              w={{ base: 'full', sm: '3xs' }}
-              data-umami-event={event.title}
-              data-umami-event-link={event.ticketLink}
-              onClick={trackViewContent}
+            {isPast
+              ? dayjs(event.eventDate).format('MMMM DD, YYYY')
+              : dayjs(event.eventDate).format('dddd, MMMM DD')}
+          </Text>
+          <Heading
+            as="h1"
+            fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+            my="2"
+          >
+            {event.title}
+          </Heading>
+          <Text as="h2" fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }} my="2">
+            {event.venue}
+          </Text>
+
+          {!isPast && (
+            <Flex
+              w="full"
+              direction={{ base: 'column', lg: 'row' }}
+              alignItems="center"
+              justifyContent="space-between"
             >
-              {event.linkText}
-            </NCLink>
-            {event.isPromoCodeEnabled && (
-              <Flex
-                direction="row"
-                justifyContent="center"
-                alignSelf="center"
-                mx="4"
-                flexWrap="wrap"
+              <NCLink
+                variant="button"
+                to={to}
+                target="_blank"
+                rel="noopener"
+                py="2"
+                my="2"
+                w={{ base: 'full', sm: '3xs' }}
+                data-umami-event={event.title}
+                data-umami-event-link={event.ticketLink}
+                onClick={trackViewContent}
               >
-                <Text fontSize="2xl">PROMO CODE: </Text>
-                <Button
-                  bg="none"
-                  _hover={{ bg: 'none' }}
-                  px="1"
-                  py="0"
-                  fontSize="2xl"
-                  color="inherit"
-                  disabled={clipboard.copied}
-                  onClick={() => clipboard.copy(event.promoCode)}
+                {event.linkText}
+              </NCLink>
+              {event.isPromoCodeEnabled && (
+                <Flex
+                  direction="row"
+                  justifyContent="center"
+                  alignSelf="center"
+                  mx="4"
+                  flexWrap="wrap"
                 >
-                  <code>{event.promoCode}</code>
-                  <MdOutlineCopyAll />
-                </Button>
-                {clipboard.copied &&
-                  (isMd ? (
-                    <Text fontSize="lg" alignSelf="center" flexBasis="0">
-                      Copied!
-                    </Text>
-                  ) : (
-                    <>
-                      <Spacer flexBasis="100%" />
-                      <Text fontSize="lg" flexBasis="1">
+                  <Text fontSize="2xl">PROMO CODE: </Text>
+                  <Button
+                    bg="none"
+                    _hover={{ bg: 'none' }}
+                    px="1"
+                    py="0"
+                    fontSize="2xl"
+                    color="inherit"
+                    disabled={clipboard.copied}
+                    onClick={() => clipboard.copy(event.promoCode)}
+                  >
+                    <code>{event.promoCode}</code>
+                    <MdOutlineCopyAll />
+                  </Button>
+                  {clipboard.copied &&
+                    (isMd ? (
+                      <Text fontSize="lg" alignSelf="center" flexBasis="0">
                         Copied!
                       </Text>
-                    </>
-                  ))}
-              </Flex>
-            )}
-            <Spacer />
-          </Flex>
-        )}
-        {event.description && (
-          <>
-            <Divider orientation="horizontal" my="4" />
+                    ) : (
+                      <>
+                        <Spacer flexBasis="100%" />
+                        <Text fontSize="lg" flexBasis="1">
+                          Copied!
+                        </Text>
+                      </>
+                    ))}
+                </Flex>
+              )}
+              <Spacer />
+            </Flex>
+          )}
+          {event.description && (
+            <>
+              <Divider orientation="horizontal" my="4" />
+              <Box
+                maxW={'container.md'}
+                fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+                p={{ base: '4', lg: 0 }}
+              >
+                <MarkdownRenderer children={event.description} />
+              </Box>
+            </>
+          )}
+        </Flex>
+        <Box
+          w={{ base: 'full', lg: '500px' }}
+          h="auto"
+          mx={{ base: 'auto', lg: '8' }}
+          order={-1}
+        >
+          {event.isPromoCodeEnabled && (
             <Box
-              maxW={'container.md'}
-              fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-              p={{ base: '4', lg: 0 }}
+              position="absolute"
+              zIndex={10}
+              width="fit-content"
+              px="2"
+              py="1"
+              borderBottomRightRadius="md"
+              bgGradient="linear(to-r, gray.500, blackAlpha.900)"
+              color="gray.100"
             >
-              <MarkdownRenderer children={event.description} />
+              <Text
+                fontSize="lg"
+                fontFamily="monospace"
+                fontWeight="700"
+                textTransform="uppercase"
+              >
+                {event.promoLabel}
+              </Text>
             </Box>
-          </>
-        )}
+          )}
+          <AspectRatio ratio={1 / 1}>
+            <Photo
+              fileName={event.photoFileName}
+              fill={true}
+              border="1px"
+              bordercolor="gray.800"
+            />
+          </AspectRatio>
+        </Box>
       </Flex>
-      <Box
-        w={{ base: 'full', lg: '500px' }}
-        h="auto"
-        mx={{ base: 'auto', lg: '8' }}
-        order={-1}
-      >
-        {event.isPromoCodeEnabled && (
-          <Box
-            position="absolute"
-            zIndex={10}
-            width="fit-content"
-            px="2"
-            py="1"
-            borderBottomRightRadius="md"
-            bgGradient="linear(to-r, gray.500, blackAlpha.900)"
-            color="gray.100"
-          >
-            <Text
-              fontSize="lg"
-              fontFamily="monospace"
-              fontWeight="700"
-              textTransform="uppercase"
-            >
-              {event.promoLabel}
-            </Text>
-          </Box>
-        )}
-        <AspectRatio ratio={1 / 1}>
-          <Photo
-            fileName={event.photoFileName}
-            fill={true}
-            border="1px"
-            bordercolor="gray.800"
-          />
-        </AspectRatio>
-      </Box>
-    </Flex>
+    </>
   )
 }
 
@@ -190,7 +198,7 @@ export async function getStaticProps(context) {
     ) || {}
 
   return {
-    props: { event },
+    props: { event, slug },
     revalidate: 60 * 60,
   }
 }
