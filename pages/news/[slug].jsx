@@ -2,6 +2,7 @@ import { getLayout } from '@components/SiteLayout'
 import { Container, Flex, Heading, Text, AspectRatio } from '@chakra-ui/react'
 import { fetchPosts } from '@helpers/cms.helpers'
 import NCLink from '@components/NCLink'
+import PageHeader from '@components/PageHeader'
 import Photo from '@components/Photo'
 import dayjs from 'dayjs'
 import { RxExternalLink } from 'react-icons/rx'
@@ -26,7 +27,7 @@ const postTheme = {
   },
 }
 
-function Post({ post }) {
+function Post({ post, slug }) {
   const {
     title,
     postDate,
@@ -37,59 +38,71 @@ function Post({ post }) {
     callToActionButtonText,
   } = post
   return (
-    <Container maxW="container.md">
-      <Flex direction="column" px={{ base: 0, lg: '10' }}>
-        <Flex direction="column">
-          <Text
-            as="h2"
-            fontSize={{ base: '2xl', sm: '3xl' }}
-            textColor="gray.400"
-          >
-            {dayjs(postDate).format('MMMM DD, YYYY')}
-          </Text>
-          <Heading as="h1" fontSize={{ base: '3xl', sm: '4xl' }} my="2" pb="4">
-            {title}
-          </Heading>
-        </Flex>
-        {photoFileName && (
-          <AspectRatio ratio={1 / 1} my={6}>
-            <Photo fileName={photoFileName} fill={true} alt="postHeroImage" />
-          </AspectRatio>
-        )}
-        {callToActionButtonText && (
-          <Flex
-            direction={{ base: 'column', sm: 'row' }}
-            justify="space-between"
-            align="center"
-            border="1px"
-            borderStyle="dotted"
-            borderColor="gray.200"
-            p={4}
-            my={4}
-            data-umami-event={title}
-            data-umami-event-link={callToActionLink}
-            onClick={trackViewContent}
-          >
-            {callToAction && (
-              <Text fontSize="2xl" maxW={{ base: 'none', sm: 'sm' }}>
-                {callToAction}
-              </Text>
-            )}
-
-            <NCLink
-              variant="button"
-              to={`https://${callToActionLink}`}
-              mt={{ base: 4, sm: 'none' }}
+    <>
+      <PageHeader
+        title={post.title}
+        urlPath={`/news/${slug}`}
+        imagePath={post.photoFileName}
+      ></PageHeader>
+      <Container maxW="container.md">
+        <Flex direction="column" px={{ base: 0, lg: '10' }}>
+          <Flex direction="column">
+            <Text
+              as="h2"
+              fontSize={{ base: '2xl', sm: '3xl' }}
+              textColor="gray.400"
             >
-              {callToActionButtonText.toUpperCase()}
-            </NCLink>
+              {dayjs(postDate).format('MMMM DD, YYYY')}
+            </Text>
+            <Heading
+              as="h1"
+              fontSize={{ base: '3xl', sm: '4xl' }}
+              my="2"
+              pb="4"
+            >
+              {title}
+            </Heading>
           </Flex>
-        )}
-        <Text as="article" fontSize="2xl" mt={4}>
-          <MarkdownRenderer components={postTheme} children={body} />
-        </Text>
-      </Flex>
-    </Container>
+          {photoFileName && (
+            <AspectRatio ratio={1 / 1} my={6}>
+              <Photo fileName={photoFileName} fill={true} alt="postHeroImage" />
+            </AspectRatio>
+          )}
+          {callToActionButtonText && (
+            <Flex
+              direction={{ base: 'column', sm: 'row' }}
+              justify="space-between"
+              align="center"
+              border="1px"
+              borderStyle="dotted"
+              borderColor="gray.200"
+              p={4}
+              my={4}
+              data-umami-event={title}
+              data-umami-event-link={callToActionLink}
+              onClick={trackViewContent}
+            >
+              {callToAction && (
+                <Text fontSize="2xl" maxW={{ base: 'none', sm: 'sm' }}>
+                  {callToAction}
+                </Text>
+              )}
+
+              <NCLink
+                variant="button"
+                to={`https://${callToActionLink}`}
+                mt={{ base: 4, sm: 'none' }}
+              >
+                {callToActionButtonText.toUpperCase()}
+              </NCLink>
+            </Flex>
+          )}
+          <Text as="article" fontSize="2xl" mt={4}>
+            <MarkdownRenderer components={postTheme} children={body} />
+          </Text>
+        </Flex>
+      </Container>
+    </>
   )
 }
 
@@ -99,7 +112,7 @@ export async function getStaticProps(context) {
   const post = posts.find((x) => x.slug === slug) || {}
 
   return {
-    props: { post },
+    props: { post, slug },
   }
 }
 
