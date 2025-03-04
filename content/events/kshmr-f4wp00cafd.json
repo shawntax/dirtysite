@@ -1,5 +1,5 @@
 {
-  "isPromoCodeEnabled": false,
+  "isPromoCodeEnabled": true,
   "id": "f4WP00cAfd",
   "publishDate": "2025-02-04T17:24:32",
   "eventDate": "2025-03-21T17:24:32.000-07:00",
@@ -10,5 +10,7 @@
   "ticketLink": "https://tixr.com/e/129497",
   "linkText": "TICKETS",
   "photoUrl": "/media/kshmr-midway-updated.png",
-  "description": "March 21st\n\nThe Midway + Dirty Not Sorry Presents\n\nKSHMR in RiDE\n\nSupport:\n\nDZEKO\n\nCAT LIU\n\nTARA\n\n21+ Event, 900 Marin Street SF\n"
+  "description": "March 21st\n\nThe Midway + Dirty Not Sorry Presents\n\nKSHMR in RiDE\n\nSupport:\n\nDZEKO\n\nCAT LIU\n\nTARA\n\n21+ Event, 900 Marin Street SF\n",
+  "promoCode": "DNS20",
+  "promoLabel": "20% OFF"
 }
