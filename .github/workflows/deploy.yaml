@@ -21,6 +21,5 @@ jobs:
       - name: Hit Vercel Deploy Hook
         env:
           TOKEN: ${{ secrets.VERCEL_DEPLOY_DAILY}}
-        # user email format is {user.id}+{user.login}@users.noreply.github.com
-        if: env.author_email == '103856042+dirtynotsorry-cms@users.noreply.github.com'
+        if: env.author_email == 'admin@dirtynotsorry.com'
         run: curl -X POST -d {} https://api.vercel.com/v1/integrations/deploy/${TOKEN}
