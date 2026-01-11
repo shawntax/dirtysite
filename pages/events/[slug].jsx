@@ -174,7 +174,7 @@ export default function Event({ event, slug }) {
               </Text>
             </Box>
           )}
-          <AspectRatio ratio={1 / 1}>
+          <AspectRatio ratio={4 / 5}>
             <Photo
               fileName={event.photoFileName}
               fill={true}

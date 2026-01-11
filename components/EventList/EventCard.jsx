@@ -52,7 +52,7 @@ const EventCard = ({ event }) => {
                 </Text>
               </Box>
             )}
-            <AspectRatio ratio={1 / 1}>
+            <AspectRatio ratio={4 / 5}>
               <Photo fileName={photoFileName} fill={true} />
             </AspectRatio>
             <Flex direction="row" justify="space-between" mt="2">
