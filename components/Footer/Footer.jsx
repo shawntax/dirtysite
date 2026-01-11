@@ -1,4 +1,5 @@
 import React from 'react'
+import dayjs from 'dayjs'
 import { Text, Stack, StackDivider, Flex, Center, Box } from '@chakra-ui/react'
 import CommunityWidget from './CommunityWidget'
 import MarketingForm from './MarketingForm'
@@ -27,7 +28,7 @@ const Footer = () => {
       </Stack>
       <Center>
         <Text pt={16} pb={4} color="white" mx="auto">
-          © 2025 Dirty Not Sorry
+          © {dayjs().year()} Dirty Not Sorry
         </Text>
       </Center>
     </Flex>
